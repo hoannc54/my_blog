@@ -1,15 +1,15 @@
 # ITCSS: Mở rộng và bảo trì kiến trúc CSS
 Làm thế nào tôi làm cho CSS của tôi có thể mở rộng và bảo trì ? Đó là vấn đề của mọi front-end developer. ITCSS có câu trả lời.
 
-Năm ngoái khi chúng tôi bắt đầu kế hoạc để thiết kế lại [HEROized][1] và wesite Xfive.co mới, tôi tìm kiếm một kiến trúc CSS, cho phép phát triển website và bảo trì trong tương lai dễ dàng.
+Năm ngoái khi chúng tôi bắt đầu kế hoạc để thiết kế lại [HEROized][1] và wesite Xfive.co mới, tôi tìm kiếm một kiến trúc CSS, cho phép ~~phát triển website và bảo trì trong tương lai dễ dàng~~ *dễ dàng phát triển và bảo trì website trong tương lai*.
 
-[CSS Modules][2] còn khá mới và mới lạ vào thời điểm đó đó và tôi luôn luôn xem xét với [Atomic Design][3] tương tự được tạo ra. Sau đó tôi đã gặp [Harry Roberts's][4] của ITCSS vào tháng 6-2015 vấn đề của [net magazine][5] và ngay lập tức yêu thích các tiếp cận CSS đơn giản.
+[CSS Modules][2] còn khá mới và mới lạ vào thời điểm đó đó và tôi luôn luôn xem xét với [Atomic Design][3] tương tự được tạo ra. Sau đó tôi đã ~~gặp~~ (came across) *đọc được* [Harry Roberts's][4] của ITCSS vào tháng 6-2015 vấn đề của [net magazine][5] và ngay lập tức yêu thích các tiếp cận CSS đơn giản.
 
 ## ITCSS là gì?
 
 ITCSS viết tắt của _Inverted Triangle CSS_ và nó giúp bạn tổ chức các file CSS trong dự án của bạn theo cách mà bạn có thể làm tốt hơn **deal with** (not always easy-to-deal with) CSS đặc biệt giống **global namespace, cascade and selectors specificity**.
 
-ITCSS có thể được dùng với bộ tiền xử lý hoặc không có chúng và tương thích với phương thức giống BEM, SMACSS or OOCSS.
+ITCSS có thể được dùng với bộ tiền xử lý hoặc không có chúng và tương thích với phương thức ~~giống~~ *như* BEM, SMACSS or OOCSS.
 
 Một trong những nguyên tắc chính của ITCSS là nó tách code cơ bản CSS của bạn thành một số phần (được gọi _layers_), có dạng của hình tam giác ngược    :
 
@@ -22,10 +22,10 @@ Những lớp giống như sau:
 * **Generic** – Thiết lập lại và hoặc định dạng bình thuường, xác định hộp kích thuước. Đây là lớp đầu tiên tạo ra CSS thực tế.
 * **Elements** – định dạng cho chỉ HTML elements (giống như H1, A, etc.). Chúng đi kèm với định dạng mặc định từ trình duyệt để chúng tôi có thể xác định lại chúng ở đây.
 * **Objects** – class-based selectors cái mà xác định các mẫu thiết kế chưa được thiết kế, ví dụ đối tượng truyền thông được biết đến từ OOCSS.
-* **Components** – Các thành phần UI cụ thể. Đây là noi phần lớn các công việc của chúng tôi diễn ra và các thành phần UI của chúng tôi thường được tạo của Objects and Components
+* **Components** – Các thành phần UI cụ thể. Đây là noi phần lớn các công việc của chúng tôi diễn ra và các thành phần UI của chúng tôi thường được ~~tạo~~ *bao gồm* (composed of) của Objects and Components
 * **Utilities** – Lớp utilities và helper với khả năng ghi đè mọi thư phía trước của tam giác. Ví dụ: ẩn lớp helper
 
-Hình tam giác cũng cho thấy cách trình bày các style bở các selector và order trong kết quả CSS: Từ các style chung đến rõ ràng, từ các selector có tính cụ thể thấp đến cụ thể hơn (nhưng vẫn giữ _not too_ cụ thể, IDs không được phép) và từ xa đến cục bộ.
+Hình tam giác cũng cho thấy cách trình bày các style bởi các selector và order trong kết quả CSS: Từ các style chung đến rõ ràng, từ các selector có tính cụ thể thấp đến cụ thể hơn (nhưng vẫn giữ _not too_ *không quá* cụ thể, IDs không được phép) và từ xa đến cục bộ.
 
 ![ITCSS Key Metrics][7]
 
@@ -137,7 +137,7 @@ _Chú ý: Chúng ta dùng [các thư mục riêng biệt cho mỗi lớp][13] v�
 
 ### Các đối tượng sử dụng lại cho quá trình phát triển nhanh
 
-Đối tượng của ITCSS là ứng cử viên hoàn hảo cho việc xây dựng một thư viện của các thành phần tái sử dụng cho phép phát triển front-end nhanh. Các thành phần UI sẽ bao gồm các đối tượng chung và các thành phần cụ thể dự án. Ví dụg, innuitcss giống như một ITCSS chung dựa trên framework chứa [một nhóm đối tượng][14] nhưng chỉ [một thành phần mẫu][15].
+Đối tượng của ITCSS là ứng cử viên hoàn hảo cho việc xây dựng một thư viện của các thành phần tái sử dụng cho phép phát triển front-end nhanh. Các thành phần UI sẽ bao gồm các đối tượng chung và các thành phần cụ thể dự án. Ví dụ, innuitcss giống như một ITCSS chung dựa trên framework chứa [một nhóm đối tượng][14] nhưng chỉ [một thành phần mẫu][15].
 
 ### Animations
 
@@ -163,7 +163,7 @@ ITCSS không thể cạnh tranh với một trường hợp này [functional CSS
 
 ## Phần kết luận
 
-Bạn không thể đi sai với ITCSS. Nó là kết quả của kinh nghiệm và nhiều năm làm việc bởi Harry Roberts, một trong những tác giả nổi tiếng nhất của CSS. Nếu bạn không nghĩ sâu bên trong tài nguyên một chút, bạn sẽ thuưởng với một kiến trúc đơn giản nhưng mạnh mẽ cho phép bạn tạo là dự án lớn hoặc nhỏ về CSS có khả năng mở rộng và bảo trì.
+Bạn không thể đi sai với ITCSS. Nó là kết quả của kinh nghiệm và nhiều năm làm việc bởi Harry Roberts, một trong những tác giả nổi tiếng nhất của CSS. Nếu bạn ~~không nghĩ~~ *không phiền đào*(don't mind digging) sâu bên trong tài nguyên một chút, bạn sẽ ~~thuưởng~~ *được đền đáp* (rewarded) với một kiến trúc đơn giản nhưng mạnh mẽ cho phép bạn tạo là dự án lớn hoặc nhỏ về CSS có khả năng mở rộng và bảo trì.
 
 Nhưng đừng quên chú ý đến cái nhìn của những người khác giống nhưB [CSS modules][17], trong thời gian chờ đợi.
 
