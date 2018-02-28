@@ -37,7 +37,7 @@ _Cập nhật 10/27/2016: The net magazine vừa được tái bản bài báo g
 
 Thông thường, đến đây tôi sẽ giới thiệu bạn đến [ITCSS webpage][9] cho học thêm. Tuy nhiên, không có gì giống như tài liệu mã nguồn mở tồn tại.
 
-ITCSS vẫn còn một phần thuộc tính và nếu bạn muốn tận dụng nó, bạn nên học phần giới thiệu ban đầu trong tạp chí. Tôi không ở đây để đánh giá ý định của tác giả(Tôi cảm ơn anh ấy đã chia sẻ sự hiểu biết của anh ấy), nhưng tôi nghĩ điều này tránh ITCSS mở rộng hơn(có thể là ý định sau tất cả).
+ITCSS vẫn còn một phần ~~thuộc tính~~ *độc quyền*(proprietary) và nếu bạn muốn tận dụng nó, bạn nên học phần giới thiệu ban đầu trong tạp chí. Tôi không ở đây để đánh giá ý định của tác giả(Tôi cảm ơn anh ấy đã chia sẻ sự hiểu biết của anh ấy), nhưng tôi nghĩ điều này tránh ITCSS mở rộng hơn(có thể là ý định sau tất cả).
 
 > The partially proprietary character of ITCSS prevents its wider adoption.
 
