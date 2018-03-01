@@ -19,13 +19,13 @@ Những lớp giống như sau:
 
 * **Settings** – Được dùng với bộ tiền xử lý và chứ font, định nghĩa màu, ...
 * **Tools** – globally used mixins and functions. Điều quan trọng là nó không tạo ra bất kỳ CSS nào trong 2 lớp đầu tiên.
-* **Generic** – Thiết lập lại và hoặc định dạng bình thuường, xác định hộp kích thuước. Đây là lớp đầu tiên tạo ra CSS thực tế.
-* **Elements** – định dạng cho chỉ HTML elements (giống như H1, A, etc.). Chúng đi kèm với định dạng mặc định từ trình duyệt để chúng tôi có thể xác định lại chúng ở đây.
+* **Generic** –  cài lại và/hoặc chuẩn hóa style, định nghĩa box-sizing. Đây là lớp đầu tiên thực sự tạo ra css.
+* **Elements** – Định kiểu cho các phần tử HTML cơ bản (như H1, A, v.v). Chúng đi kèm với định dạng mặc định từ trình duyệt để chúng tôi có thể xác định lại chúng ở đây.
 * **Objects** – class-based selectors cái mà xác định các mẫu thiết kế chưa được thiết kế, ví dụ đối tượng truyền thông được biết đến từ OOCSS.
 * **Components** – Các thành phần UI cụ thể. Đây là noi phần lớn các công việc của chúng tôi diễn ra và các thành phần UI của chúng tôi thường được tạo của Objects and Components
 * **Utilities** – Lớp utilities và helper với khả năng ghi đè mọi thư phía trước của tam giác. Ví dụ: ẩn lớp helper
 
-Hình tam giác cũng cho thấy cách trình bày các style bở các selector và order trong kết quả CSS: Từ các style chung đến rõ ràng, từ các selector có tính cụ thể thấp đến cụ thể hơn (nhưng vẫn giữ _not too_ cụ thể, IDs không được phép) và từ xa đến cục bộ.
+Hình tam giác cũng cho thấy cách trình bày các style bở các selector và order trong kết quả CSS: Từ các style chung đến rõ ràng, từ các selector có tính cụ thể thấp đến cụ thể hơn (nhưng vẫn không quá cụ thể, IDs không được phép) và từ ảnh hưởng rộng đến ảnh hưởng ít. 
 
 ![ITCSS Key Metrics][7]
 
@@ -141,7 +141,7 @@ _Chú ý: Chúng ta dùng [các thư mục riêng biệt cho mỗi lớp][13] v�
 
 ### Animations
 
-Tôi gợi ý xác định thành phần chung, animation toàn cục giống như đối tượng. Ví dụ. _@keyframes_ _o-fade-in_ trong file __objects.animations.scss_
+TTôi khuyên bạn nên định nghĩa thành phần chung, animation toàn cục giống như đối tượng. Ví dụ. _@keyframes_ _o-fade-in_ trong file __objects.animations.scss_
 
 Animations cụ thể nên được xác định tương ứng mỗi file thành phần, Ví dụ. _@keyframes c-hero-scale_ in __components.hero.scss._
 
