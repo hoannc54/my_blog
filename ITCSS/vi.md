@@ -25,7 +25,11 @@ Những lớp giống như sau:
 * **Components** – Các thành phần UI cụ thể. Đây là noi phần lớn các công việc của chúng tôi diễn ra và các thành phần UI của chúng tôi thường được ~~tạo~~ *bao gồm* (composed of) của Objects and Components
 * **Utilities** – Lớp utilities và helper với khả năng ghi đè mọi thư phía trước của tam giác. Ví dụ: ẩn lớp helper
 
+<<<<<<< HEAD
 Hình tam giác cũng cho thấy cách trình bày các style bởi các selector và order trong kết quả CSS: Từ các style chung đến rõ ràng, từ các selector có tính cụ thể thấp đến cụ thể hơn (nhưng vẫn giữ _not too_ *không quá* cụ thể, IDs không được phép) và từ xa đến cục bộ.
+=======
+Hình tam giác cũng cho thấy cách trình bày các style bở các selector và order trong kết quả CSS: Từ các style chung đến rõ ràng, từ các selector có tính cụ thể thấp đến cụ thể hơn (nhưng vẫn giữ _không quá_ cụ thể, IDs không được phép) và từ xa đến gần.
+>>>>>>> 3deec48204b4c8038219039d13d087a648728a6b
 
 ![ITCSS Key Metrics][7]
 
