@@ -10,7 +10,7 @@ Tôi sẽ không đi vào chi tiết bất kỳ cái gì về cơ chế hoặc q
 
 ## Design Pattern là gì?
 
-Từ khi bắt đầu đến giờ, chính xác `Design Pattern` là gì? Dưới đây là 1 cặp định nghĩa cho thuật ngữ:
+~~Từ khi bắt đầu đến giờ~~ (So getting started then) **Tôi sẽ bắt đầu với**, chính xác `Design Pattern` là gì? Dưới đây là 1 cặp định nghĩa cho thuật ngữ:
 
 Trích từ [Wikipedia][2]:
 
@@ -18,7 +18,7 @@ Trích từ [Wikipedia][2]:
 
 Trích từ [Data & Object Factory][3]:
 
-> "Design patterns là các giải pháp lặp lại cho các vấn đề thiết kế phần mềm bạn tìm thấy 1 lần và lại 1 lần nữa trong phát triển ứng dụng thực tế. Các mẫu(Pattern) là về việc thiết kế và sự tương tác giữa các đối tượng, cũng như cung cấp một nền tảng giao tiếp giữa các phần liên quan, các giải pháp tái sử dụng được đối với các thách thức lập trình thường gặp phải."
+> "Design patterns là các giải pháp lặp lại cho các vấn đề thiết kế phần mềm bạn ~~tìm thấy 1 lần và lại 1 lần nữa~~ (find again and again) **luôn tìm kiếm** trong phát triển ứng dụng thực tế. Các mẫu(Pattern) là về việc thiết kế và sự tương tác giữa các đối tượng, cũng như cung cấp một nền tảng giao tiếp giữa các phần liên quan, các giải pháp tái sử dụng được đối với các thách thức lập trình thường gặp phải."
 
 Vì vậy  một `Design Pattern` là một sự trừu tượng hoá mục đích chung của một vấn đề, có thể được áp dụng cho một giải pháp cụ thể. Như các nhà phát triển phần mềm có xu hướng giải quyết nhiều loại vấn đề tương tự, nó có nghĩa là bất kỳ giải pháp phần mềm nào sẽ kết hợp các yếu tố tương tự từ các giải pháp khác. Tại sao lại phát minh ra. Tại sao lại đi lại lối mòn đó ? _Why reinvent the wheel?_
 
@@ -32,7 +32,7 @@ Như `Design Patterns` là một tài liệu tốt và hiểu rõ bởi các ki�
 
 ## Sự tương đồng với kỹ thật xây dựng
 
-Để đưa và một cái tương tự như một `Design Pattern` từ lĩnh vực kỹ thuật xây dựng(như tôi đã nêu ra trong bài viết của tôi [Why design is Critical to Software Development][1]) có những điểm tương đồng gần giống với công nghệ phần mềm), sẽ là một giải pháp để vượt qua một con sông. Đây là vấn đề thuường xuyên đối với các kỹ sư xây dựng, mà có một vài giải pháp đã được chứng minh và được hiểu rõ. Các kỹ sư xây dựng có thể xây một cái cầu hoặc một cái hầm.
+Để đưa và một cái tương tự như một `Design Pattern` từ lĩnh vực kỹ thuật xây dựng(như tôi đã nêu ra trong bài viết của tôi [Why design is Critical to Software Development][1]) có những điểm tương đồng gần giống với công nghệ phần mềm), sẽ là một giải pháp để vượt qua một con sông. Đây là vấn đề thường xuyên đối với các kỹ sư xây dựng, mà có một vài giải pháp đã được chứng minh và được hiểu rõ. Các kỹ sư xây dựng có thể xây một cái cầu hoặc một cái hầm.
 
 Tại sao một kỹ sư xây dựng phải cố giải quyết vấn đề này từ đầu, khi các giải pháp thực tế trên thế giới có thể đã được biết tới? Có sự tương tương đồng gần gũi giưã kỹ sư xây dựng giải quyết vấn đề qua sông, và kỹ sư phần mềm giải quyết một vấn đề phần mềm:
 
