@@ -10,7 +10,7 @@ _source https://stackoverflow.com/questions/621884/database-development-mistakes
 
 Cơ sở dữ liệu của bạn có thể thay đổi ở đây nhưng nếu cơ sở dữ liệu của bạn hỗ trợ referential integrity-- nghĩa là tất cả khoá ngoài được đảm bảo trỏ đến một thực thể đã tồn tại bạn nên sử dụng nó.
 
-Nó khá là một biến để thấy sự thất bại trên cơ sở dữ liệu MySQL. TÔi không tin MyISAM hỗ trợ nó. InnoDB làm được. Bạn sẽ tìm người mà sử dụng MyISAM hoặc những người đang sử dụng InnoDB nhưng không sử dụng nó mọi nơi.
+Nó khá phổ biến để thấy sự thất bại trên cơ sở dữ liệu MySQL. TÔi không tin MyISAM hỗ trợ nó. InnoDB làm được. Bạn sẽ tìm người mà sử dụng MyISAM hoặc những người đang sử dụng InnoDB nhưng không sử dụng nó dù thế nào.
 
 Xem thêm ở đây:
 
@@ -20,17 +20,17 @@ Xem thêm ở đây:
 
 **3. Sử dụng khoá chính tự nhiên thay vì khóa đại diện (kỹ thuật)**
 
-Khoá tự nhiên là khoá dựa trên dữ liệu bên ngoài có nghĩa đó là (khó bên ngoài)duy nhất. Các ví dụ phổ biến là các mã code của sản phẩm, các mã code với 2 trạng thái, mã số an sinh xã hội, và nhiều hơn nữa. Các khoá chính đại diện hoặc kỹ thuật là những khoá hoàn toàn không có ý nghĩa bên ngoài hệt thống. Chúng được phát minh ra hoàn toàn để xác định các thực thể và các trường tự động tăng (SQL Server, MySQL, các csdl khác) hoặc các chuỗi(nhất là trong Oracle).
+Khoá tự nhiên là khoá dựa trên dữ liệu bên ngoài có nghĩa đó là (khó bên ngoài)duy nhất. Các ví dụ phổ biến là các mã code của sản phẩm, các mã code với 2 trạng thái, mã số an sinh xã hội, và nhiều hơn nữa. Các khoá chính đại diện hoặc kỹ thuật là những khoá hoàn toàn không có ý nghĩa bên ngoài hệ thống. Chúng được phát minh ra hoàn toàn để xác định các thực thể và các trường tự động tăng (SQL Server, MySQL, các csdl khác) hoặc các chuỗi(nhất là trong Oracle).
 
 Theo ý kiến của tôi bạn nên **luôn luôn** sử dụng các khoá đại diện. Vấn đề này được đề cập đến trong những câu hỏi này: 
 
 - [Làm thế nào bạn thích khoá chính của bạn?](https://stackoverflow.com/questions/404040/how-do-you-like-your-primary-keys)
 - [Cách tốt nhất để thực hành cho khoá chính của bảng là gì?](https://stackoverflow.com/questions/337503/whats-the-best-practice-for-primary-keys-in-tables)
 - [Định dạng khoá chính nào bạn nên sử dụng trong trường hợp này.](https://stackoverflow.com/questions/506164/which-format-of-primary-key-would-you-use-in-this-situation)
-- [Khoá đại diện so với tự nhiên/kinh doanh](https://stackoverflow.com/questions/63090/surrogate-vs-natural-business-keys)
+- [Khoá đại diện so với tự nhiên/vai trò](https://stackoverflow.com/questions/63090/surrogate-vs-natural-business-keys)
 - [Tôi có nên có một trường riêng cho khoá chính không ?](https://stackoverflow.com/questions/166750/should-i-have-a-dedicated-primary-key-field)
 
-Đây là một chủ đề gây nhiều tranh cãi về cái mà bạn không nhận được sự đồng ý của toàn bộ. Trong khi bạn có thể tìm thấy một vài người, người mà nghĩ khoá tự nhiên là tốt trong một số trường hợp, bạn sẽ không tìm thấy bất kỳ lời chỉ trích về các khoá đại diện khác được cho là không cần thiết. Đó là một nhược điểm nhỏ nếu bạn hỏi tôi.
+Đây là một chủ đề gây nhiều tranh cãi về cái mà bạn không nhận được ý kiến chung. Trong khi bạn có thể tìm thấy một vài người, người mà nghĩ khoá tự nhiên là tốt trong một số trường hợp, bạn sẽ không tìm thấy bất kỳ lời chỉ trích về các khoá đại diện khác được cho là không cần thiết. Đó là một nhược điểm nhỏ nếu bạn hỏi tôi.
 
 Hãy thớ rằng, cũng có [những đất nước không tồn tại ](http://en.wikipedia.org/wiki/ISO_3166-1) (ví dụ, Nam Tư).
 
@@ -40,15 +40,15 @@ Bạn thường thấy điều này trong các câu truy vấn tạo ra bởi OR
 
 ```SELECT DISTINCT ...``
 
-Đây là một mẹo nhỏ để đảm bảo rằng không trả về những dòng dữ liệu trùng lặp và lấy các đối tượng trùng lặp. Bạn sẽ thỉnh thoảng thấy những người làm điều này tốt. Nếu bạn thấy chúng quá nhiều, thì đó thực sự là một cờ. Không phải DISTINCT là xấu hoặc không có ứng dụng phù hợp. Nó ( về cả 2 cách tính) nhưng nó không là một đại diện hoặc là một cái ngăn chặn viết các câu truy vấn đúng.
+Đây là một mẹo nhỏ để đảm bảo rằng không trả về những dòng dữ liệu trùng lặp và lấy các đối tượng trùng lặp. Bạn sẽ thỉnh thoảng thấy những người làm điều này tốt. Nếu bạn thấy chúng quá nhiều, thì đó thực sự là một cờ. Không phải DISTINCT là xấu hoặc không có ứng dụng phù hợp. Nó tốt ( về cả 2 cách tính) nhưng nó không là một đại diện hoặc là một cái ngăn chặn viết các câu truy vấn đúng.
 
 Từ [Tại sao tôt ghét DISTINCT](http://weblogs.sqlteam.com/markc/archive/2008/11/11/60752.aspx):
 
-> Theo ý kiến của tôti lúc mà mọi thứ bắt đầu trở nênn khó chịu là khi một nhà phát triển đang đang xây dựng một lượng truy vấn lớn, kết hợp các bảng với nhau, và bất ngờ anh ta nhận ra rằng có vẻ như anh ta đang lấy các bản ghi trùng lặp( thậm trí nhiều hơn) và phản ứng ngay lập tức của anh ta .. giải pháp của anh ta cho vấn đề này là sử dụng từ khoá DISTINCT và tất cả rắc rối đó được loại bỏ.
+> Theo ý kiến của tôi lúc mà mọi thứ bắt đầu trở nên khó chịu là khi một nhà phát triển đang đang xây dựng một lượng truy vấn lớn, kết hợp các bảng với nhau, và bất ngờ anh ta nhận ra rằng có vẻ như anh ta đang lấy các bản ghi trùng lặp( thậm trí nhiều hơn) và phản ứng ngay lập tức của anh ta .. giải pháp của anh ta cho vấn đề này là sử dụng từ khoá DISTINCT và tất cả rắc rối đó được loại bỏ.
 
 **5. Khuyến khích dùng phép hợp các tập**
 
-Một lỗi phổ biến khác bởi nhà phát triển cơ sở dữ liệu ứng dụng là không nhận ra các tập tốn chi phí hơn bao nhiêu. (mệnh đè GROUP BY) có thể được so sánh với phép hợp.
+Một lỗi phổ biến khác bởi nhà phát triển cơ sở dữ liệu ứng dụng là không nhận ra các tập tốn chi phí hơn bao nhiêu. (mệnh đề GROUP BY) có thể được so sánh với phép hợp.
 
 Để cho bạn một ý tưởng làm thế nào để phổ biến rộng rãi điều này, tôi đã viết một chủ đề nhiều lần ở đây và được hạ đánh giá rất nhiều cho nó. 
 Ví dụ:
@@ -79,15 +79,15 @@ AND t1.roleid = 1
 
 > Thời gian truy vấn: 0.016 s
 
-> Điều đó là đúng. Bản jon tôi thấy **thời gian nhanh gấp 20 lần với bản tổng hợp.**
+> Điều đó là đúng. Bản join tôi thấy **thời gian nhanh gấp 20 lần với bản tổng hợp.**
 
 **6. Không làm đơn giản hoá các truy vấn phức tạp thông qua cách xem**
 
-Không phải tất cả các loại cơ sở dữ liệu đều hỗ trợ hiển thị nhưng đối với những người làm, họ có thể đơ giản hoá nhiều truy vấn nếu họ dử dụng một cách cẩn trọng. Ví dụ trong một dự án tôi đã sử dụng một [generic Party model](http://www.tdan.com/view-articles/5014/) cho CRM. Đây là một mô hình kỹ thuật rất mạnh và linh hoạt nhưng có thể dẫn đến nhiều phép hợp. Trong mô hình này có :
+Không phải tất cả các loại cơ sở dữ liệu đều hỗ trợ hiển thị nhưng đối với những người làm, họ có thể đơn giản hoá nhiều truy vấn nếu họ dử dụng một cách cẩn trọng. Ví dụ trong một dự án tôi đã sử dụng một [generic Party model](http://www.tdan.com/view-articles/5014/) cho CRM. Đây là một mô hình kỹ thuật rất mạnh và linh hoạt nhưng có thể dẫn đến nhiều phép hợp. Trong mô hình này có :
 
 - **Party**: Con người và các tổ chức;
 - **Party Role**: Những thứ mà các nhóm làm, ví dụ Nhân viên và Nhà tuyển dụng;
-- **Party Role Relationship**: Các vai trò được liên quan đến vai trò khác thế nào.
+- **Party Role Relationship**: Các vai trò được liên quan đến nhau thế nào.
 
 Ví dụ:
 
@@ -112,13 +112,13 @@ Và bất ngời bạn có một cái nhìn về dữ liệu rất đơn giản 
 
 **7. Không loại bỏ đầu vào**
 
-Đây là một vấn đề lớn. Bây giờ tôi thích PHp nhưng nếu bạn không biết làm gì thì dễ dàng tạo ra một trang web dễ bị tấn công. Không có gì tổng tkeets hơn hơn là [câu chuyện của little Bobby Tables](http://xkcd.com/327/).
+Đây là một vấn đề lớn. Bây giờ tôi thích PHp nhưng nếu bạn không biết làm gì thì dễ dàng tạo ra một trang web dễ bị tấn công. Không có gì tổng kết tốt hơn là [câu chuyện của little Bobby Tables](http://xkcd.com/327/).
 
 Dữ liệu được cung cấp bởi người dùng thông qua các URL, dữ liệu form và **cookies** nên luôn luôn được coi là kẻ thù và xử lý chúng. Đảm bảo bạn nhận được những gì bạn mong đợi.
 
 **8. Không sử dụng các câu lệnh trước**
 
-Các câu lệnh xử lsy là khi bạn biên dịch một câu truy vấn bớt dữ liệu được sử dụng trong chèn, cập nhật và mệnh đề WHERE và sau đó cung cấp sau. 
+Các câu lệnh xử lý là khi bạn biên dịch một câu truy vấn bớt dữ liệu được sử dụng trong chèn, cập nhật và mệnh đề WHERE và sau đó cung cấp sau. 
 Ví dụ:
 
 `SELECT * FROM users WHERE username = 'bob' `
@@ -132,7 +132,7 @@ hoặc
 `SELECT * FROM users WHERE username = :username`
 tuỳ thuộc vào nền tảng.
 
-Tối thấy cơ sở dữ liệu đó mang đến **their knees** bằng cách làm điều này. Về cơ bản, mỗi lần bất kỳ cơ sở dữ liệu hiện đại gặp một câu truy vấn mới, nó phải biên dịch nó. Nếu nó gặp một câu truy vấn trước đó, nó đưa đến cơ sở dữ liệu câu truy vấn được cache và thực hiện nó. Bằng cách thực hiện các câu truy vấn nhiều lần, nó đem đến cơ sở dữ liệu cơ hội để ra các con số và tối ưu nó phù hợp (ví dụ, bằng cách dữ các câu truy vấn đã được biên dịch trong bộ nhớ).
+Tôi đã từng thấy các cơ sở dữ liệu bị phá hủy vì điều này. Về cơ bản, mỗi lần bất kỳ cơ sở dữ liệu hiện đại gặp một câu truy vấn mới, nó phải biên dịch nó. Nếu nó gặp một câu truy vấn trước đó, nó đưa đến cơ sở dữ liệu câu truy vấn được cache và thực hiện nó. Bằng cách thực hiện các câu truy vấn nhiều lần, nó đem đến cơ sở dữ liệu cơ hội để ra các con số và tối ưu nó phù hợp (ví dụ, bằng cách dữ các câu truy vấn đã được biên dịch trong bộ nhớ).
 
 Sử dụng các câu lệnh chuẩn bị cũng sẽ đem đến cho bạn những số liệu thống kê có ý nghĩa về số lần câu truy vấn được sử dụng.
 
