@@ -8,7 +8,7 @@ _source https://stackoverflow.com/questions/621884/database-development-mistakes
 
 **2. Không sử dụng các ràng buộc cho tham chiếu**
 
-Cơ sở dữ liệu của bạn có thể thay đổi ở đây nhưng nếu cơ sở dữ liệu của bạn hỗ trợ referential integrity-- nghĩa là tất cả khoá ngoài được đảm bảo trỏ đến một thực thể đã tồn tại bạn nên sử dụng nó.
+Cơ sở dữ liệu của bạn có thể thay đổi ở đây nhưng nếu cơ sở dữ liệu của bạn hỗ trợ ~~referential integrity~~ **tham chiếu ràng buộc**-- nghĩa là tất cả khoá ngoài được đảm bảo trỏ đến một thực thể đã tồn tại bạn nên sử dụng nó.
 
 Nó khá là một biến để thấy sự thất bại trên cơ sở dữ liệu MySQL. TÔi không tin MyISAM hỗ trợ nó. InnoDB làm được. Bạn sẽ tìm người mà sử dụng MyISAM hoặc những người đang sử dụng InnoDB nhưng không sử dụng nó mọi nơi.
 
@@ -20,7 +20,7 @@ Xem thêm ở đây:
 
 **3. Sử dụng khoá chính tự nhiên thay vì khóa đại diện (kỹ thuật)**
 
-Khoá tự nhiên là khoá dựa trên dữ liệu bên ngoài có nghĩa đó là (khó bên ngoài)duy nhất. Các ví dụ phổ biến là các mã code của sản phẩm, các mã code với 2 trạng thái, mã số an sinh xã hội, và nhiều hơn nữa. Các khoá chính đại diện hoặc kỹ thuật là những khoá hoàn toàn không có ý nghĩa bên ngoài hệt thống. Chúng được phát minh ra hoàn toàn để xác định các thực thể và các trường tự động tăng (SQL Server, MySQL, các csdl khác) hoặc các chuỗi(nhất là trong Oracle).
+Khoá tự nhiên là khoá dựa trên dữ liệu bên ngoài có nghĩa đó là (~~khó bên ngoài~~ (ostensibly) **có vẻ**)duy nhất. Các ví dụ phổ biến là các mã code của sản phẩm, các mã code với 2 trạng thái, mã số an sinh xã hội, và nhiều hơn nữa. Các khoá chính đại diện hoặc kỹ thuật là những khoá hoàn toàn không có ý nghĩa bên ngoài hệ thống. Chúng được phát minh ra hoàn toàn để xác định các thực thể và các trường tự động tăng (SQL Server, MySQL, các csdl khác) hoặc các chuỗi(nhất là trong Oracle).
 
 Theo ý kiến của tôi bạn nên **luôn luôn** sử dụng các khoá đại diện. Vấn đề này được đề cập đến trong những câu hỏi này: 
 
@@ -40,7 +40,7 @@ Bạn thường thấy điều này trong các câu truy vấn tạo ra bởi OR
 
 ```SELECT DISTINCT ...``
 
-Đây là một mẹo nhỏ để đảm bảo rằng không trả về những dòng dữ liệu trùng lặp và lấy các đối tượng trùng lặp. Bạn sẽ thỉnh thoảng thấy những người làm điều này tốt. Nếu bạn thấy chúng quá nhiều, thì đó thực sự là một cờ. Không phải DISTINCT là xấu hoặc không có ứng dụng phù hợp. Nó ( về cả 2 cách tính) nhưng nó không là một đại diện hoặc là một cái ngăn chặn viết các câu truy vấn đúng.
+Đây là một mẹo nhỏ để đảm bảo rằng không trả về những dòng dữ liệu trùng lặp và lấy các đối tượng trùng lặp. Bạn sẽ thỉnh thoảng thấy những người làm điều này tốt. Nếu bạn thấy chúng quá nhiều, thì đó thực sự là ~~một cờ~~ (real red flag) thật sự đáng cảnh báo. Không phải DISTINCT là xấu hoặc không có ứng dụng phù hợp. Nó ( về cả 2 cách tính) nhưng nó không là một đại diện hoặc là một cái ngăn chặn viết các câu truy vấn đúng.
 
 Từ [Tại sao tôt ghét DISTINCT](http://weblogs.sqlteam.com/markc/archive/2008/11/11/60752.aspx):
 
@@ -48,9 +48,9 @@ Từ [Tại sao tôt ghét DISTINCT](http://weblogs.sqlteam.com/markc/archive/20
 
 **5. Khuyến khích dùng phép hợp các tập**
 
-Một lỗi phổ biến khác bởi nhà phát triển cơ sở dữ liệu ứng dụng là không nhận ra các tập tốn chi phí hơn bao nhiêu. (mệnh đè GROUP BY) có thể được so sánh với phép hợp.
+Một lỗi phổ biến khác bởi nhà phát triển cơ sở dữ liệu ứng dụng là không nhận ra ~~các tập tốn chi phí hơn bao nhiêu. (mệnh đè GROUP BY) có thể được so sánh với phép hợp.~~  (Another common mistake by database application developers is to not realize how much more expensive aggregation (ie the GROUP BY clause) can be compared to joins.) **tập hợp tốn kém hơn nhiều so với kết nối.**
 
-Để cho bạn một ý tưởng làm thế nào để phổ biến rộng rãi điều này, tôi đã viết một chủ đề nhiều lần ở đây và được hạ đánh giá rất nhiều cho nó. 
+~~Để cho bạn một ý tưởng làm thế nào để phổ biến rộng rãi điều này, tôi đã viết một chủ đề nhiều lần ở đây và được hạ đánh giá rất nhiều cho nó~~ (To give you an idea of how widespread this is, I've written on this topic several times here and been downvoted a lot for it. For example:) **Để cho bạn thấy ý tưởng này phổ biến như thế nào, tôi đã viết nó trong chủ đề này một vài lần ở đây và đã bị vote down nhiều lần. Ví dụ như:**.   
 Ví dụ:
 
 Từ [SQL statement - “join” vs “group by and having”](https://stackoverflow.com/questions/477006/sql-statement-join-vs-group-by-and-having/477013#477013):
@@ -112,13 +112,13 @@ Và bất ngời bạn có một cái nhìn về dữ liệu rất đơn giản 
 
 **7. Không loại bỏ đầu vào**
 
-Đây là một vấn đề lớn. Bây giờ tôi thích PHp nhưng nếu bạn không biết làm gì thì dễ dàng tạo ra một trang web dễ bị tấn công. Không có gì tổng tkeets hơn hơn là [câu chuyện của little Bobby Tables](http://xkcd.com/327/).
+Đây là một vấn đề lớn. Bây giờ tôi thích PHp nhưng nếu bạn không biết làm gì thì dễ dàng tạo ra một trang web dễ bị tấn công. Không có gì tổng ~~tkeets hơn~~ **kết tốt** hơn là [câu chuyện của little Bobby Tables](http://xkcd.com/327/).
 
 Dữ liệu được cung cấp bởi người dùng thông qua các URL, dữ liệu form và **cookies** nên luôn luôn được coi là kẻ thù và xử lý chúng. Đảm bảo bạn nhận được những gì bạn mong đợi.
 
 **8. Không sử dụng các câu lệnh trước**
 
-Các câu lệnh xử lsy là khi bạn biên dịch một câu truy vấn bớt dữ liệu được sử dụng trong chèn, cập nhật và mệnh đề WHERE và sau đó cung cấp sau. 
+Các câu lệnh xử lý là khi bạn biên dịch một câu truy vấn bớt dữ liệu được sử dụng trong chèn, cập nhật và mệnh đề WHERE và sau đó cung cấp sau. 
 Ví dụ:
 
 `SELECT * FROM users WHERE username = 'bob' `
