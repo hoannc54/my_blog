@@ -155,7 +155,7 @@ Xem thêm:
 - [Chuẩn hoá: Bao nhiêu thì đủ?](http://www.techrepublic.com/article/normalization-how-far-is-far-enough/)
 - [SQL by Design: Tại sao bạn cẩn chuẩn hoá cơ sở dữ liệu ](http://www.sqlmag.com/Article/ArticleID/4887/sql_server_4887.html)
 
-**10. Chuẩn hoá quá nhiều**
+**10. Chuẩn hoá ~~quá nhiều~~** (option: **dư thừa**)
 
 Điều này có thể thấy mâu thuẫn với luận điểm trước, nhưng chuẩn hoá giống như là nhiều thứ, nó chỉ là một công cụ. Nó không có một điểm dừng rõ ràng cho chính nó. Tôi nghĩ nhiều developer quên mất điều này và bắt đầu "means" giống như một "end". Unit testing là một ví dụ điển hình cho điều này.
 
@@ -163,29 +163,29 @@ Tôi đã từng làm việc trên một hệ thống mà có hệ thống phân
 
 Licensee -&gt;  Dealer Group -&gt; Company -&gt; Practice -&gt; ...
 
-mỗi điều đó bạn phải join khoảng 11 bảng với nhau trước khi bạn có thể lấy được dữ liệu hữu ích. Nó là một ví dụ tốt về sự chuẩn hoá tốn quá nhiều công.
+điều đó **nghĩa là** bạn phải join khoảng 11 bảng với nhau trước khi bạn có thể lấy được dữ liệu hữu ích. Nó là một ví dụ tốt về sự chuẩn hoá ~~tốn quá nhiều công~~**dư thừa**.
 
-Thêm vào đó, việc chuẩn hoá lại cẩn thận và lưu tâm có thể có lợi ích hiệu năng lớn nhưng bạn phải thực sử cẩn thận khi làm điều đó.
+Thêm vào đó, ~~việc chuẩn hoá lại cẩn thận và lưu tâm~~(denormalization - **kỹ thuật chuẩn hóa ngược**) có thể có lợi ích hiệu năng lớn nhưng bạn phải thực sử cẩn thận khi làm điều đó.
 
 Xem thêm:
 
 - [Tại sao chuẩn hoá cơ sở dữ liệu quá nhiều có thể là một thứ tồi tệ ?](http://www.selikoff.net/blog/2008/11/19/why-too-much-database-normalization-can-be-a-bad-thing/)
-- [Chuẩn hoá trong thiết kế cơ sở dữ liệu nhiều như thế nào ?](https://stackoverflow.com/questions/496508/how-far-to-take-normalization-in-database-design)
+- [Chuẩn hoá trong thiết kế cơ sở dữ liệu ~~nhiều~~ như thế nào **là đủ** ?](https://stackoverflow.com/questions/496508/how-far-to-take-normalization-in-database-design)
 - [Khi nào không chuẩn hoá trong cơ sở dữ liệu SQL của bạn ?](http://www.25hoursaday.com/weblog/CommentView.aspx?guid=cc0e740c-a828-4b9d-b244-4ee96e2fad4b)
 - [Có thể chuẩn hoá là không bình thường ?](http://www.codinghorror.com/blog/archives/001152.html)
-- [The Mother of All Database Normalization Debates on Coding Horror](http://highscalability.com/mother-all-database-normalization-debates-coding-horror)
+- [The Mother of All Database Normalization Debates on Coding Horror (**Toàn tập chuẩn hóa cơ sở dữ liệu được tranh luận trong Coding Horror**)](http://highscalability.com/mother-all-database-normalization-debates-coding-horror)
 
 **11. Sử dụng exclusive arcs**
 
 Một exclusive arc là một sai lầm phổ biến ở một bảng được tạo bởi hai hoặc nhiều khoá ngoài tại đó một hoặc chỉ một trong số chúng có thể không null.  **Sai lầm lớn.** Đối với cái mà nó trở nên khó khăn hơn để duy trì tính toàn vẹn của dữ liệu. Sau tất cả điều đó, ngay cả với tính toàn vẹn tham chiếu, không có gì ngăn được hai hay nhiều khoá ngoại này được thiết lập(mặc dù phức tạp để kiểm tra những ràng buộc). 
 
-Từ [Hướng dẫn thực hành thiết kế cơ sở dữ liệu quan hệ](http://books.google.com.au/books?id=7ZAk0YiKQV0C&pg=PA110&lpg=PA110&dq=%22exclusive+arc%22+database&source=bl&ots=AyNPWsac__&sig=gBFIerXckQlVpRdd6ycI5JEgq3U&hl=en&ei=PzGzSZfrFcPVkAWWyZDZBA&sa=X&oi=book_result&resnum=1&ct=result):
+~~Từ~~ (**Trích từ bài viết**)[Hướng dẫn thực hành thiết kế cơ sở dữ liệu quan hệ](http://books.google.com.au/books?id=7ZAk0YiKQV0C&pg=PA110&lpg=PA110&dq=%22exclusive+arc%22+database&source=bl&ots=AyNPWsac__&sig=gBFIerXckQlVpRdd6ycI5JEgq3U&hl=en&ei=PzGzSZfrFcPVkAWWyZDZBA&sa=X&oi=book_result&resnum=1&ct=result):
 
-> Chúng ta đã khuyên nhiều tránh xây dựng exclusive arc bất cứ khi nào có thể, vì một lý do hợp lý rằng chúng có thể khó khăn trong viết code và bảo trì.
+> Chúng ta đã khuyên ~~nhiều~~ (**nên**) tránh xây dựng exclusive arc bất cứ khi nào có thể, vì một lý do hợp lý rằng chúng có thể khó khăn trong viết code và bảo trì.
 
 **12. Không phân tích hiệu năng dựa trên tất cả câu truy vấn**
 
-Pragmatism reigns supreme, particularly in the database world. Nếu bạn đang cố theo nguyên tắc đến mức chúng trở thành một niềm tin thì có thể bạn đã mắc sai lầm. Lấy ví dụ về truy vấn tổng hợp bên trên. Phiên bản tổng hợp có thể trông "đẹp" nhưng hiệu năng của của nó là không tốt. Một sự so sánh hiệu năng nên được kết thúc trong buổi tranh luận (Nhưng nó không), nhưng quan trọng hơn việc phát hiện ra những quan điểm đầu tiên là không biết gì, thậm chí là nguy hiểm.
+Pragmatism reigns supreme, particularly in the database world (**Tính thực dụng được ưu tiên hàng đầu, đặc biệt trong cơ sở dữ liệu**). Nếu bạn đang cố theo nguyên tắc đến mức chúng trở thành một niềm tin thì có thể bạn đã mắc sai lầm. Lấy ví dụ về truy vấn tổng hợp bên trên. ~~Phiên bản~~ (**Câu lệnh**) tổng hợp có thể trông "đẹp" nhưng hiệu năng của của nó là không tốt. Một sự so sánh hiệu năng nên được kết thúc trong buổi tranh luận (Nhưng nó không), nhưng quan trọng hơn việc phát hiện ra những quan điểm đầu tiên là không biết gì, thậm chí là nguy hiểm.
 
 **13. Quá phụ thuộc dựa trên UNION ALL và đặc biệt cấu trúc UNION**
 
@@ -197,7 +197,7 @@ Các UNION, đặc biệt khi được dùng trong phép nối hoặc các truy 
 
 **14. Sử dụng điều kiện OR trong các câu truy vấn**
 
-Điều này có vẻ vô hại. Cuối cùng các AND chính là OR. OR nên Thế OR có thực sự đúng không ? Về cơ bản một điều kiện AND **hạn chế** bộ dữ liệu trong khi một điều kiện OR **làm tăng** tập dữ liệu đó nhưng không là một cách được tối ưu. Đặc biệt khi các điều kiện OR khác nhau có thể giao nhau bắt buộc phải tối ưu để hiệu quả hơn thông qua kết quả của một DISTINCT.
+Điều này có vẻ vô hại. Cuối cùng các AND chính là OR. Thế OR có thực sự đúng không ? Về cơ bản một điều kiện AND **hạn chế** bộ dữ liệu trong khi một điều kiện OR **làm tăng** tập dữ liệu đó nhưng không phải theo cách được tối ưu. Đặc biệt khi các điều kiện OR khác nhau có thể giao nhau bắt buộc phải tối ưu để hiệu quả hơn thông qua kết quả của một DISTINCT.
 
 Xấu:
 
@@ -207,29 +207,29 @@ Tốt hơn:
 
 ... WHERE a IN (2, 5, 11)
 
-Bây giờ tối ưu SQL của bạn có thể hiệu quả từ câu truy vấn đầu tiên tới câu thứ hai. Nhưng nó không thể. Đừng làm điều đó.
+Bây giờ ~~tối ưu SQL của bạn có thể hiệu quả từ câu truy vấn đầu tiên tới câu thứ hai~~ (**bộ tối ưu hoá SQL của bạn có thể chuyển câu lệnh truy vấn đầu tiên thành câu lệnh truy vấn thứ hai**). Nhưng nó không thể. Đừng làm điều đó.
 
 **15. Không thiết kết mô hình dữ liệu để lấy giải pháp hiệu năng cao**
 
 Đây là một điểm khó để ước lượng. Nó thuường được đánh giá bởi hiệu quả của chính nó. Nếu bạn thấy chính bạn đang viết các câu truy vấn cho những nhiệm vụ đơn giản hoặc các câu truy vấn đó để tìm thông tin của một đối tượng đơn giản là không hiệu quả, bạn chắc chắn đang sử dụng một mô hình dữ liệu tồi tệ.
 
-Trong một số cách điểm này tổng kết lại tất cả những thứ trước đó nhưng nó lại có một câu cảnh báo về những thứ đang làm đó giống như được tối ưu đầu tiên trong khi nên được làm thứ hai. Đầu tiên và cũng là quan trọng nhất bạn nên chắc chắn bạn có một mô hình dữ liệu tốt trước khi thử tôtis ưu hiệu năng . Giống như Knuth nói:
+Trong một số cách điểm này tổng kết lại tất cả những thứ trước đó nhưng nó lại có một câu cảnh báo về những thứ đang làm đó giống như được tối ưu đầu tiên trong khi nên được làm thứ hai. Đầu tiên và cũng là quan trọng nhất bạn nên chắc chắn bạn có một mô hình dữ liệu tốt trước khi thử tối ưu hiệu năng . Giống như Knuth nói:
 
 > Tối ưu sớm là gốc rễ của mọi sự tệ hại
 
 **16. Sử dụng sai Database Transactions**
 
-Tất cả thay đổi dữ liệu cho một tiến trình đặc biệt nên từ nhỏ nhất. Nếu thực hiện thành công, nó sẽ làm đầy đủ. Nếu nó thất bại, dữ liệu không thay đổi. Không nên có những thay đổi ' nửa hoàn thành'.
+Tất cả thay đổi dữ liệu cho một tiến trình đặc biệt nên từ nhỏ nhất. Nếu thực hiện thành công, nó sẽ làm đầy đủ. Nếu nó thất bại, dữ liệu không thay đổi. Không nên có những thay đổi ~~'nửa hoàn thành'~~ ('half-done' - **nửa vời**).
 
-Lý tưởng nhất, các đơn giản nhất để đạt được điều này là thiết toàn bộ hệ thống nên cố hỗ trợ tất cả sự thay đổi dữ liệu thông qua các câu lệnh đơn INSERT/UPDATE/DELETE . Trong trường hợp này, không cần xử lý giao dịch đặt biệt, một cơ sở dữ liệu nên được làm điều đó tự động.ne should do so automatically.
+Lý tưởng nhất, cách đơn giản nhất để đạt được điều này là thiết toàn bộ hệ thống nên cố hỗ trợ tất cả sự thay đổi dữ liệu thông qua các câu lệnh đơn INSERT/UPDATE/DELETE . Trong trường hợp này, không cần xử lý giao dịch đặt biệt, **vì các Engine trong** ~~một~~ cơ sở dữ liệu nên ~được làm~~ **thực hiện** điều đó tự động.
 
-Tuy nhiên nếu các tiến trình yêu cầu nhiều câu lệnh hiệu như là giữ một đơn vị dữ liệu trong một trạng thái thích hợp, khi đó việc quản lsy các Giao dịch à cần thiết.
+Tuy nhiên nếu các tiến trình yêu cầu nhiều câu lệnh hiệu như là ~~giữ~~ một đơn vị dữ liệu trong một trạng thái thích hợp, khi đó việc quản lý các Giao dịch là cần thiết.
 
 - Bắt đầu một Transaction trước câu lệnh đầu tiên.
 - Commit Transaction sau câu lệnh cuối cùng.
-- Khi gặp bất kỳ lỗi nào, Rollback the Transaction. Và chú ý không quên skip/abort tất cả câu lệnh mà theo sau là lỗi.
+- Khi gặp bất kỳ lỗi nào, Rollback the Transaction. Và chú ý không quên skip/abort tất cả câu lệnh ~~mà~~ **viết** theo sau ~~là~~**phần** lỗi.
 
-Khuyến cáo nữa là chú ý đến các dịch vụ phụ của việc kế hối các lớp cơ sở dữ liệu và tương tác của cơ sở dữ liệu
+Khuyến cáo nữa là chú ý đến các dịch vụ phụ của việc kết nối các lớp cơ sở dữ liệu và tương tác của cơ sở dữ liệu
 
 **17. Không hiểu mô hình 'set-based'**
 
