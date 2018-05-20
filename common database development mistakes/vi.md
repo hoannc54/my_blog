@@ -140,11 +140,11 @@ Các câu lệnh chuẩn bị cũng sẽ bảo vệ tốt hơn chống lại cá
 
 **9. Không chuẩn hoá đủ**
 
-[Database normalization](http://en.wikipedia.org/wiki/Database_normalization) về cơ bản là quá trình tối ưu hoá thiết kế cơ sở dữ liệu hoặc làm thế nào bạn tổ chức dữ liệu của bạn vào các bảng.
+[Database normalization](http://en.wikipedia.org/wiki/Database_normalization) về cơ bản là quá trình tối ưu hoá thiết kế cơ sở dữ liệu hoặc làm thế nào để tổ chức dữ liệu của bạn vào các bảng.
 
 Trong tuần này tôi bắt gặp một vài mã code của ai đó đã tách 1 mảng và thêm nó vào trong một trường của cơ sở dữ liệu. Chuẩn hoá là việc coi các phần tử của một mảng như là một dòng dữ liệu riêng biệt trong một bảng con (ví dụ quan hệ một-nhiều).
 
-Điều này cũng xuất hiện trong [Phương thức tốt nhất cho lưu trữ một danh sách các ID của người dùng](https://stackoverflow.com/questions/620645/best-method-for-storing-a-list-of-user-ids):
+Điều này cũng được nhắc tới trong [Phương thức tốt nhất cho lưu trữ một danh sách các ID của người dùng](https://stackoverflow.com/questions/620645/best-method-for-storing-a-list-of-user-ids):
 
 > Tôi đã nhìn thấy trong các hệ thống khác danh sách được lưu trong một mảng PHP tuần tự.
 
@@ -165,7 +165,7 @@ Licensee -&gt;  Dealer Group -&gt; Company -&gt; Practice -&gt; ...
 
 mỗi điều đó bạn phải join khoảng 11 bảng với nhau trước khi bạn có thể lấy được dữ liệu hữu ích. Nó là một ví dụ tốt về sự chuẩn hoá tốn quá nhiều công.
 
-Thêm vào đó, việc chuẩn hoá lại cẩn thận và lưu tâm có thể có lợi ích hiệu năng lớn nhưng bạn phải thực sử cẩn thận khi làm điều đó.
+Thêm vào đó, việc chuẩn hoá lại cẩn thận và lưu tâm có thể có lợi ích hiệu năng lớn nhưng bạn phải thực sự cẩn thận khi làm điều đó.
 
 Xem thêm:
 
@@ -215,11 +215,11 @@ Bây giờ tối ưu SQL của bạn có thể hiệu quả từ câu truy vấn
 
 Trong một số cách điểm này tổng kết lại tất cả những thứ trước đó nhưng nó lại có một câu cảnh báo về những thứ đang làm đó giống như được tối ưu đầu tiên trong khi nên được làm thứ hai. Đầu tiên và cũng là quan trọng nhất bạn nên chắc chắn bạn có một mô hình dữ liệu tốt trước khi thử tôtis ưu hiệu năng . Giống như Knuth nói:
 
-> Tối ưu sớm là gốc rễ của mọi sự tệ hại
+> Tối ưu sớm là gốc rễ của mọi sự sai lầm.
 
 **16. Sử dụng sai Database Transactions**
 
-Tất cả thay đổi dữ liệu cho một tiến trình đặc biệt nên từ nhỏ nhất. Nếu thực hiện thành công, nó sẽ làm đầy đủ. Nếu nó thất bại, dữ liệu không thay đổi. Không nên có những thay đổi ' nửa hoàn thành'.
+Tất cả thay đổi dữ liệu cho một tiến trình đặc biệt theo mô hình nhóm nguyên tử. Nếu thực hiện thành công, nó sẽ thực hiện đầy đủ. Nếu nó thất bại, dữ liệu không thay đổi. Không có những thay đổi ' nửa hoàn thành'.
 
 Lý tưởng nhất, các đơn giản nhất để đạt được điều này là thiết toàn bộ hệ thống nên cố hỗ trợ tất cả sự thay đổi dữ liệu thông qua các câu lệnh đơn INSERT/UPDATE/DELETE . Trong trường hợp này, không cần xử lý giao dịch đặt biệt, một cơ sở dữ liệu nên được làm điều đó tự động.ne should do so automatically.
 
@@ -229,7 +229,7 @@ Tuy nhiên nếu các tiến trình yêu cầu nhiều câu lệnh hiệu như l
 - Commit Transaction sau câu lệnh cuối cùng.
 - Khi gặp bất kỳ lỗi nào, Rollback the Transaction. Và chú ý không quên skip/abort tất cả câu lệnh mà theo sau là lỗi.
 
-Khuyến cáo nữa là chú ý đến các dịch vụ phụ của việc kế hối các lớp cơ sở dữ liệu và tương tác của cơ sở dữ liệu
+Khuyến cáo nữa là chú ý đến các dịch vụ phụ của việc kế nối các lớp cơ sở dữ liệu và tương tác của cơ sở dữ liệu
 
 **17. Không hiểu mô hình 'set-based'**
 
