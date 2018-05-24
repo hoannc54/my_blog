@@ -1,8 +1,9 @@
 ##Giới thiệu
-Trong thời đại ngày nay, phần mềm thông thường được phân phối như một dịch vụ, được gọi _web apps_ or _software-as-a-service_. 12 chuẩn ứng dụng là một phương pháp cho xây dựng các ứng dụng phần mềm như một dịch vụ:
+
+Trong thời đại ngày nay, phần mềm thông thường được phân phối như một dịch vụ, được gọi là các ứng dụng web hoặc "Phần mềm như một dịch vụ". 12 chuẩn ứng dụng là một phương pháp luận để xây dựng các ứng dụng phần mềm như một dịch vụ:
 
 * Sử dụng các định dạng khai báo cho cài đặt tự động, để tối thiểu hoá thời gian và chi phí cho các developer mới tham gia dự án.
-* Có một **quy định rõ ràng** với hệ điều hành cơ bản, cung cấp khả năng di động tối đã giữa các môi trường thực thi.
+* Có một **quy định rõ ràng** với hệ điều hành cơ bản, cung cấp khả năng di động tối đa giữa các môi trường thực thi.
 * Thích hợp cho việc triển khai trên **nền tảng đám mây** hiện đại, giảm bớt sự phụ thuộc vào các máy chủ và hệ thống quản trị.
 * **Giảm thiểu sự khác nhau** giữa quá trình phát triển và sản phẩm, cho phép sự phát triển liên tục một các nhanh chóng nhất.
 * Và có thể mở rộng quy mô mà không thay đổi nhiều các công cụ, kiến trúc hoặc phương pháp phát triển.
@@ -60,17 +61,17 @@ Một codebase là bất cứ repo đơn lẻ nào (trong một hệ thống qu�
 
 Luôn luôn có sự tương đồng một - một giữa codebase và ứng dụng :
 
-* Nếu có nhiều codebase, nó không là một ứng dụng - nó là một hệ thống phân tán. Môi thành phần trong hệ thống phân tán là một ứng dụng và mỗi thành phần đó có thể tuân thủe 12-yếu tố
+* Nếu có nhiều codebase, nó không là một ứng dụng - nó là một hệ thống phân tán. Môi thành phần trong hệ thống phân tán là một ứng dụng và mỗi thành phần đó có thể tuân thủ 12-yếu tố
 * Nhiều ứng dụng dùng chung code giống nhau là vi phạm 12-yếu tố. Giải pháp ở đây là các đoạn code được dùng chung đưa vào các thư viện, chúng có thể được include thông qua trình quản lý các phụ thuộc.
 
 Chỉ có một codebase cho mỗi ứng dụng, nhưng có nhiều phiên bản triển khai cho ứng dụng. Một phiên bản _deploy_ là một thể hiện đang chạy của ứng dụng. Đây thường là một site production và một hoặc nhiều giai đoạn của site. Thêm vào đó, mỗi developer có một bản sao chép của của ứng dụng đang chạy trên môi trường phát triển local của họ, mỗi cái đó cũng đủ điều kiện để triển khai.
 
-Codebase là như nhau trên tất cả các bản deploy, mặc dù các phiên bản khác nhau có thể hoạt động trong mỗi deploy. Ví dụg, một developer có một vài commit không được deploy trong staging; staging có một vài commit không được deploy trong production. Nhưng tất cả chúng đều dùng chung một codebase, do đó làm cho chúng có thể xác định giống như các phiên bản deploy khác nhau của cùng một ứng dụng.
+Codebase là như nhau trên tất cả các bản deploy, mặc dù các phiên bản khác nhau có thể hoạt động trong mỗi deploy. Ví dụ, một developer có một vài commit không được deploy trong staging; staging có một vài commit không được deploy trong production. Nhưng tất cả chúng đều dùng chung một codebase, do đó làm cho chúng có thể xác định giống như các phiên bản deploy khác nhau của cùng một ứng dụng.
 
 ## Dependencies (các phụ thuộc)
 #### Khai báo rõ ràng và độc lập các phụ thuộc
 
-Hầu hết các ngôn ngữ lập trình đều cung cấp hệ thống gói để phân phối các thư viện hỗ trợ, giống như CPAN của Perl hoặc Rubygems cho Ruby. Các thư viện được cài đặt thông qua hệ thống gói có thể được cài đặt trên toàn hệ thống (được gọi là "gói site") hoặc đựa đưa vào thư mục chứa ứng dụng (được gọi là "vendoring" hoặc "bundling").
+Hầu hết các ngôn ngữ lập trình đều cung cấp hệ thống đóng gói để phân phối các thư viện hỗ trợ, giống như CPAN của Perl hoặc Rubygems cho Ruby. Các thư viện được cài đặt thông qua hệ thống gói có thể được cài đặt trên toàn hệ thống (được gọi là "gói site") hoặc đựa đưa vào thư mục chứa ứng dụng (được gọi là "vendoring" hoặc "bundling").
 
 **Một ứng dụng 12-yếu tố không bao giờ phụ thuộc trên sự tồn tại không rõ ràng của các gói của hệ thống.** Nó khai báo tất cả các phụ thuộc một cách hoàn thiện và chính xác thông qua một khai báo phụ thuộc. Hơn nữa, nó sử dụng một công cụ _cô lập các phụ thuộc_ trong quá trình thực thi để đảm bảo rằng không có phụ thuộc ngầm nào "rò rỉ" từ hệ thống xung quanh. Đặc tả phụ thuộc đầy đủ và rõ ràng được áp dụng thống nhất cho cả bản production và development.
 
@@ -78,7 +79,7 @@ Ví dụ, Bundler trong Ruby cung cấp định dạng khai báo `Gemfile` cho c
 
 Một lợi ích của việc khai báo phụ thuộc rõ ràng là nó đơn giản hoá việc cài đặt cho developer cho ứng dụng. Developer mới có thể kiểm tra codebase của ứng dụng trên máy của môi trường development của họ, chỉ yêu cầu quản lý phụ thuộc và thời gian chạy của ngôn ngữ được cài đặt là điều kiện kiên quyết. Họ sẽ có thể thiết lập mọi thứ cần thiết để chạy code của ứng dụng bằng một lệnh đã xác định _build command_ . Ví dụ, build command cho Ruby/Bundler là `bundle install` trong khi cho Clojure/Leiningen là `lein deps`.
 
-12 yếu tố ứng dụng cũng không phụ thuộc vào sự tồn tài ngầm của bất cứ công cụ hệ thống nào. Ví dụ bao gồm ImageMagick hoặc `curl`. Trong khi những công cụ này có thể tồn tại trên nhiều hoặc hầu hết các hệ thống, không có gì đảm bảo chúng sẽ tồn tại trên tất cả các hệ thống mà ứng dụng có thể chạy trong tương lai, hoặc phiên bản được tìm thấy trên một phiên bản trong tương lai sẽ tương thích với ứng dụng. Nếu ứng dụng cần shell công cụ hệ thống, công cụ đó sẽ được đưa vào ứng dụng.
+12 yếu tố ứng dụng cũng không phụ thuộc vào sự tồn tại ngầm của bất cứ công cụ hệ thống nào. Ví dụ bao gồm ImageMagick hoặc `curl`. Trong khi những công cụ này có thể tồn tại trên nhiều hoặc hầu hết các hệ thống, không có gì đảm bảo chúng sẽ tồn tại trên tất cả các hệ thống mà ứng dụng có thể chạy trong tương lai, hoặc phiên bản được tìm thấy trên một phiên bản trong tương lai sẽ tương thích với ứng dụng. Nếu ứng dụng cần shell công cụ hệ thống, công cụ đó sẽ được đưa vào ứng dụng.
 
 
 ## III. Config
