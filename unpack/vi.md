@@ -7,14 +7,12 @@ Làm việc với các file nhị phân trong PHP là một việc hiếm khi đ
 
 #### Một header file của ảnh GIF
 
-Với yêu cầu chúng ta không được phép sử sụng bất kỳ hàm nào của đồ hoạ, để giải quyết vấn đề chúng ta cần lấy dự liệu liên quan từ chínhh file ảnh GIF. Không giống như của file HTM hoặc XML hoặc định dạng text khác , một file GIF và hầu hết các định dạng khác của ảnh được lưu trữ dưới một định dạng nhị phân. Hầu hết các file nhị phân mang một header đầu đầu file cá mà cung cấp các thông tin meta về file cụ thể. Chúng ta có thể sử dụng thông tin đó để tìm ra loại file hoặc các thứ khác, giống như chiều cao, chiều rộng trong một file GIF. Một loại header raw thông thường của GIF được hiển thị bên dưới, sử dụng một editor cho hex như là [WinHex][1]. 
+Với yêu cầu chúng ta không được phép sử sụng bất kỳ hàm nào của đồ hoạ, để giải quyết vấn đề chúng ta cần lấy dự liệu liên quan từ chínhh file ảnh GIF. Không giống như của file HTM hoặc XML hoặc định dạng text khác , một file GIF và hầu hết các định dạng khác của ảnh được lưu trữ dưới một định dạng nhị phân. Hầu hết các file nhị phân mang một header đầu đầu file cá mà cung cấp các thông tin meta về file cụ thể. Chúng ta có thể sử dụng thông tin đó để tìm ra loại file hoặc các thứ khác, giống như chiều cao, chiều rộng trong một file GIF. Một header của GIF thông thường được hiển thị bên dưới, sử dụng một editor cho hex như là [WinHex][1]. 
 
 ![][2]
 
 Mô tả chi tiết của header được đưa ra dưới đây.
 
-| ----- |
-| 
     
     
     Offset   Length   Contents
@@ -32,7 +30,6 @@ Mô tả chi tiết của header được đưa ra dưới đây.
              ? bytes  
              1 bytes   (0x3b)
 
- | 
 
 Vì vậy, để kiểm tra một file ảnh là một file GIF, chúng ta cần kiểm tra bắt đầu từ 3 byte của header, nếu có ký tự đánh dấu 'GIF' và 3 byte tiếp theo, là đưa ra số phiên bản; hay '87a' hoặc '89a'. Đó là nhiệm vụ giống như hàm unpack() mà không thể thiếu . Trước khi chúng ta xem xét giải pháp, chúng ta sẽ xem nhanh hàm unpack().
 
@@ -40,19 +37,15 @@ Vì vậy, để kiểm tra một file ảnh là một file GIF, chúng ta cần
 
 [unpack()][3] là sự bổ sung của [pack()][4] – nó chuyển đổi dữ liệu nhị phân thành một mảng kết hợp dựa trên định dạng được chỉ định. Điều này giống với hàm _sprintf_, chuyển đổi dữ liệu ký tự sang một số định dạng. Hai hàm này cho phép chúng ta đọc và ghi bộ đêm cho dữ liệu nhị phân theo định dạng của chuỗi cho trước.. Điều đó dễ dàng cho phép một lập trình viên chuyển đổi dữ liệu với các chương trình được viết bằng ngôn ngữ khác hoặc định dạng khác. Lây một ví dụ nhỏ.
 
-| ----- |
-| 
     
     
     $data = unpack('C*', 'codediesel');
     var_dump($data);
 
- | 
 
-Nó sẽ in ra như sau, This will print the following, mã thập phân cho  'codediesel' :
 
-| ----- |
-| 
+Nó sẽ in ra mã thập phân cho 'codediesel' như sau:
+
     
     
     array
@@ -67,9 +60,9 @@ Nó sẽ in ra như sau, This will print the following, mã thập phân cho  'c
       9 => int 101
       10 => int 108
 
- | 
 
-Trong ví dụ trên đối số đầu tiên là định dạng chuỗi và thứ hai là dữ liệu thực tế. Chuỗi định dạng sẽ chỉ định cách mà đối dữ liệu nên được parse ra. Trong ví dụ phần đầu của định dạng là 'C', xác định rằng chúng ta sẽ xử lý ký tự đầu tiên của dữ liệu giống như byte không dấu. Phần tiếp theo là '*', cho thấy rằng hàm sẽ áp dụng vào định dạng code ở phần chỉ định trước lên tất cả các ký tự còn lại.
+
+Trong ví dụ trên đối số đầu tiên là định dạng chuỗi và thứ hai là dữ liệu thực tế. Chuỗi định dạng sẽ chỉ định cách mà đối dữ liệu nên được parse ra. Trong ví dụ phần đầu của định dạng là 'C', xác định rằng chúng ta sẽ xử lý ký tự đầu tiên của dữ liệu giống như byte không dấu. Phần tiếp theo là ' * ', cho thấy rằng hàm sẽ áp dụng vào định dạng code ở phần chỉ định trước lên tất cả các ký tự còn lại.
 
 Dù điều này trông có vẻ khó hiểu, nhưng phần tiếp theo sẽ cung cấp một ví dụ cụ thể.
 
@@ -77,8 +70,6 @@ Dù điều này trông có vẻ khó hiểu, nhưng phần tiếp theo sẽ cun
 
 Dưới đây là giải pháp cho vấn đề GIF của chúng ta sử dụng hàm unpack(). Hàm _is_gif()_ sẽ trả về true nếu file đưa vào là một định dạng GIF.
 
-| ----- |
-| 
     
     
     function is_gif($image_file)
@@ -105,14 +96,10 @@ Dưới đây là giải pháp cho vấn đề GIF của chúng ta sử dụng h
     /* Run our example */
     echo is_gif("aboutus.gif");
 
- | 
 
-Dòng code quan trọng cần chú ý là phần khai báo định dạng. Ký tự  'A6' chỉ định hàm unpack() sẽ lấy 6 bytes đầu tiên trong dữ liệu và ngắt chúng ra là ột chuỗi. Dữ liệu được lấy ra sau đó lưu vào một mảng liên kết với khoá có tên 'version'.
+Dòng code quan trọng cần chú ý là phần khai báo định dạng. Ký tự  'A6' chỉ định hàm unpack() sẽ lấy 6 bytes đầu tiên trong dữ liệu và ngắt chúng ra là một chuỗi. Dữ liệu được lấy ra sau đó lưu vào một mảng liên kết với khoá có tên 'version'.
 
 Ví dụ khác bên dưới. Nó trả về thêm dữ liệu header của file GIF, bao gồm chiều rộng và chiều cao của ảnh.
-
-| ----- |
-| 
     
     
     function get_gif_header($image_file)
@@ -148,12 +135,11 @@ Ví dụ khác bên dưới. Nó trả về thêm dữ liệu header của file 
     /* Run our example */
     print_r(get_gif_header("aboutus.gif"));
 
- | 
 
-Ví dụ bên trên sẽ in ra dư sau khi chạy.
 
-| ----- |
-| 
+Ví dụ bên trên sẽ in ra như sau khi chạy.
+
+
     
     
     Array
@@ -167,20 +153,13 @@ Ví dụ bên trên sẽ in ra dư sau khi chạy.
         [Aspect] => 0
     )
 
- | 
 
-Bên dưới chúng ta sẽ đi vào chi tiết làm về cách công cụ về định dạng làm việc. Tôi sẽ chia nhỏ định dạng,  đưa ra các chi tiết của mỗi ký tự.
 
-| ----- |
-| 
+Bên dưới chúng ta sẽ đi vào chi tiết về cách công cụ về định dạng làm việc. Tôi sẽ chia nhỏ định dạng,  đưa ra các chi tiết của mỗi ký tự.
     
     
     $header_format = 'A6Version/C2Width/C2Height/C1Flag/@11/C1Aspect';
 
- | 
-
-| ----- |
-| 
     
     
     A - Đọc một byte và cắt nó thành một chuỗi. 
