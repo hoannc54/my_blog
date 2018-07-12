@@ -4,7 +4,7 @@
 
 Tôi sẽ viết trong bài viết này về Tries và khái niệm tổng quát được sử dụng trong các thao tác nhỏ của vấn đề. Chúng ta sẽ thấy 2-3 vấn đề mà Trie hữu ích.
 
-Đầu tiên chúng ta sẽ thấy trie là gì. Trie có thể lưu thông tin về keys/numbers/strings nhỏ gọn trọng một cây.
+Đầu tiên chúng ta sẽ xem trie là gì. Trie có thể lưu thông tin về keys/numbers/strings nhỏ gọn trọng một cây.
 Trie bao gồm các nút, nơi mỗi node lưu trữ một ký tự hoặc một bit. Chúng ta có thể thêm một chuỗi hoặc số phù hợp.
 Đây là một ví dụ trie về chuỗi:
 
@@ -13,7 +13,7 @@ Trie bao gồm các nút, nơi mỗi node lưu trữ một ký tự hoặc một
   
 Nguồn: Wikipedia.
 
-Nhưng chúng ta sẽ xử lý các cong số ở đây, và đặc biệt trong các bit nhị phân. Chúng ta se4x thấy chúng ta giải quyết được các vấn đề.
+Nhưng chúng ta sẽ xử lý các con số ở đây, và đặc biệt trong các bit nhị phân. Chúng ta sẽ thấy khi chúng ta giải quyết các vấn đề.
 
 **Vấn đề 1**: Cho một mảng các số nguyên, chúng ta phải tìm 2 phần tử mà chỉ dùng XOR.  
 **Giải quyết:**  
@@ -42,7 +42,7 @@ Truy vấn vượt quá log2(MAX).
 **Giải quyết:**  
 Giả sử F(L,R) là XOR mảng con từ  L đên R.  
 Ở đây chúng ta sử dụng property F(L,R)=F(1,R) XOR F(1,L-1). Làm thế nào?  
-Giả sử mảng con với maximum XOR kết thúc đến vị trí i. Bây giờ, chúng ta cần tối đa F(L,i) ie. F(1,i) XOR F(1,L-1) where L<=i. Giả sử, chúng ta đã thêm F(1,L-1) in our trie for all L<=i, thì đố là vấn đề 1
+Giả sử mảng con với maximum XOR kết thúc đến vị trí i. Bây giờ, chúng ta cần tối đa F(L,i) ie. F(1,i) XOR F(1,L-1) trong đó L<=i. Giả sử, chúng ta đã thêm F(1,L-1) vào trie của chúng ta với mọi L<=i, thì đố là vấn đề 1
     
     
     ans=0
@@ -84,7 +84,7 @@ Nếu q là 1 và p là 0, sau đó chúng ta thực hiện điều này:
 
 Tương tự chúng ta có thể dễ dàng tìm ra 3 trường hợp khác (q=1,p=1), (q=0,p=1) and (q=0,p=1).
 
-Vì vậy, chúng ta cần cáu trức của chúng ta ở đây, chúng tôi cũng giữ số các lá của node có thể truy cập từ nút hiện tại nếu tôi đi về bên trái và tương tự cho bên phải. Bởi vì, nếu không, sự phức tạp sẽ tăng thêm, nếu chúng ta duyệt qua toàn bộ cây lặp đi lặp lại. Chúng ta có thể làm điều này trong khi chèn các số vào cây rất dễ dàng.
+Vì vậy, chúng ta cần thay đổi cấu trúc của chúng ta ở đây, chúng tôi cũng giữ số các lá của node có thể truy cập từ nút hiện tại nếu tôi đi về bên trái và tương tự cho bên phải. Bởi vì, nếu không, sự phức tạp sẽ tăng thêm, nếu chúng ta duyệt qua toàn bộ cây lặp đi lặp lại. Chúng ta có thể làm điều này trong khi chèn các số vào cây rất dễ dàng.
 
 Đây là vấn đề đã được thiết lập trong CodeCraft'14. Bạn có thể thực hành ở đây: [SPOJ.com - Problem SUBXOR][6]
 
@@ -107,7 +107,7 @@ Bây giờ, hãy nói về việc triển khai.
   
 Đối với các truy vấn, chúng ta duyệt theo chiều rộng của cây.
 
-Cập thôi:  
+Cập nhật:  
 Vấn đề khác sử dụng Trie(yay! :P).  
 [Problem - B - Codeforces][7]
 
