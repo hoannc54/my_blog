@@ -103,15 +103,18 @@ Một cách tiếp cận khác để cấu hình sử dụng các file cấu hì
 Mộ khía canh khác của quản lý cấu hình là theo nhóm. ĐÔi khi ứng dụng cấu hình hàng loạt thành các nhóm được đặt tên ( thường gọi là "environments") sau khi triển khai cụ thể giống như `development`, `test` và `production` trong Rails. Phương pháp này không rõ ràng quy mô: vì càng nhiều deploy của ứng dụng được tạo ra, tên môi trường mới cần thiết, giống như `staging` hoặc `qa` . Khi dự án phát triển hơn nữa, các nhà phát triển có thể thêm các môi trường đặc biệt của riêng họ như `joes-staging`, dẫn đến tạo ra tổ hợp của cấu hình mà làm cho việc quản lý deploy của ứng dụng rất dễ hỏng.
 
 Trong 12 yếu tố ứng dụng, env vars đóng vai trò điều khiển các env vars khác. Chúng không bao giờ được nhóm lại với nhau thành "môi trường", mà thay vào đó được quản lý độc lập cho từng deploy. Đây là một mô hình tạo nên sự thuận lợi khi nâng cấp sang nhiều deploy trong suốt vòng đời ứng dụng.
-## Backing services
+
+## IV. Dịch vụ nền
+
+### Điều chỉnh dich vụ nền dưới dạng tài nguyên đính kèm
 
 Một _dịch vụ nền_ là bất kỳ dịch vụ nào mà ứng dụng sử dụng trên mạng như một phần hoạt động của nó. Ví dụ bao gồm các kho lưu trữ dữ liệu (như MySQL hoặc CouchDB), hệ thống messaging/queueing (như  RabbitMQ hoặc Beanstalkd), dịch vụ SMTP cho đầu ra email (như Postfix), và hệ thống cache (như Memcached).
 
-Backing service như cơ sở dữ liệu được quản lý theo truyền thống bởi cùng một hệ quản trị như một ứng dụng chạy. Ngoài các dịch vụ được quản lý cục bộ này, ứng dụng cũng có thể có các dịch vụ được cung cấp và quản lý bởi bên thứ 3. Ví dụ như bao gồm dịch vụ SMTP (giống như Postmark), dịch vụ thu thập số liệu (như New Relic hoặc Loggly), dịch vụ binary asset (như Amazon S3) và ngay cả các dịch vụ truy cập API( như Twitter, Google Máp, hoặc Last.fm).
+Backing service như cơ sở dữ liệu được quản lý theo truyền thống bởi cùng một hệ quản trị như một ứng dụng chạy. Ngoài các dịch vụ được quản lý cục bộ này, ứng dụng cũng có thể có các dịch vụ được cung cấp và quản lý bởi bên thứ 3. Ví dụ như bao gồm dịch vụ SMTP (giống như Postmark), dịch vụ thu thập số liệu (như New Relic hoặc Loggly), dịch vụ binary asset (như Amazon S3) và ngay cả các dịch vụ truy cập API( như Twitter, Google Map, hoặc Last.fm).
 
 Việc code cho một ứng dụng theo 12 chuẩn không phân biệt giữa dịch vụ cục bộ hay bên thứ ba. Đối với ứng dụng, cả hai đều là tài nguyên được đính kèm, được truy cập thông qua một URL hoặc locator/thông tin xác thực khác được lưu trong cấu hình. Một deploy của ứng dụng theo 12 chuẩn nên có thể hoán đổi giữa cơ sở dữ liệu MySQL cụ bộ với một dịch vụ do bên thứ 3 quản lý ( như Amazon RDS) mà không làm thay đổi bất kỳ đoạn code nào của ứng dụng. Tương tự như vậy, một server SMTP cục bộ có thể được thay đổi sang một dịch vụ SMTP của bên thứ 3 (như Postmark) mà không thay đổi code. Trong cả 2 trường hợp, chỉ xử lý tài nguyên trong cấu hình cần thay đổi.
 
-Mỗi dịch dụ backing riêng biệt là một resource. Ví dụ, một cơ sở dữ liệu MySQL là một tài nguyên , 2 cơ sở dữ liệu MySQL( được sử dụng giữa các tầng ứng dụng) đủ điều kiện như là 2 tài nguyên riêng biệt. Ứng dụng theo 12 chuẩn xử lý các cơ sở dữ liệu giống như tài nguyên đính kèm, điều này thể hiện sự phụ thuộc không chặt chẽ của chúng với deploy được đính kèm.
+Mỗi dịch dụ backing riêng biệt là một nguồn tài nguyên. Ví dụ, một cơ sở dữ liệu MySQL là một nguồn tài nguyên , 2 cơ sở dữ liệu MySQL( được sử dụng giữa các tầng ứng dụng) đủ điều kiện như là 2 nguồn tài nguyên riêng biệt. Ứng dụng theo 12 chuẩn xử lý các cơ sở dữ liệu giống như tài nguyên đính kèm, điều này thể hiện sự phụ thuộc không chặt chẽ chúng với deploy được đính kèm.
 Tài nguyên có thể được đính kèm và tách ra từ deploy theo ý muốn. Ví dụ nếu cơ sở dữ liệu của ứng dụng họt động sai do có vấn đề phần cứng, quản trị viên của ứng dụng có thể tạo lên một máy chủ cơ sở dữ liệu mới được khôi phục từ bản sao lưu gần đây. Cơ sở dữ liệu của bản production hiện tại nên được tách ra và cơ sở dữ liệu mới được đính kèm tất cả đều không làm thay đổi bất kỳ đoạn code nào.
 
 ## V. Build, release, run
@@ -128,7 +131,7 @@ Một codebase được chuyển thành một deploy (không phải deployment) 
 
 Các công cụ deployment thường cung cấp các công cụ quản lý release, đáng chú ý nhất là khả năng rollback lại phiên bản release trước. Ví dụ, công cụ deployment [Capistrano](https://github.com/capistrano/capistrano/wiki)lưu trữ các bản release trong một thư mục con với tên `releases`, nơi bản release hiện tại là một symlink đến thư mục release hiện tại. Lệnh `rollback` giúp bạn dễ dàng quay trở lại bản release trước.
 
-Mỗi bản release nên luôn luôn có một ID duy nhất cho release, như là một timestamp cho release (như `2011-04-06-20:32:17` )hoặc một số tăng dần (như `v100`). Các bản release là một bản ghi chỉ thêm vào cuối và một bản release không thể biến đổi khi nó được tạo ra. Mọi thay đổi phải tạo mới một release.
+Mỗi bản release nên luôn luôn có một ID duy nhất cho release, như là một timestamp cho release (như `2011-04-06-20:32:17` )hoặc một số tăng dần (như `v100`). Các bản release là một bản ghi chỉ thêm vào cuối và một bản release không thể biến đổi khi nó được tạo ra. Mọi thay đổi phải tạo mới một phiên bản release.
 
 Các bản build được khởi tạo bởi developer của ứng dụng bất cứ khi nào code mới được deploy. Thực thi theo thời gian chạy, bởi contrast, có thể xảy ra tự động trong trường hợp như là khởi động lại server, hoặc một tiến trình bị lỗi được khởi động lại bởi tiến trình quản lý. Vì thế, giai đoạn chạy nên giữ càng ít chi tiết càng tốt, vì các vấn đề ngăn chặn ứng dụng hoạt động bất kỳ lúc nào và làm hỏng hệ thống khi không có developer sẵn sàng. Giai đoạn build có thể phức tạp hơn vì các lỗi luôn luôn xảy ra với developer người mà đang thực hiện deploy
 
@@ -151,7 +154,7 @@ Một số hệ thống web dựa vào "sticky sessions" đó là việc cache d
 
 Các ứng dụng web đôi khi được thực thi bên trong một webserver container. Ví dụ, ứng dụng php có thể chạy giống như là một module bên trong Apache HTTPD hoặc các ứng dụng Java chạy bên trong Tomcat.
 
-Ứng dụng tuân theo 12 chuẩn hoàn toàn được độc lập và không phụ thuộc và injection chạy của webserver trong môi trường thực thi để tạo ra một dịch vụ web-facing. Ứng dụng web cung cấp HTTP như làm một dịch vụ bởi găn một cổng và lắng nghe yêu cầu đến cổng đó.
+Ứng dụng tuân theo 12 chuẩn hoàn toàn được độc lập và không phụ thuộc và injection chạy của webserver trong môi trường thực thi để tạo ra một dịch vụ web-facing. Ứng dụng web cung cấp HTTP như làm một dịch vụ gắn vào một cổng và lắng nghe yêu cầu thông qua cổng đó.
 
 Trong môi trường phát triển cục bộ, deveploper truy cập vào URL giống như `http://localhost:5000/` để truy cập vào dịch vụ được cung cấp bởi ứng dụng của họ. Trong triển khai, một lớp điều hướng xử lý các yêu cầu điều hướng từ hostname public đến cổng web xử lý.
 
