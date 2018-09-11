@@ -13,7 +13,7 @@ Phần còn lại của bài viết này sẽ có các lời khuyên
 
 ## Các mẹo của tôi cho các lập trình viên mới 
 
-### 1. Have your reason, and remember it
+### 1. Hãy có lý do để học, và nhớ nó
 
 Nếu bạn muốn bắt đầu lập trình, phải có lý do cho điều đó. Dù là bạn yêu thích viết code, bạn muốn có công việc tốt hơn, hoặc bạn đang làm một loạt công việc về Excel và bạn muốn làm cho nó hiệu quả hơn. Hãy theo dõi lý do đó; lập trình rất khó và khôi khi bạn cảm thấy thất vọng. Nó sẽ cần thiết để giữ lý do đó trong suy nghĩ để gắn bó với nó. Bạn có thể đặt một giấy nhớ lên máy tính, một cái giấy nhớ lên màn hình trang chủ or (như tôi viết nó lên gương của bạn bằng bút xoá.
 
@@ -33,19 +33,19 @@ Một trong những phần quan trọng nhất trong lập trình là khi gặp 
 
 Liên quan đến phần trước đó, có rất nhiều lần bạn có thể viết chi tiết những gì bạn cố gắng làm bằng các từ ngữ đơn giản trước khi viết code. Quá trình này được gọi là gỉa mã, và nó có thể ở bất kỳ hình thức nào bạn muốn. Nó cũng có thể hữu ích để giải quyết một vấn đề thực từ trên giấy đầu tiên, suy nghĩ hoặc thậm chí viết các bước cụ thể mà bạn đang thực hiện để giải quyết vấn đề đó.
 
-### 6. Embrace the cycle of learning
+### 6. Giữ cho mình chu trình học tập
 
-Nếu bạn đang học code như một sự nghiệp thứ 2, đặc biệt nếu bạn đã rờ khởi ghế nhà trường một thời gian, học cách để học là một phần rất quan trọng trong quá trình đó của bạn. Sẽ có rất nhiều sự thăng trầm, đó là lẽ tự nhiên ! I would brace yourself for that rollercoaster before starting out.
+Nếu bạn đang học code như một sự nghiệp thứ 2, đặc biệt nếu bạn đã rời khởi ghế nhà trường một thời gian, học cách để học là một phần rất quan trọng trong quá trình đó của bạn. Sẽ có rất nhiều sự thăng trầm, đó là lẽ tự nhiên ! Hãy giữ cho mình guồng quay của việc học trước khi bắt đầuI would brace yourself for that rollercoaster before starting out.
 
 ### 7. Bắt đầu với các nguồn miễn phí
 
 Có hàng triệu nguồn tài nguyên để học cách code. Một vài là miễn phí và một vài là trả phí. TÔ sẽ bắt đầu với các tài nguyên miễn phí, để đảm bảo bạn thích viết code, và sau đó bạn có thể nghĩ tới việc chuyển sang các tài nguyên trả phí hoặc thậm chí là một trung tâm. Tôi có một bài viết về các nguồn tài nguyên học code miễn phí mà tôi yêu thích ở [đây](https://zen-of-programming.com/favorite-free-resources)
 
-### 8. Find your niche
+### 8. Tìm ra thứ thích hợp
 
 Có rất nhiều thế giới trong lập trình, tìm một thế giới mà bạn yêu thích và tập trung vào nó. Thay vì cố học 8 ngôn ngữ lập trình, frontend và backend, các ngôn ngữ biên dịch và thông dịch, tất cả c ác trình soạn thảo văn bản và các công cụ developer,...Tìm một vài điều bạn thực sự quan tâm và làm quen với chúng.
 
-### 9. Get good at pattern recognition
+### 9. Giỏi trong pattern recognition
 
 Nhận biết các pattern trong code là một trong những kỹ năng quan trọng bạn có thể có. Khi mọi người nói về việc viết code "DRY" (Nghĩa là : Don't Repeat Yourself) họ đang nói về việc giảm các mẫu trong code của bạn. Tôi khuyên các bạn nên đặ trò chơi để nhận biết các pattern - thậm chí bạn có thể [chơi trực tuyến mỗi ngày](https://www.nytimes.com/crosswords/game/set) trên website của New York Times
 
@@ -57,7 +57,7 @@ Sẽ dễ dàng viết code clean hơn trong tương lai nếu bạn có thói q
 
 Mỗi người có cách học khác nhau -- cho dù bạn là người học trực quan, yêu thích video, cần ai đó thúc đẩy bạn hoặc bạn yêu thích tài liệu , bạn sẽ có cách học tốt nhất khác với những người bên cạnh bạn. Xác định cách bạn học tốt nhất và dựa vào tài nguyên phù hợp với phong cách đó. Ví dụ, tôi học tốt nhất từ đọc tài liệu và code các ví dụ từ tài liệu và tôi dễ dàng mất tập trung với các hướng dẫn.
 
-### 12. Struggle, nhưng không quá nhiều
+### 12. Đấu tranh, nhưng không quá nhiều
 
 Đấu tranh một chút khi vạn học thực sự quan trọng để bạn có thể tự giải quyết vấn đề và tìm ra câu trả lời bằng cách sử dụngt tài nguyên có sẵn. Điều đang được nó, nó có thể trở lên không hiệu quả và mất khả năng đấu tranh với một vấn đề quá lâu. Sau một vài giờ, hãy liên hệ với ai đó để được trợ giúp.
 
@@ -77,7 +77,7 @@ Không có câu trả lời đúng về ngôn ngữ lập trình nào để bắ
 
 Sự thật là 100% không thể biết mọi thứ về lập trình. Không ai biết được mọi ngôn ngữ lập trình, mọi phương thức ở đó, mọi thư viện và framework hoặc giải pháp hoàn hảo cho mọi vấn đề. Đừng lo lắng về việc học tất cả mọi thứ, chỉ cần tập trung vào những gì bạn biết và mở rộng điều đó
 
-### 17. Depth over Breadth
+### 17. Hiểu sâu hơn là rộng
 
 Học một thứ sâu tốt hơn là học mỗi thứ một chút, đặc biệt là chỉ được lúc đầu. Kiến thức chuyến sâu đó sẽ tiếp tục và làm cho việc học tiếp dễ dàng hơn. Đặt một người không biết gì, vì vậy bạn không bị cám dỗ để bỏ qua những gì bạn đang học và chuyển sang một cái gì mới.
 
@@ -115,9 +115,9 @@ Học lập trình là quá trình thực sự khó khăn, vì vậy khi bạn h
 
 Lập trình thực sự tuyệt với vì bạn có thể xây dựng mọi thứ. Tôi luôn quay lại với câu nói của Sandi Metz: 
 
-_Those of us whose work is to write software are incredibly lucky. Building software is a guiltless pleasure because we get to use our creative energy to get things done. We have arranged our lives to have it both ways; we can enjoy the pure act of writing code in sure knowledge that the code we write has use. We produce things that matter. We are modern craftspeople, building structures that make up present-day reality, and no less than bricklayers or bridge builders, we take justifiable pride in our accomplishments.
+_Những người trong chúng ta có công việc viết phần mềm là điều vô cùng may mắn. Xây dựng phần mềm là một niềm vui vô bờ bến bởi vì chúng ta sử dụng khả năng sáng tạo của mình để hoàn thành công việc. Chúng ta đã sắp xếp cuộc sống của mình để có cả 2 cách; chúng ta có thể tận hưởng việc viết code thuần trong kiến thức đã chắc chắn rằng code chúng ta viết đã sử dụng. Chúng ta tạo ra những thứ quan trọng. Chúng ta là những người thợ thủ công hiện đại, xây dựng các cấu trúc tạo nên xã hội ngày nay và không kém gì so với những người thợ xây hoặc những người xây cầu, chúngg ta tự hào về thành tích của mình.
 
-This all programmers share, from the most enthusiastic newbie to the apparently jaded elder, whether working at the lightest weight Internet startup or the most staid, long-entrenched enterprise. We want to do our best work. We want our work to have meaning. We want to have fun along the way._
+Tất cả lập trình viên đều chia sẻ, từ những người mới tham gia nhiệt tình nhất đển người lớn tuổi, cho dù làm việc với khối lượng nhẹ nhất là khởi động Internet hay là những doanh nghiệp lâu đời nhất. Chúng ta muốn làm tốt nhất công việc của mình. Chúng ta muốn công việc của chúng ta có ý nghĩa. Chúng ta muốn có niềm vui trong quãng đường đó_
 
 **Sandi Metz**
 
