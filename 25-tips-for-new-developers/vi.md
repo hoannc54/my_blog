@@ -3,11 +3,11 @@
 
 Câu hỏi phổ biến nhất tôi nhận được từ các độc giả của blog là "Lời khuyên của bạn dành cho các lập trình viên mới là gì ?". Vì vậy, tôi nghĩ đã đến lúc viết ra những suy nghĩ của tôi.
 
-Tôi sẽ viết câu chuyện đầy đủ của tôi trong tương lai, nhưng tôi lấy hai lớp khoa học máy tính ở trường đại học. Sau đó, tôi có một thực tập về kỹ thuật phần mềm ngay sau đó. Tôi đã bắt đầu làm công việc phát triển web, ban đầu là vị trí backend và sau đó cuối cùng là vị trí frontend. Trường đại học của tôi chắc chắc không dạy về phát triển web, khiến tôi trở lên một mình trong lớp khoa học máy tính đầu tiên , vì vậy tôi đã tự học.
+Tôi sẽ viết câu chuyện đầy đủ của tôi trong tương lai, nhưng tôi học hai lớp khoa học máy tính ở trường đại học. Sau đó, tôi có một thực tập về kỹ thuật phần mềm ngay sau đó. Tôi đã bắt đầu làm công việc phát triển web, ban đầu là vị trí backend và sau đó cuối cùng là vị trí frontend. Trường đại học của tôi chắc chắc không dạy về phát triển web, khiến tôi trở lên một mình trong lớp khoa học máy tính đầu tiên , vì vậy tôi đã tự học.
 
 Tôi không nghĩ câu chuyện của tôi là duy nhất -- tất cả các lập trình viên đều tự học ở một mức độ nào đó, cho dù đó là hoàn toàn tự học hoặc họ có một người dạy trong khoa học máy tính, nhưng họ tự dạy mình RegEx theo cách của họ. Thực tế, tự học có thể là một trong những kỹ năng quan trọng mà bạn có thể có như là một developer
 
-Ngoài kinh nghiệm của riêng tôi, tôi cũng dạy mọi người code như là một công việc chính của tôi và cho các tổ chức mà tôi tình nguyện, vì vậy bài viết này dựa trên kinh nghiệm đó.
+Ngoài kinh nghiệm của riêng tôi, tôi cũng dạy mọi người code như là nghề tay trái của tôi và cho các tổ chức mà tôi tình nguyện, vì vậy bài viết này dựa trên kinh nghiệm đó.
 
 Phần còn lại của bài viết này sẽ có các lời khuyên
 
@@ -15,7 +15,7 @@ Phần còn lại của bài viết này sẽ có các lời khuyên
 
 ### 1. Hãy có lý do để học, và nhớ nó
 
-Nếu bạn muốn bắt đầu lập trình, phải có lý do cho điều đó. Dù là bạn yêu thích viết code, bạn muốn có công việc tốt hơn, hoặc bạn đang làm một loạt công việc về Excel và bạn muốn làm cho nó hiệu quả hơn. Hãy theo dõi lý do đó; lập trình rất khó và khôi khi bạn cảm thấy thất vọng. Nó sẽ cần thiết để giữ lý do đó trong suy nghĩ để gắn bó với nó. Bạn có thể đặt một giấy nhớ lên máy tính, một cái giấy nhớ lên màn hình trang chủ or (như tôi viết nó lên gương của bạn bằng bút xoá.
+Nếu bạn muốn bắt đầu lập trình, phải có lý do cho điều đó. Dù là bạn yêu thích viết code, bạn muốn có công việc tốt hơn, hoặc bạn đang làm một loạt công việc về Excel và bạn muốn làm cho nó hiệu quả hơn. Hãy theo dõi lý do đó; lập trình rất khó và đôi khi bạn cảm thấy thất vọng. Nó sẽ cần thiết để giữ lý do đó trong suy nghĩ để gắn bó với nó. Bạn có thể đặt một giấy nhớ lên máy tính, một cái giấy nhớ lên màn hình trang chủ or (như tôi viết nó lên gương của bạn bằng bút xoá.
 
 ### 2. Xây dựng một nền tảng vững chắc
 
@@ -35,19 +35,19 @@ Liên quan đến phần trước đó, có rất nhiều lần bạn có thể 
 
 ### 6. Giữ cho mình chu trình học tập
 
-Nếu bạn đang học code như một sự nghiệp thứ 2, đặc biệt nếu bạn đã rời khởi ghế nhà trường một thời gian, học cách để học là một phần rất quan trọng trong quá trình đó của bạn. Sẽ có rất nhiều sự thăng trầm, đó là lẽ tự nhiên ! Hãy giữ cho mình guồng quay của việc học trước khi bắt đầuI would brace yourself for that rollercoaster before starting out.
+Nếu bạn đang học code như một nghề tay trái, đặc biệt nếu bạn đã rời khởi ghế nhà trường một thời gian, học cách để học là một phần rất quan trọng trong quá trình đó của bạn. Sẽ có rất nhiều sự thăng trầm, đó là lẽ tự nhiên! Hãy giữ cho mình guồng quay của việc học trước khi bắt đầu I would brace yourself for that rollercoaster before starting out.
 
 ### 7. Bắt đầu với các nguồn miễn phí
 
-Có hàng triệu nguồn tài nguyên để học cách code. Một vài là miễn phí và một vài là trả phí. TÔ sẽ bắt đầu với các tài nguyên miễn phí, để đảm bảo bạn thích viết code, và sau đó bạn có thể nghĩ tới việc chuyển sang các tài nguyên trả phí hoặc thậm chí là một trung tâm. Tôi có một bài viết về các nguồn tài nguyên học code miễn phí mà tôi yêu thích ở [đây](https://zen-of-programming.com/favorite-free-resources)
+Có hàng triệu nguồn tài nguyên để học cách code. Một vài là miễn phí và một vài là trả phí. Tôi sẽ bắt đầu với các tài nguyên miễn phí, để đảm bảo bạn thích viết code, và sau đó bạn có thể nghĩ tới việc chuyển sang các tài nguyên trả phí hoặc thậm chí là một trung tâm. Tôi có một bài viết về các nguồn tài nguyên học code miễn phí mà tôi yêu thích ở [đây](https://zen-of-programming.com/favorite-free-resources)
 
 ### 8. Tìm ra thứ thích hợp
 
-Có rất nhiều thế giới trong lập trình, tìm một thế giới mà bạn yêu thích và tập trung vào nó. Thay vì cố học 8 ngôn ngữ lập trình, frontend và backend, các ngôn ngữ biên dịch và thông dịch, tất cả c ác trình soạn thảo văn bản và các công cụ developer,...Tìm một vài điều bạn thực sự quan tâm và làm quen với chúng.
+Có rất nhiều thế giới trong lập trình, tìm một thế giới mà bạn yêu thích và tập trung vào nó. Thay vì cố học 8 ngôn ngữ lập trình, frontend và backend, các ngôn ngữ biên dịch và thông dịch, tất cả các trình soạn thảo văn bản và các công cụ developer,...Tìm một vài điều bạn thực sự quan tâm và làm quen với chúng.
 
 ### 9. Giỏi trong pattern recognition
 
-Nhận biết các pattern trong code là một trong những kỹ năng quan trọng bạn có thể có. Khi mọi người nói về việc viết code "DRY" (Nghĩa là : Don't Repeat Yourself) họ đang nói về việc giảm các mẫu trong code của bạn. Tôi khuyên các bạn nên đặ trò chơi để nhận biết các pattern - thậm chí bạn có thể [chơi trực tuyến mỗi ngày](https://www.nytimes.com/crosswords/game/set) trên website của New York Times
+Nhận biết các pattern trong code là một trong những kỹ năng quan trọng bạn có thể có. Khi mọi người nói về việc viết code "DRY" (Nghĩa là : Don't Repeat Yourself) họ đang nói về việc giảm các mẫu trong code của bạn. Tôi khuyên các bạn nên đặt trò chơi để nhận biết các pattern - thậm chí bạn có thể [chơi trực tuyến mỗi ngày](https://www.nytimes.com/crosswords/game/set) trên website của New York Times
 
 ### 10. Sớm tạo thói quen tốt
 
@@ -59,11 +59,11 @@ Mỗi người có cách học khác nhau -- cho dù bạn là người học tr
 
 ### 12. Đấu tranh, nhưng không quá nhiều
 
-Đấu tranh một chút khi vạn học thực sự quan trọng để bạn có thể tự giải quyết vấn đề và tìm ra câu trả lời bằng cách sử dụngt tài nguyên có sẵn. Điều đang được nó, nó có thể trở lên không hiệu quả và mất khả năng đấu tranh với một vấn đề quá lâu. Sau một vài giờ, hãy liên hệ với ai đó để được trợ giúp.
+Đấu tranh một chút khi bạn học thực sự quan trọng để bạn có thể tự giải quyết vấn đề và tìm ra câu trả lời bằng cách sử dụngt tài nguyên có sẵn. Điều đang được nói, nó có thể trở lên không hiệu quả và mất khả năng đấu tranh với một vấn đề quá lâu. Sau một vài giờ, hãy liên hệ với ai đó để được trợ giúp.
 
 ### 13. Thoải mãi với thất bại
 
-Lập trình là khó, và ngay lập tức sẽ không tìm được câu trả lời đúng. Một trong những khoảnh khắc quan trọng nhất trong hành trình lập trình của tôi là thất bại khi viết một lời giải cho Sodoku. Nó có thể là khó để làm cho không nhận được mọi thứ đúng và nhìn thấy những thông báo lỗi, nhưng đó là một phần của lập trình.
+Lập trình là khó, và ngay lập tức sẽ không tìm được câu trả lời đúng. Một trong những khoảnh khắc quan trọng nhất trong hành trình lập trình của tôi là thất bại khi viết một lời giải cho Sodoku. Nó là khó khăn trong việc điều chỉnh để mọi thứ hoạt động đúng và không nhìn thấy những thông báo lỗi, nhưng đó là một phần rất lớn của lập trình
 
 ### 14. Yêu quý các thông báo lỗi của bạn
 
@@ -71,24 +71,24 @@ Thông báo lỗi rất hữu ích, nhưng khi bạn bắt đầu thông báo l�
 
 ### 15. Một số ngôn ngữ lập trình dễ hơn những ngôn ngữ khác
 
-Không có câu trả lời đúng về ngôn ngữ lập trình nào để bắt đầu học đầu tiên; tuy nhiên, một số sẽ dễ dàng hơn để nắm bắt. 3 vị trí đầu của tôi là Python, Ruby và Javascript bởi vì cả ba đều có một cộng đồng lớn phía sau chúng, và có cú pháp đơn giản hơn và được thông dịch, vì vậy bạn không phải trải qua quá trình biên dịch.
+Không có câu trả lời đúng về ngôn ngữ lập trình nào nên bắt đầu học đầu tiên; tuy nhiên, một số sẽ dễ dàng hơn để nắm bắt. 3 vị trí đầu của tôi là Python, Ruby và Javascript bởi vì cả ba đều có một cộng đồng lớn phía sau chúng, và có cú pháp đơn giản hơn và được thông dịch, vì vậy bạn không phải trải qua quá trình biên dịch.
 
 ### 16. Bạn không cần biết mọi thứ
 
-Sự thật là 100% không thể biết mọi thứ về lập trình. Không ai biết được mọi ngôn ngữ lập trình, mọi phương thức ở đó, mọi thư viện và framework hoặc giải pháp hoàn hảo cho mọi vấn đề. Đừng lo lắng về việc học tất cả mọi thứ, chỉ cần tập trung vào những gì bạn biết và mở rộng điều đó
+Sự thật là 100% không thể biết mọi thứ về lập trình. Không ai biết được mọi ngôn ngữ lập trình, mọi phương thức ở đó, mọi thư viện và framework hoặc giải pháp hoàn hảo cho mọi vấn đề. Đừng lo lắng về việc học tất cả mọi thứ, chỉ cần tập trung vào những gì bạn biết và mở rộng điều đó.
 
 ### 17. Hiểu sâu hơn là rộng
 
-Học một thứ sâu tốt hơn là học mỗi thứ một chút, đặc biệt là chỉ được lúc đầu. Kiến thức chuyến sâu đó sẽ tiếp tục và làm cho việc học tiếp dễ dàng hơn. Đặt một người không biết gì, vì vậy bạn không bị cám dỗ để bỏ qua những gì bạn đang học và chuyển sang một cái gì mới.
+Học một thứ sâu tốt hơn là học mỗi thứ một chút, đặc biệt là chỉ được lúc đầu. Kiến thức chuyên sâu đó sẽ tiếp tục và làm cho việc học tiếp dễ dàng hơn. Đặt mình vào vị trí một người không biết gì, vì vậy bạn không bị cám dỗ để bỏ qua những gì bạn đang học và chuyển sang một cái gì mới.
 
 ### 18. Tập trung vào các nguyên tắc cơ bản trước
 
-Các nguyên tắc cơ bản về lập trình là vô giá, và bạn sẽ sử dụng chúng bất kể bạn làm gì với lập trình. Tập trung vào việc có kiến thức chắc về vòng lặp, điều kiện, hàm, kiểu dữ liệu và (trong hầu hết các ngôn ngữ) lập trình hướng đối tượng trước khi tiếp tục học những thứ viện tuyệt vời mà mọi người đang nói đến. Sẽ dễ dàng hơn nhiều khi học các thư viện đó khi bạn biết các nguyên tắc cơ bản trong lập trình. Chúng cũng sẽ chuyển từ ngôn ngữ này sang ngôn ngữ khác, vì vậy bạn chỉ cần thực sự học chúng một lần và sau đó nó chỉ là cú pháp
+Các nguyên tắc cơ bản về lập trình là vô giá, và bạn sẽ sử dụng chúng bất kể bạn làm gì với lập trình. Tập trung vào việc có kiến thức chắc về vòng lặp, điều kiện, hàm, kiểu dữ liệu và (trong hầu hết các ngôn ngữ) lập trình hướng đối tượng trước khi tiếp tục học những thư viện tuyệt vời mà mọi người đang nói đến. Sẽ dễ dàng hơn nhiều khi học các thư viện đó khi bạn biết các nguyên tắc cơ bản trong lập trình. Chúng cũng sẽ chuyển từ ngôn ngữ này sang ngôn ngữ khác, vì vậy bạn chỉ cần thực sự học chúng một lần và sau đó nó chỉ là cú pháp.
 
 ### 19. Làm tốt việc giải quyết vấn đề
 
-Giải quyết vấn đề là cơ sở đằng sau lập trình. Nắm bắt tốt hơn ở đây là rất quan trọng. Giải quyết các câu đố, viết code trên giấy và chia nhỏ các vấn đề có thể thực sự giúp giải quyết vấn đề. Một vài thứ tôi hay gặp ở các developer mới là họ tiếp cận lập trình như một vấn đề nghiên cứu thay vì một dự án giải quyết vấn đề, nếu họ google đủ tốt, thì họ sẽ có một giải phpas. Đúng, Google và Stack Overflow là rất hữu ích, nhưng dựa vào chính mình đôi khi là qua phí. 
-Hãy thử một vài cách khác nhau trước khi nghiên cứu nó. Hoặc, nghiên cứu các phần nhỏ của vấn đề thì vì cả vấn đề . Ví dụ "biến một String thành một Array trong Javascript" thay vì chuỗi ngược lại trong Javascript"
+Giải quyết vấn đề là cơ sở đằng sau lập trình. Nắm bắt tốt hơn ở đây là rất quan trọng. Giải quyết các câu đố, viết code trên giấy và chia nhỏ các vấn đề có thể thực sự giúp giải quyết vấn đề. Một vài thứ tôi hay gặp ở các developer mới là họ tiếp cận lập trình như một vấn đề nghiên cứu thay vì một dự án giải quyết vấn đề, nếu họ google đủ tốt, thì họ sẽ có một giải pháp. Đúng, Google và Stack Overflow là rất hữu ích, nhưng đôi khi cũng tùy thuộc vào chính bản thân bạn. 
+Hãy thử một vài cách khác nhau trước khi nghiên cứu nó. Hoặc, nghiên cứu các phần nhỏ của vấn đề. Ví dụ "biến một String thành một Array trong Javascript" thay vì chuỗi ngược lại trong Javascript"
 
 ### 20. Làm tốt việc nghiên cứu
 
@@ -97,19 +97,19 @@ Một trong những điều quan trọng nhất để học là cách tìm ra c�
 
 ### 21. Xây dựng các dự án bạn yêu thích
 
-Khi bạn đang học, bạn sẽ xây dựng các dự án khác nhau để thực hành (và thể hiện) các kỹ năng của bạn. Chọn ý tưởng dự án phù hợp với bạn; bạn sẽ có nhiều khả năng hoàn thành chúng hơn và muốn đưa công việc vào chúng. Dẫn đến, hoàn thành các dự án đó. Một vài dự án thành công thực sự tốt là cách ấn tượng hơn nhiều so với hoàn thành nột nửa.
+Khi bạn đang học, bạn sẽ xây dựng các dự án khác nhau để thực hành (và thể hiện) các kỹ năng của bạn. Chọn ý tưởng dự án phù hợp với bạn; bạn sẽ có nhiều khả năng hoàn thành chúng hơn và muốn đưa công việc vào chúng. Dẫn đến, hoàn thành các dự án đó. Một vài dự án thành công thực sự tốt là cách ấn tượng hơn nhiều so với hoàn thành một nửa.
 
 ### 22. Chỉ so sánh bạn với chính bạn
 
-Có rất nhiều người học code ở đây. Đừng so sánh sự tiến bộ của bạn với người khác, thay vì đó so sánh bản thân bạn với bạn trước đó và tập trung vào sự phát triển riêng của bạn
+Có rất nhiều người học code ở đây. Đừng so sánh sự tiến bộ của bạn với người khác, thay vì đó so sánh bản thân bạn với bạn trước đó và tập trung vào sự phát triển riêng của bạn.
 
 ### 23. Thực hiện các code challenge
 
-Thực hiện các challenge về code có thẻ thực sự giúp của cố các nguyên tắc cơ bản. Chúng rất tuyệt vời để giải quyết và thực hành cho các cuộc phỏng vấn. Tôi đăng bài lên trê Twitter mỗi ngày với hastag #CodingPuzzle nếu bạn muốn người khác giải quyết chúng.
+Thực hiện các challenge về code có thể thực sự giúp củng cố các nguyên tắc cơ bản. Chúng rất tuyệt vời để giải quyết và thực hành cho các cuộc phỏng vấn. Tôi đăng bài lên trên Twitter mỗi ngày với hastag #CodingPuzzle nếu bạn muốn người khác giải quyết chúng.
 
 ### 24. Ăn mừng chiến thắng của bạn 
 
-Học lập trình là quá trình thực sự khó khăn, vì vậy khi bạn hoàn thành một cái gì đó, ngay cả khi nó nhỏ, hãy ăn mừng. Tôi theo dõi chiến thắng của mình trong Google Keep vì vậy, nếu tôi có một ngày tồi tệ, tôi có thể quay lại những chiến thắng đó và nhớ chúng!
+Học lập trình là quá trình thực sự khó khăn, vì vậy khi bạn hoàn thành một cái gì đó, ngay cả khi nó nhỏ, hãy ăn mừng. Tôi theo dõi chiến thắng của mình trong Google Keep vì vậy, nếu tôi có một ngày tồi tệ, tôi có thể xem lại những chiến thắng đó và nhớ chúng!
 
 ### 25. Lập trình thật tuyệt vời
 
