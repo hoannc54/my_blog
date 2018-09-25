@@ -17,3 +17,4 @@ Design by contract có nguồn gốc của nó trong công việc  formal verifi
 
 ## Mô tả 
 
+Ý tưởng chính của DbC là 
