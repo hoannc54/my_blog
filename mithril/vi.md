@@ -1,4 +1,4 @@
-# Simple application
+# Ứng dụng đơn giản
 
 Hãy phát triển một ứng dụng đơn giản bao gồm một số khía cạnh chính của Single Page Applications.
 
@@ -146,7 +146,7 @@ Hãy sử dụng Mithril hyperscript để tạo một danh sách các item. Hyp
 `".user-list"` là một CSS selector, và giống như bạn muốn, `.user-list` đại diện cho một class. Khi một thẻ không được chỉ định, `div` là thẻ mặc định. Vì vậy, view này tương đương với `<div class="user-list"></div>`
 `.
 
-Bây giờ, Now, hãy tham khảo danh sách các user từ model chúng ta đã tạo (`User.list`) để tự động duyệt qua data:
+Bây giờ, hãy tham khảo danh sách các user từ model chúng ta đã tạo (`User.list`) để tự động duyệt qua data:
     
     
     // src/views/UserList.js
@@ -164,7 +164,7 @@ Bây giờ, Now, hãy tham khảo danh sách các user từ model chúng ta đã
 
 Từ `User.list` là một mảng Javascript, và từ khi hyperscript views là Javascript, chúng ta có thể lặp thông qua mản sử dụng phương thức `.map`. Điều này tạo ra một mảng các vnodes đại diện cho một danh sách các thẻ `div`, mỗi trên chứa một user.
 
-The problem, of course, is that we never called the `User.loadList` function. Therefore, `User.list` is still an empty array, and thus this view would render a blank page. Since we want `User.loadList` to be called when we render this component, we can take advantage of component [lifecycle methods][13]:
+Vấn đề, dĩ nhiên chúng ta không bao giờ họi hàm  `User.loadList`. Mặc dù, `User.list` vẫn là một mảng rỗng và do đó view này vẫn hiển thị một trang trắng. Từ khi chúng ta muốn `User.loadList` được gọi khi chúng ta render component này, chúng ta có thể tận dụng lợi thể cửa component  [lifecycle methods][13]:
     
     
     // src/views/UserList.js
@@ -181,12 +181,12 @@ The problem, of course, is that we never called the `User.loadList` function. Th
     }
     
 
-Notice that we added an `oninit` method to the component, which references `User.loadList`. This means that when the component initializes, User.loadList will be called, triggering an XHR request. When the server returns a response, `User.list` gets populated.
+Lưu ý chúng ta đã thêm một phương thức `oninit` cho commponet, cái mà tham chiếu đến `User.loadList`. Điều đó có nghĩa là khi khởi tạo component , User.loadList sẽ được gọi, kích hoạt một XHR request. KHi server trả về một response, `User.list` được định nghĩa.
 
-Also notice we **didn't** do `oninit: User.loadList()` (with parentheses at the end). The difference is that `oninit: User.loadList()` calls the function once and immediately, but `oninit: User.loadList` only calls that function when the component renders. This is an important difference and a common pitfall for developers new to javascript: calling the function immediately means that the XHR request will fire as soon as the source code is evaluated, even if the component never renders. Also, if the component is ever recreated (through navigating back and forth through the application), the function won't be called again as expected.
+CŨng lưu ý chúng ta **không** thực hiện `oninit: User.loadList()` (với dấu ngoặc đơn ở cuối). Sự khác biệt là `oninit: User.loadList()` gọi hàm một lần và ngay lập tức, nhưng `oninit: User.loadList` chỉ gọi hàm khi component render. Đó là một sự khác biệt quan trọng và một nhầm lẫn phổ biến với các develper javascript: lời gọi hàm ngay nghĩa là XHR request sẽ được kích hoạt ngay sau khi mã nguồn được xác định, ngay cả component không bao giờ được render. Ngoài ra nếu compoent được tạo lại (thông qua ) Also, if the component is ever recreated (through navigating back and forth through the application), hàm không được gọi như mong đợi.
 * * *
 
-Let's render the view from the entry point file `src/index.js` we created earlier:
+Hãy render view từ file đầu vào `src/index.js` chúng ta đã tạo trước đó:
     
     
     // src/index.js
@@ -197,17 +197,17 @@ Let's render the view from the entry point file `src/index.js` we created earlie
     m.mount(document.body, UserList)
     
 
-The `m.mount` call renders the specified component (`UserList`) into a DOM element (`document.body`), erasing any DOM that was there previously. Opening the HTML file in a browser should now display a list of person names.
+`m.mount` gọi render componet xác định (`UserList`) vào một DOM element (`document.body`), xoá bất kỳ DOM nào đã có trước đó. Mở file HTML trong một trình duyệt sẽ hiển thị danh sách tên các người.
 
 * * *
 
-Right now, the list looks rather plain because we have not defined any styles.
+Ngay bây giờ, danh sách trông khá đơn giản vì chúng tôi chưa xác định bất kỳ kiểu nào.
 
-There are many similar conventions and libraries that help organize application styles nowadays. Some, like [Bootstrap][14] dictate a specific set of HTML structures and semantically meaningful class names, which has the upside of providing low cognitive dissonance, but the downside of making customization more difficult. Others, like [Tachyons][15] provide a large number of self-describing, atomic class names at the cost of making the class names themselves non-semantic. "CSS-in-JS" is another type of CSS system that is growing in popularity, which basically consists of scoping CSS via transpilation tooling. CSS-in-JS libraries achieve maintainability by reducing the size of the problem space, but come at the cost of having high complexity.
+Có nhiều quy ước và thư viện tương tự giúp tổ chức các kiểu ứng dụng ngày nay. Một số, như Bootstrap chạy một tập hợp các cấu trúc HTML cụ thể và các tên lớp có ý nghĩa về ngữ nghĩa, trong đó có xu hướng cung cấp sự thiếu hụt nhận thức thấp, nhưng nhược điểm của việc tùy biến trở nên khó khăn hơn. Những người khác, như Tachyons cung cấp một số lượng lớn các tên lớp tự mô tả, mức nguyên tử với chi phí tự đặt tên lớp không phải theo ngữ nghĩa. "CSS-in-JS" là một loại hệ thống CSS khác đang ngày càng phổ biến, về cơ bản bao gồm phạm vi CSS thông qua công cụ chuyển biên. Các thư viện CSS-in-JS đạt được khả năng bảo trì bằng cách giảm kích thước của không gian vấn đề, nhưng đến với chi phí có độ phức tạp cao.
 
-Regardless of what CSS convention/library you choose, a good rule of thumb is to avoid the cascading aspect of CSS. To keep this tutorial simple, we'll just use plain CSS with overly explicit class names, so that the styles themselves provide the atomicity of Tachyons, and class name collisions are made unlikely through the verbosity of the class names. Plain CSS can be sufficient for low-complexity projects (e.g. 3 to 6 man-months of initial implementation time and few project phases).
+Bất kể quy ước / thư viện CSS mà bạn chọn, nguyên tắc chung là tránh khía cạnh xếp tầng của CSS. Để giữ cho hướng dẫn này đơn giản, chúng tôi sẽ chỉ sử dụng CSS đơn giản với các tên lớp rõ ràng, để các kiểu tự cung cấp mức nguyên tử của Tachyons và sự xung đột tên lớp được thực hiện không qua độ dài của tên lớp. CSS thuần có thể đủ cho các dự án có độ phức tạp thấp (ví dụ: 3 đến 6 tháng của thời gian triển khai ban đầu và một vài giai đoạn dự án).
 
-To add styles, let's first create a file called `styles.css` and include it in the `index.html` file:
+Để thêm styles, đầu tiên hãy tạo file được gọi là `styles.css` và bao gồm file `index.html`:
     
     
     
@@ -224,7 +224,7 @@ To add styles, let's first create a file called `styles.css` and include it in t
     
     
 
-Now we can style the `UserList` component:
+Bây giờ chúng ta có thể stlye `UserList` component:
     
     
     .user-list {list-style:none;margin:0 0 10px;padding:0;}
@@ -232,19 +232,20 @@ Now we can style the `UserList` component:
     .user-list-item:hover {text-decoration:underline;}
     
 
-The CSS above is written using a convention of keeping all styles for a rule in a single line, in alphabetical order. This convention is designed to take maximum advantage of screen real estate, and makes it easier to scan the CSS selectors (since they are always on the left side) and their logical grouping, and it enforces predictable and uniform placement of CSS rules for each selector.
+CSS ở trên được viết bằng cách sử dụng quy ước giữ tất cả các style cho quy tắc trong một dòng, theo thứ tự bảng chữ cái. Quy ước này được thiết kế để tận dụng tối đa diện tích màn hình và dễ dàng quét các CSS selector (vì chúng luôn ở bên trái) và nhóm logic của chúng, và nó thực thi các quy tắc CSS có thể dự đoán và thống nhất cho mỗi selector.
 
-Obviously you can use whatever spacing/indentation convention you prefer. The example above is just an illustration of a not-so-widespread convention that has strong rationales behind it, but deviate from the more widespread cosmetic-oriented spacing conventions.
+Rõ ràng bạn có thể sử dụng bất kỳ khoảng trắng / indentation ước bạn thích. Ví dụ trên chỉ là một minh họa của một quy ước không phổ biến rộng rãi có các lý do mạnh mẽ đằng sau nó, nhưng đi chệch khỏi các quy ước khoảng trắng rộng hơn về quy chuẩn.
 
-Reloading the browser window now should display some styled elements.
+Tải lại cửa sổ trình duyệt bây giờ sẽ hiển thị một số style element.
 
 * * *
 
-Let's add routing to our application.
+Hãy thêm route vào ứng dụng của chúng ta.
 
-Routing means binding a screen to a unique URL, to create the ability to go from one "page" to another. Mithril is designed for Single Page Applications, so these "pages" aren't necessarily different HTML files in the traditional sense of the word. Instead, routing in Single Page Applications retains the same HTML file throughout its lifetime, but changes the state of the application via Javascript. Client side routing has the benefit of avoiding flashes of blank screen between page transitions, and can reduce the amount of data being sent down from the server when used in conjunction with an web service oriented architecture (i.e. an application that downloads data as JSON instead of downloading pre-rendered chunks of verbose HTML).
+Route có nghĩa là liên kết màn hình với một URL duy nhất, để làm chuyển từ một "trang" sang một trang khác. Mithril được thiết kế cho Single Page Applications, do đó, các "trang" này không nhất thiết là các file HTML khác nhau theo nghĩa truyền thống. Thay vào đó, route trong các Single Page Applications giữ lại cùng một file HTML trong suốt vòng đời của nó, nhưng thay đổi trạng thái của ứng dụng thông qua Javascript. Định tuyến phía client có lợi ích của việc tránh nhấp nháy màn hình trống giữa các chuyển tiếp trang và có thể giảm lượng dữ liệu được gửi xuống từ máy chủ khi được sử dụng kết hợp với kiến ​​trúc hướng dịch vụ web (tức là một ứng dụng tải xuống dữ liệu dưới dạng JSON thay vì tải xuống các đoạn mã chi tiết được trả trước).
 
-We can add routing by changing the `m.mount` call to a `m.route` call:
+
+Chúng ta có thể thêm route được thay đổi bởi `m.mount` gọi đến một `m.route`:
     
     
     // src/index.js
@@ -257,15 +258,15 @@ We can add routing by changing the `m.mount` call to a `m.route` call:
     })
     
 
-The `m.route` call specifies that the application will be rendered into `document.body`. The `"/list"` argument is the default route. That means the user will be redirected to that route if they land in a route that does not exist. The `{"/list": UserList}` object declares a map of existing routes, and what components each route resolves to.
+`m.route` gọi chỉ định rằng ứng dụng sẽ được hiển thị vào `document.body`. Đối số `"/list"` là mặc định của route. Điều đó có nghĩa là người dùng sẽ được chuyển hướng đến đường dẫn đó nếu họ đến một đường dẫn không tồn tại. Đối tượng `{"/list": UserList}` khai báo một bản đồ các route hiện có và các thành phần mà mỗi route xử lý.
 
-Refreshing the page in the browser should now append `#!/list` to the URL to indicate that routing is working. Since that route render UserList, we should still see the list of people on screen as before.
+Việc àm mới trang trong trình duyệt bây giờ sẽ thêm `#!/list` vào URL để cho biết định tuyến đang hoạt động. Do route đó render UserList, chúng ta vẫn sẽ thấy danh sách những người trên màn hình như trước đây.
 
-The `#!` snippet is known as a hashbang, and it's a commonly used string for implementing client-side routing. It's possible to configure this string it via [`m.route.prefix`][16]. Some configurations require supporting server-side changes, so we'll just continue using the hashbang for the rest of this tutorial.
+`#!` được biết đến như một hashbang, và nó là một chuỗi thường được sử dụng để thực hiện định tuyến phía client. Có thể cấu hình chuỗi này qua [`m.route.prefix`][16]. Một số cấu hình yêu cầu hỗ trợ thay đổi phía máy chủ, vì vậy chúng tôi sẽ tiếp tục sử dụng hashbang cho phần còn lại của hướng dẫn này.
 
 * * *
 
-Let's add another route to our application for editing users. First let's create a module called `views/UserForm.js`
+Hãy thêm một route khác vào ứng dụng của chúng tôi để chỉnh sửa người dùng. Đầu tiên hãy tạo một mô-đun gọi là `views/UserForm.js`
     
     
     // src/views/UserForm.js
@@ -277,7 +278,7 @@ Let's add another route to our application for editing users. First let's create
     }
     
 
-Then we can `require` this new module from `src/index.js`
+Sau đó chúng ta có thể `require` module mới này từ `src/index.js`
     
     
     // src/index.js
@@ -291,7 +292,7 @@ Then we can `require` this new module from `src/index.js`
     })
     
 
-And finally, we can create a route that references it:
+Và cuối cùng, chúng ta có thể tạo một route tham chiếu đến nó:
     
     
     // src/index.js
@@ -306,9 +307,9 @@ And finally, we can create a route that references it:
     })
     
 
-Notice that the new route has a `:id` in it. This is a route parameter; you can think of it as a wild card; the route `/edit/1` would resolve to `UserForm` with an `id` of `"1"`. `/edit/2` would also resolve to `UserForm`, but with an `id` of `"2"`. And so on.
+Lưu ý rằng route mới có `:id` trong nó. Đây là một tham số route; bạn có thể nghĩ về nó như một thẻ gốc; route `/edit/1` sẽ xử lý `UserForm` với `id` là `"1"`. `/edit/2` cũng sẽ xử lý `UserForm`, nhưng với một `id` là `"2"`. Và cứ thế.
 
-Let's implement the `UserForm` component so that it can respond to those route parameters:
+Hãy thực hiện `UserForm` component để nó có thể đáp ứng các thông số route đó:
     
     
     // src/views/UserForm.js
@@ -327,7 +328,7 @@ Let's implement the `UserForm` component so that it can respond to those route p
     }
     
 
-And let's add some styles to `styles.css`:
+Và hãy thêm một số style vào `styles.css`:
     
     
     /* styles.css */
@@ -343,7 +344,7 @@ And let's add some styles to `styles.css`:
     .button:hover {background:#e8e8e8;}
     
 
-Right now, this component does nothing to respond to user events. Let's add some code to our `User` model in `src/models/User.js`. This is how the code is right now:
+Ngay bây giờ, component này không có gì để phản hồi sự kiện của người dùng. Hãy thêm đoạn code vào `User` model trong `src/models/User.js`. Đây là cách mà code chạy đúng:
     
     
     // src/models/User.js
@@ -366,7 +367,7 @@ Right now, this component does nothing to respond to user events. Let's add some
     module.exports = User
     
 
-Let's add code to allow us to load a single user
+Hãy thêm đoạn code cho phép chúng ta load một user riêng lẻ:
     
     
     // src/models/User.js
@@ -401,7 +402,7 @@ Let's add code to allow us to load a single user
     module.exports = User
     
 
-Notice we added a `User.current` property, and a `User.load(id)` method which populates that property. We can now populate the `UserForm` view using this new method:
+Chú ý chúng ta đã thêm một `User.current` property, và một phương thức `User.load(id)` đưa vào thuộc tính. Chúng ta có thê đưa `UserForm` view sử dụng phương thức mới này:
     
     
     // src/views/UserForm.js
@@ -422,9 +423,9 @@ Notice we added a `User.current` property, and a `User.load(id)` method which po
     }
     
 
-Similar to the `UserList` component, `oninit` calls `User.load()`. Remember we had a route parameter called `:id` on the `"/edit/:id": UserForm` route? The route parameter becomes an attribute of the `UserForm` component's vnode, so routing to `/edit/1` would make `vnode.attrs.id` have a value of `"1"`.
+Tương tự như `UserList` component, `oninit` gọi `User.load()`. Hãy nhớ rằng chúng tôi đã có tham số route được gọi là  `:id` trên `"/edit/:id": UserForm` route? Tham số route trở thành một thuộc tính của `UserForm` component, vì vậy  routing đến `/edit/1` sẽ tạo  `vnode.attrs.id` có giá trị `"1"`.
 
-Now, let's modify the `UserList` view so that we can navigate from there to a `UserForm`:
+Bây giờ, hãy chỉnh sửa `UserList` để chúng ta có thể điều hướng từ đó đến `UserForm`:
     
     
     // src/views/UserList.js
@@ -441,13 +442,13 @@ Now, let's modify the `UserList` view so that we can navigate from there to a `U
     }
     
 
-Here we changed `.user-list-item` to `a.user-list-item`. We added an `href` that references the route we want, and finally we added `oncreate: m.route.link`. This makes the link behave like a routed link (as opposed to merely behaving like a regular link). What this means is that clicking the link would change the part of URL that comes after the hashbang `#!` (thus changing the route without unloading the current HTML page)
+Ở đây chúng đã thay đổi `.user-list-item` thành `a.user-list-item`. Chúng ta đã thêm một `href` để cập đến route chúng ta muốn, và cuối cùng chúng ta đã thêm `oncreate: m.route.link`. Điều này làm cho liên kết hoạt động giống như một liên kết route (trái ngược với việc chỉ hoạt động giống như một liên kết thông thường). Điều này có nghĩa là việc nhấp vào liên kết sẽ thay đổi một phần của URL xuất hiện sau hashbang `#!` (do đó thay đổi route mà không cần tải trang HTML hiện tại)
 
-If you refresh the page in the browser, you should now be able to click on a person and be taken to a form. You should also be able to press the back button in the browser to go back from the form to the list of people.
+Nếu bạn làm mới trang trong trình duyệt, bây giờ bạn có thể nhấp vào một người và được đưa đến một form. Bạn cũng có thể nhấn nút quay lại trong trình duyệt để quay lại từ form tới danh sách người
 
 * * *
 
-The form itself still doesn't save when you press "Save". Let's make this form work:
+Bản thân form vẫn không lưu khi bạn nhấn "Lưu". Hãy làm cho form này hoạt động:
     
     
     // src/views/UserForm.js
@@ -479,9 +480,9 @@ The form itself still doesn't save when you press "Save". Let's make this form w
     }
     
 
-We added `oninput` events to both inputs, that set the `User.current.firstName` and `User.current.lastName` properties when a user types.
+Chúng ta có thể thêm sự kiện `oninput` cho cả 2 đầu vào, thiết lập `User.current.firstName` và `User.current.lastName` properties khi một người dùng nhập.
 
-In addition, we declared that a `User.save` method should be called when the "Save" button is pressed. Let's implement that method:
+Ngoài ra, chúng tôi đã mô tả phương thức `User.save` nên được gọi khi nút  "Save" được nhấp . Hãy thực hiện phương thức : 
     
     
     // src/models/User.js
@@ -525,15 +526,15 @@ In addition, we declared that a `User.save` method should be called when the "Sa
     module.exports = User
     
 
-In the `save` method at the bottom, we used the `PUT` HTTP method to indicate that we are upserting data to the server.
+Trong phương thức `save` ở dưới, chúng ta sử dụng phương thức HTTP `PUT` để chỉ ra rằng chúng tôi đang đẩy dữ liệu đến máy chủ.
 
-Now try editing the name of a user in the application. Once you save a change, you should be able to see the change reflected in the list of users.
+Bây giờ hãy thử chỉnh sửa tên của người dùng trong ứng dụng. Khi bạn lưu thay đổi, bạn sẽ có thể thấy thay đổi được phản ánh trong danh sách người dùng.
+
 
 * * *
+Hiện tại, chúng ta chỉ có thể điều hướng trở lại danh sách người dùng thông qua nút quay lại trình duyệt. Lý tưởng nhất, chúng ta muốn có một menu - hoặc tổng quát hơn, một layout nơi chúng ta có thể đặt các element UI global.
 
-Currently, we're only able to navigate back to the user list via the browser back button. Ideally, we would like to have a menu - or more generically, a layout where we can put global UI elements
-
-Let's create a file `src/views/Layout.js`:
+Hãy tạo một file `src/views/Layout.js`:
     
     
     // src/views/Layout.js
@@ -551,13 +552,11 @@ Let's create a file `src/views/Layout.js`:
     }
     
 
-This component is fairly straightforward, it has a `
-` with a link to the list of users. Similar to what we did to the `/edit` links, this link uses `m.route.link` to activate routing behavior in the link.
+component khá đơn giản, nó có `<nav>` với một link đến danh sách người dùng. Tương tự như những gì chúng ta đã làm với link `/edit`, link này sử dụng `m.route.link` để kích hoạt route trong link.
 
-Notice there's also a `
-` element with `vnode.children` as children. `vnode` is a reference to the vnode that represents an instance of the Layout component (i.e. the vnode returned by a `m(Layout)` call). Therefore, `vnode.children` refer to any children of that vnode.
+Chú ý cũng có một element `<section>` với `vnode.children` giống như children. `vnode` là một tham chiếu đến vnode đại diện cho một thể hiện của Layout (tức là vnode được trả về bởi một `m(Layout)`). Vì thế, `vnode.children` đề cập đến bất kỳ children nào của vnode đó. 
 
-Let's add some styles:
+Hãy thêm một vài style:
     
     
     /* styles.css */
@@ -576,7 +575,7 @@ Let's add some styles:
     .button:hover {background:#e8e8e8;}
     
 
-Let's change the router in `src/index.js` to add our layout into the mix:
+Hãy thay đổi router trong `src/index.js` để thêm vào layout của chúng ta trong mix:
     
     
     // src/index.js
@@ -600,21 +599,27 @@ Let's change the router in `src/index.js` to add our layout into the mix:
     })
     
 
-We replaced each component with a [RouteResolver][17] (basically, an object with a `render` method). The `render` methods can be written in the same way as regular component views would be, by nesting `m()` calls.
+Chúng ta thay thế mỗi component với một [RouteResolver][17] (về cơ bản, một đối tượng với một phương thức `render`). Phương thức `render` các phương thức có thể được viết theo cách tương tự như view component thông thường bởi lời gọi `m()` .
 
-The interesting thing to pay attention to is how components can be used instead of a selector string in a `m()` call. Here, in the `/list` route, we have `m(Layout, m(UserList))`. This means there's a root vnode that represents an instance of `Layout`, which has a `UserList` vnode as its only child.
+Điều thú vị cần chú ý là cách các component lời gọi `m()`. Ở đây, trong `/list` route, chúng ta có `m(Layout, m(UserList))`. Điều này có nghĩa là có một vnode gốc đại diện cho một thể hiện của `Layout`, trong đó có một `UserList` vnode là con duy nhất
 
-In the `/edit/:id` route, there's also a `vnode` argument that carries the route parameters into the `UserForm` component. So if the URL is `/edit/1`, then `vnode.attrs` in this case is `{id: 1}`, and this `m(UserForm, vnode.attrs)` is equivalent to `m(UserForm, {id: 1})`. The equivalent JSX code would be ``.
+Trong `/edit/:id` route, cũng có một đối số `vnode` mang theo tham số route trong `UserForm` component. Vì vậy nếu URL là `/edit/1`, sau đó `vnode.attrs` trong trường hợp này là `{id: 1}`, và `m(UserForm, vnode.attrs)`  này tương đương với `m(UserForm, {id: 1})`. code JSX tương đương sẽ là `<UserForm id={vnode.attrs.id} />`.
 
-Refresh the page in the browser and now you'll see the global navigation on every page in the app.
+Làm mới trang trong trình duyệt và bây giờ bạn sẽ thấy điều hướng toàn bộ trên mọi trang trong ứng dụng.
+
 
 * * *
+
+Điều này kết thúc hướng dẫn.
+
+Trong hướng dẫn này, chúng ta đã trải qua quá trình tạo một ứng dụng rất đơn giản, nơi chúng ta có thể liệt kê người dùng từ một máy chủ và chỉnh sửa chúng riêng lẻ. Là một bài tập bổ sung, hãy cố gắng tự tạo và xóa người dùng.
 
 This concludes the tutorial.
 
 In this tutorial, we went through the process of creating a very simple application where we can list users from a server and edit them individually. As an extra exercise, try to implement user creation and deletion on your own.
 
-If you want to see more examples of Mithril code, check the [examples][18] page. If you have questions, feel free to drop by the [Mithril chat room][19].
+Nếu bạn muốn xem thêm ví dụ về code Mithril, hãy kiểm tra trang ví dụ. Nếu bạn có thắc mắc, vui lòng ghé qua phòng chat Mithril.
+
 
 * * *
 
