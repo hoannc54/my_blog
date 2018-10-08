@@ -614,10 +614,6 @@ Làm mới trang trong trình duyệt và bây giờ bạn sẽ thấy điều h
 
 Trong hướng dẫn này, chúng ta đã trải qua quá trình tạo một ứng dụng rất đơn giản, nơi chúng ta có thể liệt kê người dùng từ một máy chủ và chỉnh sửa chúng riêng lẻ. Là một bài tập bổ sung, hãy cố gắng tự tạo và xóa người dùng.
 
-This concludes the tutorial.
-
-In this tutorial, we went through the process of creating a very simple application where we can list users from a server and edit them individually. As an extra exercise, try to implement user creation and deletion on your own.
-
 Nếu bạn muốn xem thêm ví dụ về code Mithril, hãy kiểm tra trang ví dụ. Nếu bạn có thắc mắc, vui lòng ghé qua phòng chat Mithril.
 
 
