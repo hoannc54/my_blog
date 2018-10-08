@@ -1,6 +1,6 @@
-# Simple application
+# Khởi tạo một ứng dụng đơn giản
 
-Hãy phát triển một ứng dụng đơn giản bao gồm một số khía cạnh chính của Single Page Applications.
+Hãy phát triển một ứng dụng đơn giản bao gồm một số đặc điểm chính của Single Page Applications.
 
 Một ví dụ đang chạy có thể thấy ở đây [flems: Simple Application]()
 
@@ -20,18 +20,18 @@ Một ví dụ đang chạy có thể thấy ở đây [flems: Simple Applicatio
 </html>
 ```
 
-Dòng `<!doctype html>` cho biết đây là một HTML 5 document. Thẻ meta `charset` cho biết encodeing của document và thẻ `viewport` đưa ra cách trình duyệt mobile nên mở rộng page. Thẻ `title` chứa đoạn chữ hiển thị trên tab trình duyệt cho ứng dụng này, và thẻ `script` cho biết đường dẫn nào của file Javascript để ứng dụng sử dụng.
+Dòng `<!doctype html>` cho biết đây là một HTML 5 document. Thẻ meta `charset` cho biết encodeing của document và thẻ `viewport` đưa ra cách trình duyệt mobile nên mở rộng page. Thẻ `title` chứa đoạn tiêu đề hiển thị trên tab trình duyệt cho ứng dụng này, và thẻ `script` cho biết đường dẫn nào của file Javascript để ứng dụng sử dụng.
 
-Chúng ta nên tạo entire ứng dụng trong một file Javascript duy nhất, nhưng làm như vậy sẽ gây khó khăn cho việc điều hướng codebase sau này. Thay vào đó, hãy chia code vào các module và tập hợp các module đó vào một bundle `bin/app.js`.
+Chúng ta nên tạo toàn bộ ứng dụng trong một file Javascript duy nhất, nhưng làm như vậy sẽ gây khó khăn cho việc điều hướng codebase sau này. Thay vào đó, hãy chia code vào các module và tập hợp các module đó vào một bundle `bin/app.js`.
 
-Đó là một số cách để cài đặt công cụ bundler, nhưng hầu hết được phân phối qua NPM. Trong thực tế, hầu hết các thư viện và công cụ Javascript hiện đại được phân phối qua các đó, bao gồm cả Mithril. NPM viết tắt cho Node.js Package Manager. Để download NPM, cài đặt Node.js; NPM được cài tự động với nó. Khi bạn có Node.js và NPM được cài đặt, mở command line và chạy câu lệnh này: 
+Có nhiều cách để cài đặt công cụ quản lý code, nhưng hầu hết được phân phối qua NPM. Trong thực tế, hầu hết các thư viện và công cụ Javascript hiện đại được phân phối qua cách đó, bao gồm cả Mithril. NPM viết tắt cho Node.js Package Manager. Để download NPM, cài đặt Node.js; NPM được cài tự động với nó. Khi bạn có Node.js và NPM được cài đặt, mở command line và chạy câu lệnh này: 
 
 ```
 npm init -y
 ```
 Nếu NPM được cài đúng, một file `package.json` sẽ được cài đặt. File này sẽ chưa một bộ mô tả file của dự án. Cảm thấy tự do để chỉnh sửa project và thông tin tác giả trong file này.
 
-Để cài đặt Mithril, theo dõi hướng dẫn trong trang installtion. Khi bạn có một project skeleton với Mithril được cài đặt, chúng ta sẵn sàng để tạo ứng dụng. 
+Để cài đặt Mithril, làm theo hướng dẫn trong trang installtion. Khi bạn có một project cơ bản với Mithril được cài đặt, chúng ta sẵn sàng để tạo ứng dụng. 
 
 Hãy bắt đầu bằng cách tạo một module để lưu trữ trạng thái của chúng ta. Hãy tạo một file với tên gọi `src/models/User.js`
 
@@ -95,7 +95,7 @@ var User = {
 
 module.exports = User
 ```
-Tùy chọn `method` là một HTTP method. Để nhận dữ liệu từ server mà không gây ra tác dụng phụ của server, chúng ta cần sử dụng phương thức `GET`. `url` là địa chỉ cho API endpoint. Dòng `withCredentials: true` cho biết chúng ta đang sử dụng cookies (đó là một yêu cầu cho REM API).
+Tùy chọn `method` là một HTTP method. Để nhận dữ liệu từ server mà không gây ra các ngoại lệ lên server, chúng ta cần sử dụng phương thức `GET`. `url` là địa chỉ cho API endpoint. Dòng `withCredentials: true` cho biết chúng ta đang sử dụng cookies (đó là một yêu cầu cho REM API).
 
 Lời gọi `m.request` trả về một Promise để giải quyết dữ liệu từ endpoint. Theo mặc định, Mithril lấy một body HTTP response ở dạng JSON và tự động parse nó vào object hoặc array trong Javascript. Lời gọi callback `.then` chạy khi XHR request hoàn thành. Trong trường hợp này, callback assign `result.data` array đến `User.list`
 
@@ -127,9 +127,9 @@ module.exports = {
 }
 ```
 
-Theo mặc định, Mithril view được mô tả sử dụng [hyperscript](https://mithril.js.org/hyperscript.html). Hyperscript cung cấp một cú pháp vắn tắt mà có thể  thụt vào một cách tự nhiên hơn HTML cho các thẻ phức tạp, và ngoài ra, từ cú pháp đơn giản là Javascript, có thể tận dụng nhiều hệ sinh thái các công cụ của Javascript, ví dụ [Babel][7], [JSX][8] (inline-HTML syntax extension), [eslint][9] (linting), [uglifyjs][10] (minification), [istanbul][11] (code coverage), [flow][12] (static type analysis), ....
+Theo mặc định, Mithril view được mô tả sử dụng [hyperscript](https://mithril.js.org/hyperscript.html). Hyperscript cung cấp một cú pháp vắn tắt mà có thể chèn HTML vào một cách tự nhiên hơn cho các thẻ phức tạp, và ngoài ra, từ cú pháp đơn giản là Javascript, có thể tận dụng nhiều hệ sinh thái các công cụ của Javascript, ví dụ [Babel][7], [JSX][8] (inline-HTML syntax extension), [eslint][9] (linting), [uglifyjs][10] (minification), [istanbul][11] (code coverage), [flow][12] (static type analysis), ....
 
-Hãy sử dụng Mithril hyperscript để tạo một danh sách các item. Hyperscript là ngôn ngữ phổ biến cách viết Mithril views, nhưng [JSX là một lựa chọn phổ biế khác bạn có thể thử dùng][8] bạn sẽ thấy thoải mãi hơn với những thứ cơ bản:
+Hãy sử dụng Mithril hyperscript để tạo một danh sách các item. Hyperscript là ngôn ngữ phổ biến cách viết Mithril views, nhưng [JSX là một lựa chọn phổ biế khác bạn có thể thử dùng][8] khi bạn thấy thoải mãi hơn với những thứ cơ bản:
     
     
     // src/views/UserList.js
@@ -144,9 +144,8 @@ Hãy sử dụng Mithril hyperscript để tạo một danh sách các item. Hyp
     
 
 `".user-list"` là một CSS selector, và giống như bạn muốn, `.user-list` đại diện cho một class. Khi một thẻ không được chỉ định, `div` là thẻ mặc định. Vì vậy, view này tương đương với `<div class="user-list"></div>`
-`.
 
-Bây giờ, Now, hãy tham khảo danh sách các user từ model chúng ta đã tạo (`User.list`) để tự động duyệt qua data:
+Bây giờ, hãy tham khảo danh sách các user từ model chúng ta đã tạo (`User.list`) để tự động duyệt qua data:
     
     
     // src/views/UserList.js
@@ -162,9 +161,9 @@ Bây giờ, Now, hãy tham khảo danh sách các user từ model chúng ta đã
     }
     
 
-Từ `User.list` là một mảng Javascript, và từ khi hyperscript views là Javascript, chúng ta có thể lặp thông qua mản sử dụng phương thức `.map`. Điều này tạo ra một mảng các vnodes đại diện cho một danh sách các thẻ `div`, mỗi trên chứa một user.
+Vì `User.list` là một mảng trên Javascript, và hyperscript views cũng là Javascript, chúng ta có thể lặp thông qua mảng bằng cách sử dụng phương thức `.map`. Điều này tạo ra một mảng các vnodes đại diện cho một danh sách các thẻ `div`, mỗi trên chứa một user.
 
-The problem, of course, is that we never called the `User.loadList` function. Therefore, `User.list` is still an empty array, and thus this view would render a blank page. Since we want `User.loadList` to be called when we render this component, we can take advantage of component [lifecycle methods][13]:
+Có vấn đề, tất nhiên rồi, chúng ta chưa bao giờ gọi hàm User.loadList. Vì thế, User.list vẫn là một array rỗng, và view này chỉ trả về một trang rỗng. Vì chúng ta muốn User.loadList được gọi khi chúng ta render component, chúng ta có thể tận dụng được ưu điểm của vòng đời của các phương thức:
     
     
     // src/views/UserList.js
