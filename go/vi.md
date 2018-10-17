@@ -1,6 +1,6 @@
 # Tại sao bạn lên học Go ?
 
-Trong vài năm qua, có sự gia tăng của ngôn ngữ lập trình mới: Go or GoLang. Không có gì làm một developer trở nên crazy hơn là một ngôn ngữ lập trình mới phải không ? Vì vậy tôi đã bắt đầu học Go trước 4-5 tháng và ở đây tôi sẽ nói cho bạn tại sao bạn cũng nên học ngôn ngữ mới này. 
+Trong vài năm qua, có một ngôn ngữ lập trình mới đang nổi lên : Go hoặc GoLang. Không có gì làm một developer trở nên crazy hơn là một ngôn ngữ lập trình mới phải không ? Vì vậy tôi đã bắt đầu học Go trước 4-5 tháng và ở đây tôi sẽ nói cho bạn tại sao bạn cũng nên học ngôn ngữ mới này. 
 
 Tôi sẽ không dạy bạn, làm thế nào bạn viết "Hello world!" trong bài viết này. Có rất nhiều các bài viết online cho điều đó. Tôi sẽ giải thích thời điểm hiện tại của phần cứng-phần mềm máy tính và tại sao chúng ta cần ngôn ngữ mới giống như Go ? Bởi vì nếu không có bất kỳ vấn đề gì, thì chúng ta không cần giải quyết đúng không ?
 
@@ -8,7 +8,7 @@ Tôi sẽ không dạy bạn, làm thế nào bạn viết "Hello world!" trong 
 
 Định luật Moore là sai
 
-Bộ xử lý Pentium 4 đầu tiên với tốc độ 3.0 GHz được giới thiệu vào năm 2004 bởi Intel. Ngày ngay, Macbook Pro 2016 của tôi có tốc độ 2.9 GHz. Vì vậy, gần một thập kỷ, không có quá nhiều thay đổi về hiệu năng của bộ xử lý. Bạn có thể thấy sự so sánh về sự gia tăng hiệu năng của bộ xử lý theo thời gian trong biểu đồ dưới đấy ![](https://cdn-images-1.medium.com/max/1600/1*Azz7YwzYYR6lDKFj8iIGZg.png)
+Bộ xử lý Pentium 4 đầu tiên với tốc độ 3.0 GHz được Intel giới thiệu vào năm 2004 . Ngày ngay, Macbook Pro 2016 của tôi có tốc độ 2.9 GHz. Vì vậy, gần một thập kỷ, không có quá nhiều thay đổi về hiệu năng của bộ xử lý. Bạn có thể thấy sự so sánh về sự gia tăng hiệu năng của bộ xử lý theo thời gian trong biểu đồ dưới đấy ![](https://cdn-images-1.medium.com/max/1600/1*Azz7YwzYYR6lDKFj8iIGZg.png)
 
 Từ biểu đồ phía trên bạn có thể thấy hiệu suất của single-thread và tần số của bộ xử lý vẫn ổn định trong gần một thập kỷ. Nếu bạn đang nghĩ rằng việc thêm nhiều transistor là giải quyết được, thì bạn đã sai. Điều này là do ở quy mô nhỏ hơn một số tính chất lượng tử bắt đầu xuất hiện (giống như tunneling) và bởi vì nó thực sự tốn chi phí hơn để đưa thêm transistor ([Tại sao ](https://www.quora.com/What-is-Quantum-Tunneling-Limit-How-does-it-limit-the-size-of-a-transistor)) và số lượng các transistor bạn có thể thêm trên mỗi đô la bắt đầu giảm.
 
@@ -29,7 +29,7 @@ Giống như chúng ta đã thảo luận ở trên, các nhà sản xuất ph�
 
 Nhưng, hầu hết các ngôn ngữ lập trình hiện đại (như Java, Python ..) là từ 90s môi trường đơn luồng. Hầu hết các ngôn ngữ lập trình hỗ trợ đa luồng. Nhưng vấn đề thực tế đi liền với việc thực thi đồng thời, luồng bị khóa, race conditions và deadlock. Những thứ đó gây khó khăn để tạo một ứng dụng đa luồng trên các ngôn ngữ đó. 
 
-Một ví dụ, tạo một luồng trên Java không là một bộ nhớ hiệu quả. Mỗi luồng tốn khoảng 1MB kích thước bộ nhớ heap và cuối nếu bạn bắt đầu xoay vòng 1 nghìn luồng, chúng sẽ tạo áp lực lớn lên heap và sẽ gây ra việc ngừng do hết bộ với. Ngoài ra, nếu bạn muốn giao tiếp giữa hai hay nhiều luồng, điều đó là rất khó.
+Một ví dụ, tạo một luồng trên Java không thực sự hiệu quả về bộ nhớ. Mỗi luồng tốn khoảng 1MB kích thước bộ nhớ heap và cuối nếu bạn bắt đầu xoay vòng 1 nghìn luồng, chúng sẽ tạo áp lực lớn lên heap và sẽ gây ra việc ngừng do hết bộ với. Ngoài ra, nếu bạn muốn giao tiếp giữa hai hay nhiều luồng, điều đó là rất khó.
 
 Mặt khác, Go được release vào năm 2009 khi bộ xử lý nhiều core đã có sẵn. Đó là lý do tại sao Go được xây dựng để duy trì sự đồng thời trong suy nghĩ. Go có goroutines thay thế cho luồng. Chúng mất khoảng 2Kb bộ nhớ heap. Vì vậy, bạn có thể xoay vòng hàng triệu goroutine bất cứ lúc nào
 
@@ -66,9 +66,9 @@ Go mang lại sự tốt nhất của cả thế giới. Giống như các ngôn
 
 ## Code được viết bằng Go rất dễ bảo trì
 
-Hãy để tôi nói với bạn một điều. Go không có cú pháp lập trình điên như các ngôn ngữ khác. Nó có cú pháp rất gọn gàng và sạch sẽ.
+Hãy để tôi nói với bạn một điều. Go không có cú pháp lập trình điên rồ như các ngôn ngữ khác. Nó có cú pháp rất gọn gàng và sạch sẽ.
 
-Các nhà thiết kế của Go tại google đã có điều này trong tâm trí khi họ đã tạo ra ngôn ngữ. Vì google có nền tảng code lớn và hàng nghìn developer đang làm việc trên cùng một nền tảng code đó nên code đơn giản để hiểu được cho các developer khác và một đoạn code nên có ảnh hưởng ngoài tối thiểu trên một đoạn code khác. Điều đó sẽ làm cho mã dễ bảo trì và dễ sửa đổi
+Các nhà thiết kế của Go tại google luôn nghĩ về điều này trong tâm trí khi họ đã tạo ra ngôn ngữ. Vì google có nền tảng code lớn và hàng nghìn developer đang làm việc trên cùng một nền tảng code đó nên code đơn giản để hiểu được cho các developer khác và một đoạn code nên có ảnh hưởng ngoài tối thiểu trên một đoạn code khác. Điều đó sẽ làm cho mã dễ bảo trì và dễ sửa đổi
 
 Go cố tình bỏ qua nhiều tính năng của ngôn ngữ OOP hiện đại
 * Không có class nào. Mọi thứ chỉ được chia thành các gói. Go chỉ có cấu trúc thay vì các class.
@@ -79,7 +79,7 @@ Go cố tình bỏ qua nhiều tính năng của ngôn ngữ OOP hiện đại
 * Không generic
 * Không exception
 
-Những thay đổi trên làm cho Go khác với các ngôn ngữ khác và nó làm cho việc lập trình trong Go khác với các ngôn ngữ khác. Bạn có thể không thích một số điểm trên. Tuy nhiên, nó không giống như bạn không thể code ứng dụng của bạn mà không có các tính năng trên. Tất cả những gì bạn phải làm là viết 2-3 dòng nữa. Nhưng về mặt tích cực, nó sẽ làm cho code của bạn sạch hơn và thêm rõ ràng hơn cho code của bạn.
+Những thay đổi trên làm cho Go khác với các ngôn ngữ khác và nó làm cho việc lập trình trong Go khác với các ngôn ngữ khác. Bạn có thể không thích một số điểm trên. Tuy nhiên, nó không giống như bạn không thể code ứng dụng của bạn mà không có các tính năng trên. Tất cả những gì bạn phải làm là viết 2-3 dòng nữa. Nhưng về mặt tích cực, nó sẽ làm cho code của bạn sạch hơn và rõ ràng hơn.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*nlpYI256BR71xMBWd1nlfg.png)
 
