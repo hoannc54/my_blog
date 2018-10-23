@@ -10,7 +10,7 @@ Tại sao ?
 
 Tốt, Google gần đây thông báo rằng RankBrain là tín hiệu xếp hạng quan trọng thứ ba của Google
 
-Và nó nó đang trở lên quan trọng mỗi ngày.
+Và nó đang dần trở lên quan trọng mỗi ngày.
 
 Trong hướng dẫn hôm nay bạn sẽ học mọi thứ bạn cần để biết về thuật toán RankBrain của Google. Nào bắt đầu thôi
 
@@ -35,28 +35,28 @@ RankBrain là một thuật toán học máy (AI) mà Google sử dụng để s
 
 Vậy: Điều gì tạo nên sự khác biệt RankBrain ?
 
-Trước RankBrain, 100% thuật toán của Google là được code tay. Quá trình này đã diễn ra như đây :
+Trước RankBrain, 100% thuật toán của Google là được code tay. Quá trình này đã diễn ra như sau :
 ![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/1_2_google-engineers.png)
 
-Người kỹ sư vẫn làm việc trên thuật toán, dĩ nhiên. Nhưng ngày nay RankBrain cũng làm những điều đó trên nền tảng.
+dĩ nhiên.Người kỹ sư vẫn làm việc trên thuật toán,  Nhưng ngày nay RankBrain tự thực hiện những điều đó
 
 ![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/1_3_rankbrain-process.png)
 
 Nói ngắn gọn, RankBrain tự điều chỉnh thuật toán.
 
-Tuỳ thuộc vào từ khoá, RankBrain sẽ tăng hoặc giảm tầm quan trọng của backlink, nội dung mới, chiều dài của nội dung, doamin, ...
+Tuỳ thuộc vào từ khoá, RankBrain sẽ tăng hoặc giảm tầm quan trọng của backlink, nội dung mới, chiều dài của nội dung, domain ...
 
-Sau đó, nó xem xét cách tìm kiếm của Google tương tác với kết quả tìm kiếm mới. Nếu người dùng thích thuật toán mới tốt hơn, nó vẫn thế. Nếu không, RankBrain quay trở lại thuật toán cũ.
+Sau đó, nó xem xét cách tìm kiếm của Google tương tác với kết quả tìm kiếm mới. Nếu người dùng thích thuật toán mới hơn, nó sẽ giữ nguyên. Nếu không, RankBrain sẽ quay trở lại thuật toán cũ.
 
 Đây là phần điên rồ nhất: 
 
-Google yêu cầu một nhóm các kỹ sư Google để xác định trang tốt nhất cho một tìm kiếm cụ thể. Họ cũng yêu cầu RankBrain
+Google hỏi một nhóm các kỹ sư Google để xác định trang tốt nhất cho một tìm kiếm được đưa ra. Họ cũng hỏi RankBrain
 
-Và RankBranin vượt trội so với kỹ sư của Google là 10 %
+Và RankBranin vượt trội so với kỹ sư của Google  khoảng 10%
 
 ![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/1_4_accuracy.png)
 
-Nói ngắn gọn, RankBrain làm việc. Và nó vẫn ở đây
+Nói ngắn gọn, RankBrain hoạt động hiệu quả . Và nó vẫn tiếp tục như vậy.
 
 Bây giờ bạn có thể thấy tổng quan RankBrain là gì, chúng ta sẽ đi sâu vào cách hoạt động của nó.
 
@@ -65,7 +65,7 @@ Bây giờ bạn có thể thấy tổng quan RankBrain là gì, chúng ta sẽ 
 RankBrain có 2 công việc chính: 
 
 1. Hiểu được truy vấn tìm kiếm (từ khoá)
-2. Đo lường cách mà người dùng tương tác với kết quả (người dùng thoả mãn)
+2. Tính toán sự tương tác với kết quả tìm kiếm (Sự thỏa mãn của người dùng )
 
 Hãy chia nhỏ từng phần:
 
@@ -75,11 +75,11 @@ Một vài năm gần đây, Google có một vấn đề:
 
 15% từ khoá người dùng gõ vào Google chưa từng thấy trước đây.
 
-15% có vẻ không nhiều. Nhưng khi bạn thực hiện hàng tỉ kết quả trên ngày, đã lên đến 450 triệu từ khoá đã làm cho Google nổi bật mỗi ngày.
+15% có vẻ không nhiều. Nhưng khi bạn tìm kiếm hàng tỉ kết quả trên ngày, đã lên đến 450 triệu từ khoá đã làm cho Google nổi bật mỗi ngày.
 
-Trước RankBrain, Google sẽ quét các trang để thấy nếu chúng chứa từ khoá chinnhs xác mà mọi người đã tìm kiếm.
+Trước RankBrain, Google sẽ quét các trang để thấy nếu chúng chứa từ khoá chính xác mà mọi người đã tìm kiếm.
 
-NHưng bởi vì những từ khoá này là thương hiệu mới, Google không biết điều mà người dùng thực sự tìm kiếm. Nên chúng bị đoán.
+NHưng bởi vì những từ khoá này là hoàn toàn mới, Google không biết điều mà người dùng thực sự tìm kiếm. Nên chúng bị đoán.
 
 Ví dụ, hãy nói bạn tìm kiếm "the grey console developed by Sony". Google sẽ tìm các trang chứa các từ  “grey”, “console”, “developed” và “Sony”.
 
@@ -95,7 +95,7 @@ Cái gì đã thay đổi ? Trước đây, Google sẽ thử ghép các từ tr
 
 Ngày nay, RankBrain cố gắng tìm hiểu ý bạn là gì. Bạn biết đấy, nó giống như một con người.
 
-Làm thế nào? Bằng cách so sánh các từ khoá chưa từng thấy trước đây với các từ khoá mà Google Has đã thấy trước.
+Làm thế nào? Bằng cách so sánh các từ khoá chưa từng thấy trước đây với các từ khoá mà Google đã thấy trước.
 
 Ví dụ, Google RankBrain có thể nhận tháy rằng rất nhiều người tìm kiếm  “grey console developed by Nintendo”.
 
@@ -117,7 +117,7 @@ Ví dụ, Google nó rằng kỹ thuật đó _"hiểu rằng Paris và Pháp đ
 
 ![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/2_6_country-and-capital.png)
 
-Mặc dù bài viết này không nói cụ thể về RankBrain, RankBrain có khả năng sử dụng công nghệ tương tự.
+Mặc dù bài viết này không nói cụ thể về RankBrain, RankBrain dường như cũng sử dụng công nghệ tương tự.
 
 Tóm lại: Google RankBrain vượt trội so với việc khớp từ khóa đơn giản. Nó biến cụm từ tìm kiếm của bạn thành các khái niệm ... và cố gắng tìm các trang bao gồm khái niệm đó.
 
@@ -125,7 +125,7 @@ Trong chương 3, tôi sẽ chỉ cho bạn cách thay đổi cách chúng ta n�
 
 #### Cách RankBrain đo lường sự hài lòng của người dùng
 
-Chắc chắn, RankBrain có thể mất một lần để lao vào hiểu từ khóa mới. Và nó thậm chí có thể tự tinh chỉnh thuật toán.
+Chắc chắn, RankBrain có thể đã cố gắng thử để hiểu từ khóa mới. Và nó thậm chí có thể tự tinh chỉnh thuật toán.
 
 Nhưng một câu hỏi lớn:
 
@@ -148,11 +148,11 @@ Nó rất chú ý đến cách bạn tương tác với kết quả tìm kiếm.
 * Bounce Rate
 * Pogo-sticking
 
-Đây được gọi là tín hiệu về trải nghiệm người dùng (tín hiệu UX).
+Đây được gọi là các tín hiệu về trải nghiệm người dùng (tín hiệu UX).
 
 Hãy nhìn một ví dụ: 
 
-Bạn đã bị kéo một cơ bắp ở phía sau của bạn khi chơi tennis. Vì vậy, bạn tìm kiếm "pulled back muscle" trong Google
+Bạn đã bị dãn cơ lưng khi chơi tennis. Vì vậy, bạn tìm kiếm "pulled back muscle" trong Google
 
 ![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/2_8_google-search.png)
 
@@ -182,7 +182,7 @@ Nếu Google thông báo rằng mọi người nhanh chóng rời khỏi trang �
 
 ![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/2_11_pogo-stick-effect-3.png)
 
-Và nếu Google thông báo rằng rất nhiều người DỪNG gắn bó với một kết quả cụ thể, họ sẽ tăng cường trang đó để giúp tìm kiếm dễ dàng hơn.
+Và nếu Google thông báo rằng rất nhiều người DỪNG gpogo-sticking với một kết quả cụ thể, họ sẽ tăng cường trang đó để giúp tìm kiếm dễ dàng hơn.
 
 ![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/2_12_pogo-stick-effect-4.png)
 
