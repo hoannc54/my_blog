@@ -296,7 +296,126 @@ Cụ thể, tôi cố gắng đưa ra một tiêu đề phụ cho mỗi nội du
 
 # Chương 6: Chiến lược Tối ưu hóa RankBrain và Case Studies
 
+Trong chương này, tôi sẽ giới thiệu một số chiến lược nhanh mà bạn có thể sử dụng để tối ưu hóa trang web của mình cho RankBrain.
 
+## Tăng Brand Awareness. Cải thiện CTR
+
+Tôi đã chỉ cho bạn cách các con số, cảm xúc và từ ngữ mạnh có thể cải thiện organic CTR của bạn.
+
+Nhưng có một giá trị LỚN khác mà tôi chưa đề cập: brand awareness
+
+Không cần phải nói, nếu ai đó biết thương hiệu của bạn, họ có nhiều khả năng nhấp vào trang web của bạn hơn trong kết quả tìm kiếm. Trên thực tế, dữ liệu từ WordStream nhận thấy rằng nhận thức về thương hiệu có thể tăng CTR lên tới 342%!
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_2_increase-brand-awareness.png)
+
+Ví dụ: hãy xem các kết quả tìm kiếm sau:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_3_search-results.png)
+
+Bạn có nhiều khả năng nhấp vào hai trang web nào nhất?
+
+Dĩ nhiên là NYTimes.com và Simply Recipes
+
+Nói cách khác, bạn muốn mọi người biết về thương hiệu của bạn TRƯỚC KHI họ tìm kiếm trong Google.
+
+Làm thế nào bạn có thể tăng nhận thức về thương hiệu của bạn?
+
+### 1. Trước tiên, hãy thử quảng cáo trên Facebook
+
+Ngay cả khi mọi người không nhấp và chuyển đổi, quảng cáo trên Facebook có thể đặt thương hiệu của bạn trước rất nhiều nhãn cầu.
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_4_facebook_ads.png)
+
+Và khi những ánh mắt đó đang tìm kết quả tìm kiếm, thì chúng có nhiều khả năng nhấp vào kết quả của bạn hơn.
+
+### 2. Ngoài ra, tạo một bản tin email có giá trị điên rồ.
+
+Không có gì làm tăng nhận thức về thương hiệu hơn là gửi nội dung có giá trị đến hộp thư đến của mọi người.
+
+Thực tế, tỷ lệ mở của tôi cao hơn mức trung bình bởi vì tôi chỉ gửi những thứ tốt:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_5_valuable-content.png)
+
+Không cần phải nói, các người đăng ký của tôi đã học được rằng tài liệu của tôi là tốt nhất trong kinh doanh. Vì vậy, khi Backlinko xuất hiện trên trang 1, họ có nhiều khả năng nhấp vào kết quả của tôi hơn.
+
+### 3. Cuối cùng, hãy thực hiện “Content Blitz”
+
+Một “Content Blitz” là nơi bạn phát hành một tấn nội dung trong một khoảng thời gian ngắn. Và tôi tin tưởng: đây là CÁCH mạnh mẽ hơn so với nội dung nhỏ giọt trong suốt cả năm.
+
+Trong thực tế, tôi đã sử dụng một Content Blitz khi tôi lần đầu tiên bắt đầu Backlinko.
+
+Tôi đã xuất bản bài đăng của khách:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_6_publish_guest-posts.png)
+
+Tôi đã vào Podcasts:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_7_go-on-podcasts.png)
+
+Tôi thậm chí là đồng tác giả hướng dẫn với Neil Patel:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_8_advanced-guides.png)
+
+(Tất cả trong một khoảng thời gian vài tháng)
+
+Và điều này đã giúp Backlinko từ “Cái gì vậy?” Đến “Thật là một trang tuyệt vời!” Trong thời gian kỷ lục
+
+## Biến "Zeros" thành "Heros"
+
+Có phải bạn có một trang trên web của mình không hoạt động tốt như bạn mong muốn không?
+
+Tôi có tin tốt: nếu bạn quay trở lại và tối ưu trang đó cho RankBrain, bạn có thể tăng thứ hạng QUAN TRỌNG
+
+Ví dụ, Sean từ Proven.com đã có một hướng dẫn rất lớn trên trang web của mình đã làm OK ... nhưng không được xếp hạng như anh ấy đã hy vọng.
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_9_improve_ctr.png)
+
+Và Sean nhận thấy thẻ tiêu đề của trang của mình không hấp dẫn để nhấp vào:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_10_not-compelling.png)
+
+Vì vậy, anh ấy đã thêm một số, một từ ngữ mạnh (Power Word) và dấu ngoặc đơn vào tiêu đề của mình:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_11_power-words.png)
+
+Và với thay đổi duy nhất này đã tăng lưu lượng truy cập organic của Sean lên trang đó lên gần 128%:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2018/01/6_12_improve-organic-traffic.png)
+
+Vâng, việc tăng lưu lượng truy cập đó là do tiêu đề thực tế đơn giản là nhiều người đã nhấp vào kết quả của Sean.
+
+Nhưng phần LỚN của câu chuyện là RankBrain nhận thấy sự gia tăng CTR ... và đẩy trang của Sean lên một vài điểm:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/6_13_rankbrain_ctr.png)
+
+# Sử dụng từ khóa LSI để điền vào "Khoảng trống nội dung"
+
+Từ khóa LSI là các từ và cụm từ có liên quan đến chủ đề chính về nội dung của bạn.
+
+Tại sao từ khóa LSI lại quan trọng? Vâng, chúng đưa RankBrain đến bối cảnh chúng cần để hiểu đầy đủ trang của bạn.
+
+Ví dụ: giả sử bạn đang viết hướng dẫn về xây dựng liên kết.
+
+Từ khóa LSI là những thứ giống như: 
+
+* Backlinks
+* Domain Authority
+* Email outreach
+* Anchor text
+
+Và khi RankBrain thấy rằng nội dung của bạn bao gồm các cụm từ này, chúng tin rằng trang của bạn là về xây dựng liên kết…
+
+… Có nghĩa là bạn có nhiều khả năng xếp hạng cho các từ khóa có liên quan đến chủ đề đó.
+
+Bạn có thể khám phá các từ khóa LSI bằng Watson Natural Language Understanding Tool.
+
+Công cụ này phân tích nội dung mà bạn cung cấp cho nó các khái niệm, thực thể và danh mục.
+
+Ví dụ, khi tôi paste vào bản nháp đầu tiên của hướng dẫn này, nó đưa ra các khái niệm liên quan đến RankBrain.
+
+Điều thú vị là tôi không đề cập đến nhiều thuật ngữ trong hướng dẫn này. Giống như RankBrain, Watson hiểu nội dung của tôi là gì. Rất tuyệt.
+
+Và khi bạn đưa đều các từ khóa LSI này vào bài đăng của mình, bạn sẽ xác nhận với RankBrain rằng nội dung của bạn là toàn diện.
 
 
 
