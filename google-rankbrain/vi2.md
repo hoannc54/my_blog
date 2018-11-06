@@ -188,5 +188,115 @@ Google sẽ làm cho nó in đậm, có thể giúp kết quả của bạn nổ
 
 Đó là tất cả
 
+# Chương 5: Làm thế nào để tối ưu nội dung của bạn cho tỉ lệ thoát và thời gian dừng
+
+OK, vì bạn đã sử dụng các mẹo tăng CTR của tôi. Và nhiều người hơn đang nhấp vào kết quả của bạn hơn trước.
+
+Giờ thì sao ? Vâng, bạn cần phải cho Google thấy rằng kết quả của bạn làm cho người dùng của họ hài lòng. Và cách tốt nhất để làm điều đó là gì? Cải thiện thời gian dừng.
+
+## Google có thực sự sử dụng thời gian dừng không? Yup!
+
+Thời gian dừng là lượng thời gian mà một người tìm kiếm Google dành trên trang web của bạn sau khi nhấp vào kết quả của bạn
+
+Rõ ràng, người càng dành nhiều thời gian trên trang của bạn càng tốt. Điều này nói với Google: "mọi người đang YÊU THÍCH kết quả này. Hãy đẩy nó lên một vài điểm ”.
+
+Và nếu một người nào đó thoát ra từ trang web của bạn sau 2 giây, điều đó sẽ cho Google biết: “Kết quả này sẽ bị ngừng lại! Hãy hạ nó xuống một vài điểm ”.
+
+Vì vậy, điều đó là hợp lý khi mà RankBrain sẽ đo Thời gian dừng - và trộn các kết quả xung quanh dựa trên dấu hiệu này.
+
+Trên thực tế, một nhân viên của Google gần đây đã nói rằng Google đã sử dụng 100% dấu hiệu ngoài trang (đặc biệt là các backlink). Mặc dù Google vẫn sử dụng backlinks, nhân viên này đã chỉ ra rằng:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/5_2_google-machine-learning.png)
+
+Và dữ liệu sao lưu dữ liệu này. Khi chúng tôi phân tích một tập hợp lớn các kết quả tìm kiếm của Google, chúng tôi đã tìm thấy mối tương quan giữa xếp hạng cao và tỷ lệ thoát thấp:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/5_3_high-rankings-and-bounce-rate.png)
+
+## Làm thế nào giảm tỉ lệ thoát và tăng thời gian dừng
+
+Bây giờ là lúc để tôi chia sẻ một vài chiến lược đơn giản mà bạn có thể sử dụng để tăng thời gian dừng của trang web.
+
+### 1. Đẩy nội dung của bạn lên màn hình đầu tiên
+
+Khi ai đó nhấp chuột lên trang của bạn từ google, họ muốn câu hỏi của họ trả lời NGAY
+
+Nói cách khác, họ không muốn cuộn xuống để đọc nội dung của bạn
+
+Đó là lý do tại sao tôi khuyên bạn nên xóa mọi thứ đẩy nội dung của bạn xuống dưới màn hình đầu tiên, như sau:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/5_4_content-below-fold.png)
+
+Thay vào đó, bạn muốn câu đầu tiên của nội dung ở trước và trung tâm:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/5_5_content-above-fold.png)
+
+Bằng cách đó, bạn sẽ thu hút người đọc của bạn ngay lập tức.
+
+### 2. Sử dụng đoạn giới thiệu ngắn (tối đa 5-10 câu)
+
+Tin hay không, nhưng tôi dành nhiều thời gian hơn cho phần giới thiệu của tôi hơn là tiêu đề.
+
+Đó là vì phần giới thiệu của bạn là nơi mà 90% độc giả của bạn quyết định ở lại… hoặc đi.
+
+Và sau rất nhiều thử nghiệm, tôi đã thấy rằng phần giới thiệu ngắn hoạt động tốt nhất.
+
+Tại sao ?
+
+Khi ai đó tìm kiếm thứ gì đó trong Google, họ đã biết về chủ đề đó. Vì vậy, không cần một phần giới thiệu lớn.
+
+Thay vào đó, hãy sử dụng phần giới thiệu của bạn để đưa ra nội dung mà họ sắp đọc, như sau:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/5_6_short-intros.png)
+
+Khi ai đó tìm kiếm "white hat SEO", đọc phần giới thiệu mà họ nghĩ: "Tuyệt vời! Tôi đang ở đúng nơi. ”
+
+### Xuất bản nội dung dài, sâu
+
+Tôi đã thử nghiệm mười cách này đến Thứ ba. Và tôi có thể tự tin nói với bạn rằng:
+
+Nội dung dài hơn = Thời gian dừng lâu hơn
+
+Rõ ràng, phải mất nhiều thời gian hơn để đọc hướng dẫn từ 2000 từ một bài đăng trên blog dài 400 từ. Nhưng đó chỉ là một phần của sự cân bằng.
+
+Lý do khác khiến nội dung biểu mẫu dài cải thiện Thời gian chờ là thực tế nội dung dài hơn có thể trả lời đầy đủ truy vấn của người tìm kiếm.
+
+Ví dụ: giả sử bạn tìm kiếm "how to run a marathon"
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/5_7_publish-long-content.png)
+
+Và kết quả đầu tiên mà bạn nhấp vào là bài đăng 300 từ. Nó trả lời câu hỏi của bạn ... nhưng bạn muốn nhiều hơn nữa.
+
+Vì vậy, bạn bấm vào nút quay lại của bạn để tìm một cái gì đó tốt hơn (như bạn có thể nhớ, Google gọi đây là "Pogo-sticking").
+
+Và lần này bạn trúng số độc đắc.
+
+Bạn tìm thấy hướng dẫn toàn diện bao gồm mọi thứ bạn cần biết về việc chạy marathon.
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/5_9_publish-comprehensive-guides.png)
+
+Vì vậy, bạn lấy một tách cà phê và đọc hướng dẫn từ đầu đến cuối. Bạn thậm chí còn đọc lại một số phần nhất định. Tất cả các bài đọc này đều có thời gian dừng nghiêm túc.
+
+#### Chia nhỏ nội dung của bạn thành các khối có kích thước nhỏ
+
+Hãy đối mặt với nó:
+
+Đọc 2.000 từ là Khó.
+
+Và nó còn khó hơn nếu 2.000 từ đó được trình bày như một bức tường văn bản khổng lồ.
+
+May mắn thay, có một cách đơn giản để giải quyết vấn đề này: các tiêu đề phụ.
+
+Tiêu đề phụ chia nhỏ nội dung của bạn thành các phần có kích thước nhỏ, dễ đọc. Điều này cải thiện khả năng đọc, và do đó, cải thiện Thời gian chờ.
+
+Tôi sử dụng NHIỀU phân nhóm tại Backlinko vì lý do chính xác này:
+
+![](https://cdn-backlinko.pressidium.com/wp-content/uploads/2017/11/5_10_break-up-content-into-chunks.png)
+
+Cụ thể, tôi cố gắng đưa ra một tiêu đề phụ cho mỗi nội dung 200 từ.
+
+# Chương 6: Chiến lược Tối ưu hóa RankBrain và Case Studies
+
+
+
 
 
