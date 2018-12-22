@@ -70,7 +70,7 @@ model của chúng ta sẽ xử lý request đến cơ sở dữ liệu của ch
 
 ### MVC
 
-Bây giờ chúng ta thiết llaapj dispatcher, website của chúng ta có thể tải một hành động từ controller.
+Bây giờ chúng ta thiết lập dispatcher, website của chúng ta có thể tải một hành động từ controller.
 
 Ở đây chúng ta muốn tạo một ứng dụng todo, vì vậy chúng ta phải tạo một _tasksController.php_. Controller này sẽ yêu cầu dữ liệu từmodel Task.php và sau đó chuyển dữ liệu đến một view. Để làm cho quá trình này đơn giản hơn, chúng ta sẽ tạo một class cha Controller để xử lý việc này.
 
