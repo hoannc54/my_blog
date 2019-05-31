@@ -25,7 +25,7 @@ Client khởi tạo chấp nhận một mảng kết hợp các option:
 `base_uri`
 : 
 
-(string|UriInterface) Base URI của client được gộp với các URL tương đối. Có thể là một string hoặc một thể hiện của đối tượng UriInterface. Khi một URI tương đối được cung cấp một client, client sẽ kết hợp với base URI với URL tương đối sử dụng theo quy tắc được mô tả trong [RFC 3986, section 2][2].
+(string|UriInterface) Base URI của client được gộp với các URL tương đối. Có thể là một string hoặc một thể hiện của đối tượng UriInterface. Khi một URI tương đối được cung cấp đến một client, client sẽ kết hợp base URI với URL tương đối sử dụng theo quy tắc được mô tả trong [RFC 3986, section 2][2].
     
     
     // Create a client with a base URI
@@ -48,10 +48,10 @@ Không thấy giống đọc RFC 3986? Đây là một vài ví dụ nhanh làm 
 | `http://foo.com/?bar` | `bar`            | `http://foo.com/bar`     |  
 
 `handler`
-: (callable) hàm chuyển đổi các HTTP request over the wire. Hàm được gọi với một `Psr7HttpMessageRequestInterface` và mảng các tuỳ chọn chuyển đổi, và phải trả về một `GuzzleHttpPromisePromiseInterface` that is fulfilled with a `Psr7HttpMessageResponseInterface` on success. `handler` là một hàm khởi tạo tuỳ chọn duy nhất không thể ghi đè trong các tuỳ chọn của per/request.
+: (callable) hàm chuyển đổi các HTTP request trên đường dẫn. Hàm được gọi với một `Psr7HttpMessageRequestInterface` và mảng các tuỳ chọn chuyển đổi, và phải trả về một `GuzzleHttpPromisePromiseInterface` thỏa mãn `Psr7HttpMessageResponseInterface` khi thành công. `handler` là một hàm khởi tạo tuỳ chọn duy nhất không thể ghi đè trong các tuỳ chọn của per/request.
 
 `...`
-: (mixed) All other options passed to the constructor are used as default request options with every request created by the client.
+: (mixed) Tất cả các tùy chọn khác được truyền vào hàm khởi tạo được sử dụng như các tùy chọn request mặc định với mỗi request được tạo bởi client
 
 ###Gửi các Request
 
@@ -76,7 +76,7 @@ Bạn có thể tạo một request và sau đó gửi request với client khi 
     $response = $client->send($request, ['timeout' => 2]);
     
 
-Đối tượng client cung cấp nhiều sự linh hoạt tuyệt vời trong cách request được chuyển đổi bao gồm các tuỳ chọn mặc định request, mặc định ngăng xếp bộ xử lý trung gian được sử dụng bởi mỗi request, và một URI báe cũng cho phép bạn gửi các request với các URI tương đối.
+Đối tượng client cực kì linh hoạt trong cách request được chuyển đổi bao gồm các tuỳ chọn mặc định request, mặc định ngăn xếp bộ xử lý trung gian được sử dụng bởi mỗi request, và một URI báe cũng cho phép bạn gửi các request với các URI tương đối.
 
 Bạn có thể tìm hiểu thêm về client middleware trong trang [_Handlers and Middleware_][3] của tài liệu.
 
@@ -128,7 +128,7 @@ promise được trả về bằng những phương thức thực hiện [Promis
 
 ### Các request đồng thời
 
-Bạn có thể gửi nhiều request đồng thời sử dụng các request promises và asynchronous.
+Bạn có thể gửi nhiều request đồng thời sử dụng các promises và asynchronous request.
     
     
     use GuzzleHttpClient;
@@ -209,7 +209,7 @@ Hoặc sử dụng một closure sẽ trả về một promise mỗi khi có l�
 
 ##Sử dụng Responses
 
-Trong các ví dụ trước, chúng ta nhận được một biến `$response` hoặc chúng ta delivered một response từ một promise. Đối tượng response thực hiện theo một PSR-7 response, `PsrHttpMessageResponseInterface`,và chứa nhiều thông tin hữu ích.
+Trong các ví dụ trước, chúng ta nhận được một biến `$response` hoặc chúng ta lấy được một response từ một promise. Đối tượng response thực hiện theo một PSR-7 response, `PsrHttpMessageResponseInterface`,và chứa nhiều thông tin hữu ích.
 
 Bạn có thể lấy code trạng thái và lý do của response:
     
@@ -235,7 +235,7 @@ Bạn có thể lấy các header từ response:
     }
     
 
-Phần body của một response có thể được lấy bằng cách sử dụng phương thức `getBody`. Body có thể được dùng như một, cast to a string,hoặc được sử dụng như một stream giống như object.
+Phần body của một response có thể được lấy bằng cách sử dụng phương thức `getBody`. Body có thể được dùng như một string, cast to a string,hoặc được sử dụng như một stream giống như object.
     
     
     $body = $response->getBody();
@@ -296,7 +296,7 @@ Bạn có thể gửi các request chứa một stream của dữ liệu thông 
     $r = $client->request('POST', 'http://httpbin.org/post', ['body' => $body]);
     
 
-Một cách đơn giản để upload dữ liệu JSO và thiết lập header thích hợp sử dụng tuỳ chọn `json` :
+Một cách đơn giản để upload dữ liệu JSON và thiết lập header thích hợp sử dụng tuỳ chọn `json` :
     
     
     $r = $client->request('PUT', 'http://httpbin.org/put', [
@@ -328,7 +328,7 @@ Gửi các request POST `application/x-www-form-urlencoded` yêu cầu bạn ch�
 
 Bạn có thể gửi các file cùng với một form (`multipart/form-data` POST requests),sử dụng `multipart`. `multipart` chấp nhận một mảng của các mảng kết hợp, nơi mỗi mảng kết hợp chứa các key dưới đây:
 
-* name: (required, string) key để mapp với tên của trường trong form.
+* name: (required, string) key để map với tên của trường trong form.
 * contents: (required, mixed) cung cấp một chuỗi để gửi các nội dung của file như là một chuỗi, cung cấp một tài nguyên dạng fopen để stream các nội dung từ một strem PHP hoặc cung cấp một `PsrHttpMessageStreamInterface` để stream các nội dung theo  PSR-7 stream.
     
     
@@ -366,7 +366,7 @@ Guzzle có thể duy trì một cookie session cho bạn nếu sử dụng `cook
     ]);
     
 
-Bạn có thể thiết `cookies` là `true` trong khởi tạo của client nếu bạn muốn sử dụng cookie jar cho tất cả các request.
+Bạn có thể thiết lập `cookies` là `true` trong khởi tạo của client nếu bạn muốn sử dụng cookie jar cho tất cả các request.
     
     
     // Use a shared client cookie jar
@@ -381,6 +381,7 @@ Guzzle sẽ tự động theo các chuyển hướng trừ bạn không cho phé
 * Thiết lập `true` để cho phép chuyển hướng bình thường với số lần chuyển hướng tối đa là 5. Nó được cài đặt mặc định.
 * Thiết lập `false` để vô hiệu hoá các chuyển hướng.
 * Pass an associative array containing the 'max' key to specify the maximum number of redirects and optionally provide a 'strict' key value to specify whether or not to use strict RFC compliant redirects (meaning redirect POST requests with POST requests vs. doing what most browsers do which is redirect POST requests with GET requests).
+* chưa dịch nè
     
     
     $response = $client->request('GET', 'http://github.com');
@@ -451,6 +452,8 @@ Chú ý :Bởi vì biến HTTP_PROXY có thể chứa người dùng tuỳ ý kh
 
 `HTTPS_PROXY`
 : Xác định proxy sử dụng khi gửi các request thông qua phương thức "https".
+
+thiếu phần cuối
 
 [1]: http://docs.guzzlephp.org/overview.html#installation
 [2]: http://tools.ietf.org/html/rfc3986#section-5.2
