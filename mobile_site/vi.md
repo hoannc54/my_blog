@@ -4,9 +4,9 @@
 # Điều gì tạo nên một trang mobile site tốt ?
 
 
-Jenny Gove là một UX Research Lead tại Google, ở đây cô ấy tiến hành nghiên cứu cá trải nghiệm trên smartphone. Cô ấy có bằng tiến sĩ tại đại học University of Southampton, UK. 
+Jenny Gove là một UX Research Lead tại Google, ở đây cô ấy tiến hành nghiên cứu các trải nghiệm trên smartphone. Cô ấy có bằng tiến sĩ tại đại học University of Southampton, UK. 
 
-Google và AnswerLab đã tiến hành một [một nghiên cứu][2] để trả lời cho câu hỏi này.
+Google và AnswerLab đã tiến hành [một nghiên cứu][2] để trả lời cho câu hỏi này.
 
 > Người dùng mobile hướng tới mục tiêu cụ thể. Họ hi vọng có được những gì họ cần,ngay lập tức, và theo ý muốn riêng của họ.
 
@@ -24,7 +24,7 @@ Thực hiện các tác vụ phụ thông qua [menus][3]hoặc "dưới màn hì
 
 ![][4]**LÀM**: Tất cả các tác vụ phổ biến của người dùng được tạo sao cho dễ dàng sử dụng.
 
-![][5]**KHÔNG LÀM**: Lãng phí phần không gian quý trên màn hình đầu tiên cho những lời mời mơ hồ như "tìm hiểu thê". 
+![][5]**KHÔNG LÀM**: Lãng phí phần không gian quý trên màn hình đầu tiên cho những lời mời mơ hồ như "tìm hiểu thêm". 
 
 ### Giữ cho các menu ngắn gọn và hấp dẫn
 
@@ -32,13 +32,13 @@ Thực hiện các tác vụ phụ thông qua [menus][3]hoặc "dưới màn hì
 
 Những người dùng mobile không đủ kiên nhẫn để cuộn qua một danh sách dài các tuỳ chọn để tìm cái họ muốn. Sắp xếp lại menu của bạn để sử dụng càng ít mục càng tốt, mà không phải hy sinh khả năng sử dụng.
 
-### Hãy làm dễ dàng để quay lại trang chủ
+### Giúp dễ dàng quay lại trang chủ
 
-![][7]**LÀM**: Hãy làm dễ dàng để quay lại trang chủ. 
+![][7]**LÀM**: Giúp dễ dàng quay lại trang chủ.
 
 Người dùng mong muốn quay lại trang chủ khi họ chạm vào logo bên trái phía trên của trang mobile, và họ trở nên thất vọng khi nó không có hoặc không hoạt động.
 
-### Đừng để quảng cáo chiếm mất phần thể hiện
+### Đừng để quảng cáo chiếm mất phần hiển thị
 
 Ứng dụng lớn cài đặt quảng cáo xen kẽ (ví dụ: Quảng cáo tràn ra toàn trang ẩn nội dung đi và nhắc người dùng cài đặt một ứng dụng) làm phiền người dùng và làm cho việc thực hiện các tác vụ trở nên khó khăn. Ngoài ra gây phiền nhiễu đến người dùng, [các site sử dụng quảng cáo xen kẽ có thể thấy một tác động tiêu cực đến thứ hạng tìm kiếm của chúng][8].
 
@@ -127,9 +127,9 @@ Sử dụng [loại input phù hợp nhất][27] cho mỗi trường hợp. Sử
 
 ![][29]**DO**: Sử dụng các widget về lịch khi có thể. 
 
-Ghi rõ ngày bắt đầu và ngày kết thúc. Người dùng không cần phải dời trang wev và kiểm tra một ứng dụng lích khác cho việc đặt lịch một ngày.
+Ghi rõ ngày bắt đầu và ngày kết thúc. Người dùng không cần phải dời trang web và kiểm tra một ứng dụng lích khác cho việc đặt lịch một ngày.
 
-### Giảm thiểu các lỗi của form với các nhãn và xác thực ngay khi nhậpMinimize form errors with labeling and real-time validation
+### Giảm thiểu các lỗi của form với các nhãn và xác thực ngay khi nhập
 
 ![][30]**DO**: Hiển thị trước nội dung nơi có thể. 
 
@@ -161,8 +161,7 @@ Khách hàng trong bán lẻ mong đợi trang web cho phép họ [xem cận c�
 
 ![][38]**LÀM**: Nói cho người dùng biết hướng làm việc nào tốt nhất.
 
-Những người tham gia nghiên cứu có xu hướng ở cùng 1 hướng màn hình cho đến khi một cái gì đó nhắc họ chuyển đổi. Thiết kế cho cả chiều landscape (ngang) và portrait (dọc), hoặc khuyến khích người dùng chuyển sang hướng tối ưu.Make sure that your important calls-to-action can be completed even if the users ignore the suggestion to switch orientations.
-
+Những người tham gia nghiên cứu có xu hướng ở cùng 1 hướng màn hình cho đến khi một cái gì đó nhắc họ chuyển đổi. Thiết kế cho cả chiều landscape (ngang) và portrait (dọc), hoặc khuyến khích người dùng chuyển sang hướng tối ưu.Đảm bảo rằng lời gọi hành động quan trọng của bạn có thể được hoàn thành ngay cả khi người dùng bỏ qua đề xuất để chuyển hướng.
 ### Giữa người dùng trên 1 cửa sổ trình duyệt
 
 ![][39]**DO**: Macy giữ người dùng của họ trên trang web của họ bằng cách phiếu giảm giá trên trang web. 
