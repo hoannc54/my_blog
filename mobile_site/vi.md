@@ -24,7 +24,7 @@ Thực hiện các tác vụ phụ thông qua [menus][3]hoặc "dưới màn hì
 
 ![][4]**LÀM**: Tất cả các tác vụ phổ biến của người dùng được tạo sao cho dễ dàng sử dụng.
 
-![][5]**KHÔNG LÀM**: Lãng phí phần không gian quý trên màn hình đầu tiên cho những lời mời mơ hồ như "tìm hiểu thê". 
+![][5]**KHÔNG LÀM**: Lãng phí phần không gian quý trên màn hình đầu tiên cho những lời mời mơ hồ như "tìm hiểu thêm". 
 
 ### Giữ cho các menu ngắn gọn và hấp dẫn
 
@@ -40,7 +40,7 @@ Người dùng mong muốn quay lại trang chủ khi họ chạm vào logo bên
 
 ### Đừng để quảng cáo chiếm mất phần thể hiện
 
-Ứng dụng lớn cài đặt quảng cáo xen kẽ (ví dụ: Quảng cáo tràn ra toàn trang ẩn nội dung đi và nhắc người dùng cài đặt một ứng dụng) làm phiền người dùng và làm cho việc thực hiện các tác vụ trở nên khó khăn. Ngoài ra gây phiền nhiễu đến người dùng, [các site sử dụng quảng cáo xen kẽ có thể thấy một tác động tiêu cực đến thứ hạng tìm kiếm của chúng][8].
+Ứng dụng lớn cài đặt quảng cáo xen kẽ (ví dụ: Quảng cáo tràn ra toàn trang ẩn nội dung đi và nhắc người dùng cài đặt một ứng dụng) làm phiền người dùng và làm cho việc thực hiện các tác vụ trở nên khó khăn. Ngoài ra gây phiền nhiễu đến người dùng, [các site sử dụng quảng cáo xen kẽ có thể dẫn đến một vài tác động tiêu cực đến thứ hạng tìm kiếm của chúng][8].
 
 ![][9]**LÀM**: Các quảng cáo nên dễ dàng được tắt đi và không làm sao nhãng trải nghiệm người dùng.
 
@@ -62,7 +62,7 @@ Người dùng tìm kiếm thông tin thường chuyển sang thanh tìm kiếm,
 
 Người dùng không duyệt qua nhiều trang kết quả tìm kiếm để tìm nội dung họ tìm. Giúp người dùng dễ dàng hơn bằng các câu truy vấn gợi ý, sửa lỗi chính tả và gợi ý các truy vấn liên quan. Thay vì làm lại những gì đã có, tham khảo các sản phẩm mạnh mẽ như [Google Custom Search][13].
 
-![][14]**LÀM**: Macy chỉ trả về các sản phẩm trẻ em.
+![][14]**LÀM**: Macy chỉ trả về các sản phẩm cho trẻ em.
 
 ![][15]**KHÔNG LÀM**: Trả về các kết quả cho bất cứ thứ gì có từ "kid" trong nó. 
 
@@ -82,7 +82,7 @@ Những người tham gia nghiên cứu tin rằng họ dựa trên [các bộ l
 
 ## Tính thương mại và sự chuyển đổi
 
-**Success:** Hiểu được luồng khách hàng của bạn và cho 	phép người dùng chuyển đổi theo cách riêng của họ.
+**Success:** Hiểu được luồng khách hàng của bạn và cho	phép người dùng chuyển đổi theo cách riêng của họ.
 
 ### Cho phép người dùng trải nghiệm trước khi họ cam kết gì đó
 
@@ -99,7 +99,7 @@ Những người tham gia nghiên cứu đã thất vọng bởi các site yêu 
 Những người tham gia nghiên cứ đã xem khác thanh toán là "thuận tiện", "đon giản", "dễ dàng",và "nhanh". Người dùng cảm thấy khó chịu bởi các trang web bắt buộc họ đăng ký một tài khoản khi thực hiện một thanh toán, đặc biệt là khi lợi ích của một tài khoảng không rõ ràng.
 
 ### Sử dụng thông tin đã có để tối đa hoá sự tiện lợi.
-Nhớ và [điền sẵn các nội dung][23] cho người dùng đã đăng ký. Cung cấp sự quen thuộc, với các dịch vụ thanh toán bên thứ ba cho những người dùng mới.
+Lưu lại và [điền sẵn các nội dung][23] cho người dùng đã đăng ký. Cung cấp các dịch vụ thanh toán qua bên thứ ba quen thuộc cho những người dùng mới.
 
 ### Sử dụng các nút click để gọi cho các tác vụ phức tạp
 
@@ -117,7 +117,7 @@ Người dùng thường xuyên muốn kết thúc các tác vụ trên các thi
 
 ### Hợp lý hoá đầu vào của thông tin
 
-Tự động chuyển sang trường tiếp theo khi người dùng nhấn Quay lại. Nói chung, càng ít thao tác nhấn mà người dùng phải thực hiện, càng tốt.
+Tự động chuyển sang trường tiếp theo khi người dùng nhấn Return. Nói chung, càng ít thao tác nhấn mà người dùng phải thực hiện, càng tốt.
 
 ### Chọn đầu vào đơn giản nhất
 
@@ -149,7 +149,7 @@ Sử dụng một [responsive layout][3] thay đổi dựa trên kích thước 
 
 ### Không khiến người dùng phải zoom
 
-Người dũng cảm thấy thoải mãi với trang web cuộn theo chiều dong, nhưng không theo chiều ngang. Tránh các phân từ quá lớn, được cố định theo chiều rộng. Sử dụng [CSS media queries][33] để áp dụng định dạng cho các màn hình khác nhau. Không tạo nội dung mà chỉ hiển thị tốt ở màn hình cá nhân [theo chiều rộng hiển thị][34]. Các trang web buộc người dùng cuộn theo chiều ngang sẽ không thành công ở [Google Mobile-Friendly Test][35], có thể tác động tiêu cực đến thứ hạng tìm kiếm của chúng.
+Người dũng cảm thấy thoải mãi với trang web cuộn theo chiều dọc, nhưng không phải theo chiều ngang. Tránh các phân từ quá lớn, được cố định theo chiều rộng. Sử dụng [CSS media queries][33] để áp dụng định dạng cho các màn hình khác nhau. Không tạo nội dung mà chỉ hiển thị tốt ở một màn hình cá nhân [theo chiều rộng hiển thị][34]. Các trang web buộc người dùng cuộn theo chiều ngang sẽ không hoàn thành được bài test ở [Google Mobile-Friendly Test][35], có thể tác động tiêu cực đến thứ hạng tìm kiếm của chúng.
 
 ### Làm cho các ảnh của sản phẩm có thể mở rộng
 
@@ -161,7 +161,7 @@ Khách hàng trong bán lẻ mong đợi trang web cho phép họ [xem cận c�
 
 ![][38]**LÀM**: Nói cho người dùng biết hướng làm việc nào tốt nhất.
 
-Những người tham gia nghiên cứu có xu hướng ở cùng 1 hướng màn hình cho đến khi một cái gì đó nhắc họ chuyển đổi. Thiết kế cho cả chiều landscape (ngang) và portrait (dọc), hoặc khuyến khích người dùng chuyển sang hướng tối ưu.Make sure that your important calls-to-action can be completed even if the users ignore the suggestion to switch orientations.
+Những người tham gia nghiên cứu có xu hướng ở cùng 1 hướng màn hình cho đến khi một cái gì đó nhắc họ chuyển đổi. Thiết kế cho cả chiều landscape (ngang) và portrait (dọc), hoặc khuyến khích người dùng chuyển sang hướng tối ưu.Đảm bảo rằng những lời gọi hành động quan trọng của bạn có thể được hoàn thành ngay cả khi người dùng từ chối gợi ý chuyển hướng.
 
 ### Giữa người dùng trên 1 cửa sổ trình duyệt
 
