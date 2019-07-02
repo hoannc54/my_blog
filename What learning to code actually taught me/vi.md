@@ -8,18 +8,18 @@ Khi chúng ta già đi, niềm tin sẽ lấy mất động lực của chúng t
 
 Đây là một số điều bạn sẽ nhận ra: 
 
-* Bạn không thể dạy một kỹ thuật mới cho con chó cũ
+* Bạn không thể dạy cho một chú chó già những trò mới
 * Chỉ trẻ em mới có thể học những điều mới nhanh
 * Nó quá khó
 * Tôi ghét trường học hoặc trường đại học
 * Tốt hơn là nên tuân theo những gì bạn giỏi hơn là tìm hiểu nội dung mới
 * Tôi không có thời gian
-* Bạn đã trở thành một kẻ mọt sách / một thiên tài / một người có trí tuệ
-* Bạn phải có một tâm trí nhất định / tôi không phải là "loại"
+* Bạn phải trở thành một kẻ mọt sách / một thiên tài / một người đặc biệt thông minh
+* Bạn phải có một chút băn khoăn / tôi không phải là "loại đó"
 
 Chỉ điều cuối cùng là đúng, và không theo cách mà bạn đang dùng nó.
 
-Trong nhiều năm, tôi đã nghĩ rằng bạn đã "đạt vị trí rất cao trong bảng" thông minh để trở thành một coder. Có vẻ như một siêu trí tuệ. Chỉ khi tôi đọc về Jack Dorsey, Elon Musk, Bill Gates, Steve Wozniak và nhiều người khác đang tự học, giống như trẻ em, trong kỷ nguyên Internet trước mà tôi bắt đầu nghĩ - cứ tiếp tục, điều đó không tăng lên. Nếu những người này tự dạy chính họ giống như trẻ em, khi tất cả những gì họ có là các dự án của trường học và những sách hướng dẫn cũ, thì đây không phải là thiên tài bẩm sinh. Đây là nỗ lực liên tục và dành nhiều thời gian.
+Trong nhiều năm, tôi đã nghĩ rằng bạn phải thông minh tuyệt đỉnh để trở thành một coder. Có vẻ như một siêu trí tuệ. Chỉ khi tôi đọc về Jack Dorsey, Elon Musk, Bill Gates, Steve Wozniak và nhiều người khác đang tự học, giống như trẻ em, trong kỷ nguyên Internet trước mà tôi bắt đầu nghĩ - cứ tiếp tục, điều đó không tăng lên. Nếu những người này tự dạy chính họ giống như trẻ em, khi tất cả những gì họ có là các dự án của trường học và những sách hướng dẫn cũ, thì đây không phải là thiên tài bẩm sinh. Đây là nỗ lực liên tục và dành nhiều thời gian.
 
 Tôi bắt đầu nghiên cứu thêm, và nhận ra rằng rất nhiều coder tự học, và không tự xem mình là những người có năng khiếu đặc biệt. Giống như tất cả kỹ năng, ngoại lệ cho những người có năng khiếu. Nhưng họ là những ngoại lệ. Những người tốt và giỏi cứ tiếp tục làm những việc đó lặp đi lặp lại, cho đến khi họ đủ giỏi để làm bất cứ điều gì họ muốn.
 
@@ -45,7 +45,7 @@ Không. Đó là do sự đạt được . Và vì nó luôn luôn có tính tư
 
 Thực ra, không đúng. Trong thực tế, khi bạn càng lớn tuổi, bạn sẽ học cách để học tốt hơn. Không giống như cơ thể bạn, ý nghĩ của bạn ở tuổi 75 có thể tạo ra cường độ lớn hơn khi bạn 25 tuổi. Hỏi Benjamin Franklin.
 
-Điều thực sự xảy ra là sự tập trung, chú ý, tự tin và kỷ luật cũng ta suy giảm và lãng phí khi già đi, thông qua việc thiếu tập thể dục. Đó không phải là do tuổi tác, đó là do chúng ta không tập luyện. Chúng ta trở lên suy giảm trí tuệ.
+Điều thực sự xảy ra là sự tập trung, chú ý, tự tin và kỷ luật cũng ta suy giảm và lãng phí khi già đi, thông qua việc thiếu tập thể dục. Đó không phải là do tuổi tác, đó là do chúng ta không tập luyện. Chúng ta trở nên suy giảm trí tuệ.
 
 Đối với nhiều người trong chúng ta, lần cuối cùng chúng ta thực sự học một cái gì đó là ở trường đại học, và đó là những năm trước. Chúng ta tiếp tục học những gì mà chúng ta yêu thích để học - như sở thích, làm thế nào sử dụng Facebook, học lặn, làm thế nào để tải hình ảnh được lọc lên Instagram - bởi vì chúng tôi thấy nó thú vị. Nhưng những thứ là "làm việc" mà chúng ta thường có xu hướng tránh, và vì thế mất đi sự tập luyện. 
 
