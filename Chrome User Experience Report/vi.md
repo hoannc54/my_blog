@@ -1,4 +1,4 @@
-#Chrome User Experience Report
+# Chrome User Experience Report
 
 Chrome User Experience Report cung cấp số liệu về trải nghiệm người dùng cách người dùng Chrome trong thực tế trải nghiệm các điểm đến phổ biến trên web
 
@@ -16,11 +16,11 @@ _Chú ý: Chrome User Experience Report hiện tại được vào hiệu suất
 
 Hướng dẫn về các số liệu nào cần theo dõi và tối ưu hoá, và các phương pháp tốt nhất về cách thể hiện các dữ liệu đo lường về người dùng thực, tham khảo tài liệu về hiệu suất ở giữa của chúng tôi.
 
-#### First Paint
+#### First Paint (Khung màn hình đầu tiên)
 
 Được xác định bởi Paint Timing API và sẵn sàng trên Chrome M60+:
 
-_"First Pain báo cáo thời gian khi trình duyệt lần đầu render sau khi điều hướng đến. Điều này loại trừ background mặc định, nhưng bao gồm background không mặc định. Đây là thời điểm quan trọng đầu tiên mà các developer cần quan tâm trong khi tải trang - khi trình duyệt bắt đầu render trang"_
+_"First Pain báo cáo thời gian khi trình duyệt lần đầu render sau khi điều hướng đến. Điều này loại trừ background mặc định, nhưng lại chứa các background không mặc định. Đây là thời điểm quan trọng đầu tiên mà các developer cần quan tâm trong khi tải trang - khi trình duyệt bắt đầu render trang"_
 
 #### First Contentful Paint
 
