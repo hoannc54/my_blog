@@ -1,28 +1,28 @@
 # Design by contract
 
-Design by contract (DbC), cũng được biết đến như contract programming, programming by contract và design by contract programming, là một cách tiếp cận trong thiết kế phần mềm. Nó quy định rằng các nhà thiết kế phần mềm nên xác định trước formal, các đặc tả giao diện chính xác và có thể kiểm chứng được cho các thành phần phần mềm, mở rộng định nghĩa thông thường của các kiểu dữ liệu trừu tượng với các điều kiện tiên quyết, điều kiện sau và các bất biến. Những đặc điểm này được gọi là "contracts", phù hợp với nghĩa bóng với điều kiện và nghĩa vụ trong hợp đồng kinh doanh.
+Design by contract (DbC), cũng được biết đến như contract programming, programming by contract và design by contract programming, là một cách tiếp cận trong thiết kế phần mềm. Nó quy định rằng các nhà thiết kế phần mềm nên xác định trước formal, các đặc tả giao diện chính xác và có thể kiểm chứng được cho các thành phần phần mềm, mở rộng định nghĩa thông thường của các kiểu dữ liệu trừu tượng với các điều kiện tiên quyết, điều kiện sau và các bất biến. Những đặc điểm này được gọi là "đặc tả", phù hợp với nghĩa bóng với điều kiện và nghĩa vụ trong việc đặc tả các nghiệp vụ.
 
-Cách tiếp cận DbC giả sửa trong tất cả các thành phần client mà gọi một hoạt động trên một thành phần máy chủ sẽ đáp ứng các điều kiện bạn đầu được chỉ định yêu cầu cho hoạt động đó. Giả định này được coi là quá rủi ro (như trong mô hình client-server đa kênh hoặc tính toán phân tán) cách tiếp cận đối mặt "defensive design" được thực hiện, nghĩa là một thành phần server thử nghiệm (trước hoặc trong quá trình thực hiện request client) tất cả các điều kiện trước có liên quan đều đúng và trả lời với thông báo lỗi phù hợp nếu không đúng.
+Cách tiếp cận DbC giả sửa trong tất cả các thành phần mà client gọi một hoạt động trên một phần máy chủ sẽ đáp ứng các điều kiện bạn đầu được chỉ định yêu cầu cho hoạt động đó. Giả định này được coi là quá rủi ro (như trong mô hình client-server đa kênh hoặc tính toán phân tán) cách tiếp cận đối mặt "defensive design" được thực hiện, nghĩa là một thành phần server thử nghiệm (trước hoặc trong quá trình thực hiện request client) tất cả các điều kiện trước có liên quan đều đúng và trả lời với thông báo lỗi phù hợp nếu không đúng.
 
 ## Lịch sử 
 
 Thuật ngữ được đặt ra bởi Bertrand Meyer liên quan đến thiết kế ngôn ngữ lập trình Eiffel của anh ấy và được mô tả đầu tiên trong các bài viết khác nhau từ năm 1986 và hai ấn bản liên tiếp (1988, 1997) trong quyển sách Object-Oriented Software Construction của ông ấy. Eiffel Software đăng ký nhãn hiệu cho Design by Contract vào tháng 10, 2003 và nó đã được cấp vào tháng 10, 2004. Chủ sở hữu hiện tại của nhãn hiệu này là Eiffel Software.
 
-Design by contract có nguồn gốc của nó trong công việc  formal verification, formal specification và Hoare logic. Những đóng góp ban đầu bao gồm: 
+Design by contract bắt nguồn từ  việc  formal verification, formal specification và Hoare logic. Những đóng góp ban đầu bao gồm: 
 
-* Một ẩn dụ rõ ràng để hướng dẫn quá trình thiết kế
-* Các ứng dụng để thừa kế, đặc biệt llaf một hình thức cho redefinition và dynamic binding.
+* Một mô hình rõ ràng để hướng dẫn quá trình thiết kế
+* Các ứng dụng để thừa kế, đặc biệt là một hình thức cho redefinition và dynamic binding.
 * Ứng dụng để xử lý exception
 * Kết nối tự động với tài liệu phần mềm
 
 ## Mô tả 
 
-Ý tưởng chính của DbC là phép ẩn cách các thành phần của hệ thống phần mềm tương tác với nhau trên cơ sở nhiệm vụ và lợi ích với nhau.Phép ẩn dụ này xuất phát thực thực tế cuộc sống kinh doanh, trong trường hợp "khách hàng" và "nhà cung cấp" đồng ý về "hợp đồng" đã xác định ví dụ :
+Ý tưởng chính của DbC là phép ẩn cách các thành phần của hệ thống phần mềm tương tác với nhau trên cơ sở nhiệm vụ và lợi ích với nhau.Phép ẩn dụ này xuất phát thực thực tế cuộc sống kinh doanh, trong trường hợp "khách hàng" và "nhà cung cấp" đồng ý về "hợp đồng" đã xác định ví dụ:
 * Nhà cung cấp phải cung cấp một sản phẩm nhất định (nghĩa vụ) và và được quyền mong đợi rằng khách hàng đã trả phí (lợi ích) của mình.
 * Khách hàng phải trả phí (nghĩa vụ) và được quyền nhận sản phẩm (lợi ích).
-* Cả hai bên phải đáp ứng các nghĩa vụ nhất định, chẳng hạn như các luật và các quy định, áp dụng cho tất cả các hợp đồng.
+* Cả hai bên phải đáp ứng các nghĩa vụ nhất định, chẳng hạn như các luật và các quy định, áp dụng cho tất cả các phần của đặc tả.
 
-Tương tự, nếu một routine từ một [lớp] [26] trong [lập trình hướng đối tượng] [27] cung cấp một chức năng nhất định, nó có thể:
+Tương tự, nếu một routine từ một [class] [26] trong [lập trình hướng đối tượng] [27] cung cấp một chức năng nhất định, nó có thể:
 * Mong đợi một điều kiện nhất định được đảm bảo khi được nhập vào bởi bất kỳ module client nào gọi nó: [điều kiện tiên quyết] [6] - nghĩa vụ của khách hàng, và một lợi ích cho nhà cung cấp (chính thủ tục), vì nó giải phóng nó khỏi việc phải xử lý các trường hợp ngoài điều kiện tiên quyết.
 * Đảm bảo một tài sản nhất định khi thoát: [điều kiện sau] [7] - nghĩa vụ của nhà cung cấp, và rõ ràng là một lợi ích (lợi ích chính của việc gọi thủ tục) cho khách hàng.
 * Bảo trì một property nhất định, giả định về đầu vào và được bảo đảm khi thoát ra: [bất biến lớp] [28].
@@ -32,7 +32,7 @@ Hợp đồng tương đương về mặt ngữ nghĩa với [Hoare triple] [29]
 * Mong muốn của hợp đồng là gì?
 * Điều gì đảm bảo cho hợp đồng ?
 * Điều gì để duy trì hợp đồng ?
-Nhiều [ngôn ngữ lập trình] [30] dễ dàng để tạo [xác nhận] [31] như thế. Tuy nhiên, DbC coi các hợp đồng này là rất quan trọng đối với [tính chính xác phần mềm] [32] rằng chúng phải là một phần của quá trình thiết kế. Thực tế, DbC chủ trương viết các xác nhận trước. Hợp đồng có thể được viết bởi [code comments] [33], được thi hành bởi [test suite] [34], hoặc cả hai, ngay cả khi không có hỗ trợ ngôn ngữ đặc biệt cho các hợp đồng.
+Nhiều [ngôn ngữ lập trình] [30] dễ dàng để tạo [xác nhận] [31] như thế. Tuy nhiên, DbC coi các đặc tả này là rất quan trọng đối với [tính chính xác của phần mềm] [32] rằng chúng phải là một phần của quá trình thiết kế. Thực tế, DbC chủ trương viết các xác nhận trước. Hợp đồng có thể được viết bởi [code comments] [33], được thi hành bởi [test suite] [34], hoặc cả hai, ngay cả khi không có hỗ trợ ngôn ngữ đặc biệt cho các hợp đồng.
 
 Khái niệm về hợp đồng kéo dài xuống mức phương thức / thủ tục; hợp đồng cho mỗi phương thức thường sẽ chứa các thông tin sau [[_citation needed][35]_]
 * Các giá trị hoặc loại đầu vào được chấp nhận và không được chấp nhận và ý nghĩa của chúng
@@ -49,7 +49,7 @@ Các lớp con trong [phân cấp thừa kế] [38] được phép làm giảm c
 Tất cả các quan hệ class là giữa các lớp khách hàng và các lớp nhà cung cấp. Lớp khách hàng có nghĩa vụ thực hiện các lời gọi đến các tính năng của nhà cung cấp, nơi trạng thái kết quả của nhà cung cấp không bị vi phạm bởi lời gọi của khách hàng. 
 Sau đó, nhà cung cấp có nghĩa vụ cung cấp trạng thái trả về và dữ liệu không vi phạm các yêu cầu trạng thái của khách hàng. Ví dụ, một bộ đệm dữ liệu của nhà cung cấp có thể yêu cầu dữ liệu đó có trong bộ đệm khi một tính năng xóa được gọi. Sau đó, nhà cung cấp đảm bảo cho khách hàng rằng khi một tính năng xóa kết thúc công việc của nó, phần dữ liệu sẽ thực sự bị xóa khỏi bộ đệm. Các hợp đồng thiết kế khác là các khái niệm về "bất biến lớp". Lớp bảo đảm bất biến (đối với lớp cục bộ) rằng trạng thái của lớp sẽ được duy trì trong các mức chịu được chỉ định ở cuối mỗi thực thi tính năng.
 
-Khi sử dụng hợp đồng, nhà cung cấp không nên cố gắng xác minh rằng các điều kiện hợp đồng được thỏa mãn,. ý tưởng chung là code nên "thất bại", với việc xác minh hợp đồng là quá trình an toàn. Thuộc tính "thất bại" của DbC đơn giản là việc gỡ rối hành vi hợp đồng, vì hành vi dự định của mỗi routine được xác định rõ ràng. Điều này phân biệt nó một cách rõ rệt từ một thực hành liên quan được gọi là [lập trình phòng thủ] [40], nơi nhà cung cấp chịu trách nhiệm tìm ra những việc cần làm khi điều kiện tiên quyết bị phá vỡ. Thường xuyên hơn không, nhà cung cấp ném một exception để thông báo cho khách hàng rằng điều kiện tiên quyết đã bị phá vỡ và trong cả hai trường hợp — DbC và lập trình phòng thủ — khách hàng phải tìm ra cách để đáp ứng điều đó. DbC giúp công việc của nhà cung cấp dễ dàng hơn.
+Khi sử dụng đặc tả, nhà cung cấp không nên cố gắng xác minh rằng các điều kiện hợp đồng được thỏa mãn,. ý tưởng chung là code nên "thất bại", với việc xác minh hợp đồng là quá trình an toàn. Thuộc tính "thất bại" của DbC đơn giản là việc gỡ rối hành vi hợp đồng, vì hành vi dự định của mỗi routine được xác định rõ ràng. Điều này phân biệt nó một cách rõ rệt từ một thực hành liên quan được gọi là [lập trình phòng thủ] [40], nơi nhà cung cấp chịu trách nhiệm tìm ra những việc cần làm khi điều kiện tiên quyết bị phá vỡ. Thường xuyên hơn không, nhà cung cấp ném một exception để thông báo cho khách hàng rằng điều kiện tiên quyết đã bị phá vỡ và trong cả hai trường hợp — DbC và lập trình phòng thủ — khách hàng phải tìm ra cách để đáp ứng điều đó. DbC giúp công việc của nhà cung cấp dễ dàng hơn.
 
 Thiết kế theo hợp đồng cũng xác định tiêu chí cho tính chính xác cho một module phần mềm:
 
