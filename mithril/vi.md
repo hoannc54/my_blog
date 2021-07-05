@@ -144,7 +144,7 @@ Hãy sử dụng Mithril hyperscript để tạo một danh sách các item. Hyp
     
 
 `".user-list"` là một CSS selector, và giống như bạn muốn, `.user-list` đại diện cho một class. Khi một thẻ không được chỉ định, `div` là thẻ mặc định. Vì vậy, view này tương đương với `<div class="user-list"></div>`
-`.
+
 
 Bây giờ, hãy tham khảo danh sách các user từ model chúng ta đã tạo (`User.list`) để tự động duyệt qua data:
     
@@ -201,7 +201,7 @@ Hãy render view từ file đầu vào `src/index.js` chúng ta đã tạo trư�
 
 * * *
 
-Ngay bây giờ, danh sách trông khá đơn giản vì chúng tôi chưa xác định bất kỳ kiểu nào.
+Ngay bây giờ, danh sách trông khá đơn giản vì chúng tôi chưa xác định bất kỳ style nào.
 
 Có nhiều quy ước và thư viện tương tự giúp tổ chức các kiểu ứng dụng ngày nay. Một số, như Bootstrap chạy một tập hợp các cấu trúc HTML cụ thể và các tên lớp có ý nghĩa về ngữ nghĩa, trong đó có xu hướng cung cấp sự thiếu hụt nhận thức thấp, nhưng nhược điểm của việc tùy biến trở nên khó khăn hơn. Những người khác, như Tachyons cung cấp một số lượng lớn các tên lớp tự mô tả, mức nguyên tử với chi phí tự đặt tên lớp không phải theo ngữ nghĩa. "CSS-in-JS" là một loại hệ thống CSS khác đang ngày càng phổ biến, về cơ bản bao gồm phạm vi CSS thông qua công cụ chuyển biên. Các thư viện CSS-in-JS đạt được khả năng bảo trì bằng cách giảm kích thước của không gian vấn đề, nhưng đến với chi phí có độ phức tạp cao.
 
@@ -234,7 +234,7 @@ Bây giờ chúng ta có thể stlye `UserList` component:
 
 CSS ở trên được viết bằng cách sử dụng quy ước giữ tất cả các style cho quy tắc trong một dòng, theo thứ tự bảng chữ cái. Quy ước này được thiết kế để tận dụng tối đa diện tích màn hình và dễ dàng quét các CSS selector (vì chúng luôn ở bên trái) và nhóm logic của chúng, và nó thực thi các quy tắc CSS có thể dự đoán và thống nhất cho mỗi selector.
 
-Rõ ràng bạn có thể sử dụng bất kỳ khoảng trắng / indentation ước bạn thích. Ví dụ trên chỉ là một minh họa của một quy ước không phổ biến rộng rãi có các lý do mạnh mẽ đằng sau nó, nhưng đi chệch khỏi các quy ước khoảng trắng rộng hơn về quy chuẩn.
+Rõ ràng bạn có thể sử dụng bất kỳ khoảng trắng / indentation bạn thích. Ví dụ trên chỉ là một minh họa của một quy ước không phổ biến rộng rãi có các lý do mạnh mẽ đằng sau nó, nhưng đi chệch khỏi các quy ước khoảng trắng rộng hơn về quy chuẩn.
 
 Tải lại cửa sổ trình duyệt bây giờ sẽ hiển thị một số style element.
 
@@ -260,7 +260,7 @@ Chúng ta có thể thêm route được thay đổi bởi `m.mount` gọi đế
 
 `m.route` gọi chỉ định rằng ứng dụng sẽ được hiển thị vào `document.body`. Đối số `"/list"` là mặc định của route. Điều đó có nghĩa là người dùng sẽ được chuyển hướng đến đường dẫn đó nếu họ đến một đường dẫn không tồn tại. Đối tượng `{"/list": UserList}` khai báo một bản đồ các route hiện có và các thành phần mà mỗi route xử lý.
 
-Việc àm mới trang trong trình duyệt bây giờ sẽ thêm `#!/list` vào URL để cho biết định tuyến đang hoạt động. Do route đó render UserList, chúng ta vẫn sẽ thấy danh sách những người trên màn hình như trước đây.
+Việc làm mới trang trong trình duyệt bây giờ sẽ thêm `#!/list` vào URL để cho biết định tuyến đang hoạt động. Do route đó render UserList, chúng ta vẫn sẽ thấy danh sách những người trên màn hình như trước đây.
 
 `#!` được biết đến như một hashbang, và nó là một chuỗi thường được sử dụng để thực hiện định tuyến phía client. Có thể cấu hình chuỗi này qua [`m.route.prefix`][16]. Một số cấu hình yêu cầu hỗ trợ thay đổi phía máy chủ, vì vậy chúng tôi sẽ tiếp tục sử dụng hashbang cho phần còn lại của hướng dẫn này.
 
@@ -610,7 +610,7 @@ Làm mới trang trong trình duyệt và bây giờ bạn sẽ thấy điều h
 
 * * *
 
-Điều này kết thúc hướng dẫn.
+kết thúc hướng dẫn.
 
 Trong hướng dẫn này, chúng ta đã trải qua quá trình tạo một ứng dụng rất đơn giản, nơi chúng ta có thể liệt kê người dùng từ một máy chủ và chỉnh sửa chúng riêng lẻ. Là một bài tập bổ sung, hãy cố gắng tự tạo và xóa người dùng.
 
