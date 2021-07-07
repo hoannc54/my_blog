@@ -1,6 +1,6 @@
 [Source](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0 "Permalink to Master the JavaScript Interview: What is Functional Programming?")
 
-# Bậc thầy trong phỏn vấn về Javascript: Lập trình hướng chức năng là gì?
+# Bậc thầy trong phỏn vấn về Javascript: Lập trình chức năng là gì?
 
 ![][1]
 
@@ -8,11 +8,11 @@ Structure Synth — Orihaus (CC BY 2.0)
 
 > "Bậc thầy trong phỏng vấn về Javascript" là một loạt các bài viết được thiết kế để chuẩn bị cho các ứng viên về các câu hỏi phổ biến mà họ có khả năng gặp phải khi ứng tuyển vào vị trí senior JavaScript. Đây là những câu hỏi tôi thường xuyển sử dụng trong các cuộc phỏng vấn thực sự.
 
-Lập trình hướng chức năng trở thành một chủ đề hot trong thế giới JavaScript. Chỉ vài năm trước, một số lập trình viên Javascript thậm chí biết lập trình hướng chức năng là gì, nhưng mỗi ứng dụng có codebase lớn tôi đã từng thấy trong 3 năm sử dụng nhiều ý tưởng lập trình hướng chức năng.
+Lập trình hướng chức năng trở thành một chủ đề hot trong thế giới JavaScript. Chỉ vài năm trước, một số lập trình viên Javascript thậm chí không biết lập trình chức năng là gì, nhưng mỗi ứng dụng có codebase lớn tôi đã từng thấy trong 3 năm sử dụng nhiều ý tưởng lập trình chức năng.
 
 **Lập trình hướng chức năng** (thường được viết tắt FP) là quá trình xây dựng phần mềm bằng cách viết **các hàm thuần**, tránh **chia sẻ trạng thái,** **dữ liệu thay đổi, **and **ảnh hưởng phụ**. Lập trình hướng chức năng là  **declarative** hơn là **imperative**, và luồng trạng thái ứng dụng thông qua các hàm thuần. Ngược lại với lập trình hướng đối tượng, nơi trạngt thái ứng dụng thường được chia sẻ và colocated với các phương thức trong các đối tượng.
 
-Lập trình hướng chức năng là một **mô hình lập trình**, có nghĩa là đó là một cách suy nghĩ về kiến trúc phần mềm dựa trên một số nền tảng cơ bản, xác định theo các nguyên tắc (được liệt kê ở trên). Các ví dụ khác về các mô hình lập trình bao gồm lập trình hướng đối tượng và lập trình hướng thủ tục.
+Lập trình hướng chức năng là một **mô hình lập trình**, có nghĩa là đó là một cách suy nghĩ về kiến trúc phần mềm dựa trên một số nền tảng cơ bản, xác định theo các nguyên tắc (được liệt kê ở trên). Các ví dụ khác về các mô hình lập trình bao gồm lập trình hướng đối tượng và lập trình thủ tục.
 
 Code theo hướng chức năng có xu hướng ngắn gọn hơn, dễ hiểu hơn, và dễ kiểm tra hơn là code theo hướng imperative hoặc hướng đối tượng - nhưng nếu bạn không quen với nó và các pattern phổ biến liên quan tới nó, code hướng chức năng cũng trông có vẻ dày đặc hơn nhiều, và các tài liệu liên quan có thể không hiểu được với người mới.
 
