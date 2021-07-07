@@ -1,12 +1,12 @@
 # 17 Mẹo sử dụng Composer hiệu quả
 
-Mặc dù hầu hết các lập trình viên PHP biết làm thế nào sử dụng Composer, nhưng không phải tất cả trong số họ đang sử dụng nó hiệu quả hoặc cách khả thi nhất. Vì vậy tôi quyết định tóm tắt những thứ mà quan trọng trong quy trình làm việc mỗi ngày của tôi.
+Mặc dù hầu hết các lập trình viên PHP biết làm thế nào sử dụng Composer, nhưng không phải tất cả trong số họ đang sử dụng nó hiệu quả hoặc cách hợp lý nhất. Vì vậy tôi quyết định tóm tắt những thứ quan trọng trong quy trình làm việc mỗi ngày của tôi.
 
 Triết lý của hầu hết các mẹo là "chơi an toàn", nghĩa là nếu có nhiều cách để xử lý cái gì đó, tôi sẽ sử dụng cách tiếp cận ít bị lỗi nhất. 
 
 ### Mẹo 1: Đọc tài liệu 
 
-Tôi thực sự thấy nó ý nghĩa. Tài liệu của composer là rất tốt và chỉ mất vài tiếng để đọc nó sẽ tiết kiệm nhiều thời gian dài khi chạy. Bạn sẽ ngạc nhiên cách mà nhiều thứ của composer có thể làm. 
+Tôi thực sự thấy nó ý nghĩa. Tài liệu của composer là rất tốt và chỉ mất vài tiếng để đọc nó sẽ tiết kiệm nhiều thời gian về sau. Bạn sẽ ngạc nhiên cách mà nhiều thứ của composer có thể làm. 
 
 ### Mẹo 2: Hãy nhận biết sự khác nhau giữa một dự án và một thư viện
 
@@ -14,15 +14,15 @@ Tôi thực sự thấy nó ý nghĩa. Tài liệu của composer là rất tố
 
 Một thư viện là một gói có thể tái sử dụng, ở đó bạn sẽ thêm như là một phụ thuộc, giống như `symfony/symfony`, `doctrine/orm` hoặc `elasticsearch/elasticsearch`
 
-Một dự án thường là một ứng dụng, nó phụ thuộc vào một số thư viện. Nó thì luôn luôn tái sử dụng được (không có dự án khác nào có thể yêu cầu (require) nó như là một phụ thuộc). Ví dụ điển hình là một trang web thương mại điện tử, hệ thống hỗ trợ khách hàng, ....
+Một dự án thường là một ứng dụng, nó phụ thuộc vào một số thư viện. Nó thì thường không tái sử dụng được (không có dự án khác nào có thể yêu cầu (require) nó như là một phụ thuộc). Ví dụ điển hình là một trang web thương mại điện tử, hệ thống hỗ trợ khách hàng, ....
 
 Tôi sẽ phân biệt giữa thư viện và một dự án trong các mẹo bên dưới. 
 
 ### Mẹo 3: Sử dụng các phiên bản cụ thể của phụ thuộc cho các ứng dụng
 
-Nếu bạn đang khởi tạo một ứng dụng, bạn nên sử dụng một phiên bản cụ thể nhất để xác định phụ thuộc. Nếu bạn cần parse các file YAML, bạn nên chỉ định phụ thuộc này `"symfony/yaml": "4.0.2"`
+Nếu bạn đang khởi tạo một ứng dụng, bạn nên sử dụng một phiên bản cụ thể nhất để xác định dependency. Nếu bạn cần parse các file YAML, bạn nên chỉ định dependency này `"symfony/yaml": "4.0.2"`
 
-Ngay cả khi nếu thư viện tuân theo [Sematic Versioning](https://semver.org/), chúng có thể có khả năng tương thích ngược trong các phiên bản nhỏ và bản vá. Ví dụ, nếu bạn sử dụng `"symfony/symfony": "^3.1"`, có một vài thứ lại không dùng trong bản 3.2, những điều đó có thể làm hỏng các test của ứng dụng. Hoặc có thể có một lỗi được fix trong PHP_CodeSniffer và nó sẽ phát hiện ra các vấn đề với loại mới trong code của bạn, chúng một lần nữa có thể dẫn đến quá trình xây dựng bị hỏng.
+Ngay cả khi nếu thư viện tuân theo [Sematic Versioning](https://semver.org/), chúng có thể có khả năng tương thích ngược trong các phiên bản nhỏ và bản vá. Ví dụ, nếu bạn sử dụng `"symfony/symfony": "^3.1"`, có một vài thứ lại không dùng trong bản 3.2, những điều đó có thể làm hỏng các test của ứng dụng. Hoặc có thể có một lỗi được fix trong PHP_CodeSniffer và nó sẽ phát hiện ra các lỗi định dạng trong code của bạn, chúng một lần nữa có thể dẫn đến quá trình xây dựng bị hỏng.
 
 Cập nhật các phụ thuộc nên thận trọng, không ngẫu nhiên. Một trong những mẹo phía dưới thảo luận chi tiết hơn.
 
@@ -94,7 +94,7 @@ Mặc dù giải pháp này sẽ bắt được hầu hết các trường hợp
 
 Đó là một thói quen tốt để giữ các package trong `require` và `require-dev` được sắp xếp theo tên. Nó có thể ngăn chặn xung đột merge không cần thiết khi thực hiện rebase một nhánh. Bởi vì nếu bạn đã thêm một package vào cuối danh sách trong 2 nhánh, sẽ có xung đột merge mọi lúc
 
-Đó là một công việc tẻ nhà để mà phải thực hiện thủ công, vì vậy tốt nhất là [cấu hình nó](https://getcomposer.org/doc/06-config.md#sort-packages) trong `composer.json`
+Thật không thú vị gì khi cứ phải làm điều đó m, vì vậy tốt nhất là [cấu hình nó](https://getcomposer.org/doc/06-config.md#sort-packages) trong `composer.json`
 
 ```
 {
@@ -132,7 +132,7 @@ Các package mà được require để chạy ứng dụng hoặc thư viện n
 
 Các package cần thiết cho quá trình phát triển ứng dụng ( hoặc thư viện) nên được xác định trong `require-dev` (ví dụ: PHPUnit, PHP_CodeSniffer, PHPStan)
 
-### Mẹo 11: Cập nhật các phụ thuộc an toàn
+### Mẹo 11: Cập nhật các dependency một cách an toàn
 
 Tôi đoán chúng ta có thể đồng ý trên thực tế các phụ thuộc đó nên được cập nhật thường xuyên. Cái tôi muốn thảo luận ở đây là các phụ thuộc đó đang cập nhật nên được rõ ràng và thận trọng, không được thực hiện bằng cách làm việc với 1 số công việc khác. Nếu bạn cấu trúc lại cái gì đó và đồng thời cập nhật một số thư viện, bạn không thể dễ dàng nói nếu ứng dụng bị hỏng bởi tái cấu trúc lại hay bởi việc cập nhật. 
 
@@ -226,7 +226,7 @@ Nhưng không cần lo lắng, đó là một cách dễ dàng. Hãy chỉ đị
 
 ### Mẹo 16: Sử dụng package private từ Gitlab tự lưu trữ
 
-Nó được đề nghị để sử dụng `vcs` giống như một loại repository và Composer nên xác định đúng cách lấy. Ví dụ, nếu bạn đang thêm một fork từ Github, nó sẽ sử dụng API của nó để tải xuống tệp .zip thay vì clone từ toàn bộ repository.
+Bạn nên sử dụng `vcs` giống như một loại repository và Composer nên xác định đúng cách lấy. Ví dụ, nếu bạn đang thêm một fork từ Github, nó sẽ sử dụng API của nó để tải xuống tệp .zip thay vì clone từ toàn bộ repository.
 
 Nhưng nó phức tạp hơn cho cài đặt Gitlab private. Nếu bạn sử dụng `vcs` giống như một loại repository, Composer sẽ phát hiện ra nó là một cài đặt Gitlab sẽ thử để lấy về package sử dụng API (nó yêu cầu một API key. Tôi không muốn thiết lập nó, vì vậy tôi đã thiết lập cho cài đặt này (giống như sử dụng SSH cho clone)):
 
@@ -324,7 +324,7 @@ Composer script là một công cụ nhẹ để tạo các script build. Tôi �
 ### Kết luận: 
 
 Nếu bạn không đồng ý với các mẹo, tôi sẽ rất vui lòng nếu bạn có thể mô tả lý do tại sao bạn lại có ý kiến ( đừng quên đặt số cho ác mẹo ở đó)
-
+c
 
 
 
