@@ -10,13 +10,13 @@ Có phải là biến và hàm không ? Mọi người có thể học từng kh
 
 Nhưng những gì nằm ngoài những điều cơ bản ?
 
-What are the pillars of Javascript that you should master before calling yourself intermediate (or even senior) Javascript developer?
+
 Những nền tảng nào của Javascript mà bạn nên làm chủ trước khi gọi chính bạn là Javascript developer ở mức trung (hoặc senior)
-Có một số: Scope, Closure, Callbacks, Prototype, and so on.
+Có một số: Scope, Closure, Callbacks, Prototype, và những thứ tương tự.
 
 Nhưng trước khi đi sâu hơn vào các khai niệm này bạn nên ít nhất hiểu cách hoạt động của Javascript Engine.
 
-Trong bài viết nàu, chúng ta sẽ đi qua 2 phần cơ bản của mọi Javascript engine: the Execution Context và the Call Stack
+Trong bài viết này, chúng ta sẽ đi qua 2 phần cơ bản của mọi Javascript engine: the Execution Context và the Call Stack
 
 (Đừng sợ. Nó dễ hơn bạn nghĩ)
 
@@ -81,7 +81,7 @@ Tôi đã mong đợi điều đó.
 
 Tôi đã nói chính xác những điều này vào năm trước.
 
-Trong phần tiếp theo, bạn sẽ khám phá machinery đằng sau những dòng code đơn giản đó
+Trong phần tiếp theo, bạn sẽ khám phá những thứ đằng sau những dòng code trông có vẻ đơn giản đó
 
 ## Javascript: Execution Context là gì? Javascript Engines
 
@@ -105,7 +105,7 @@ Execution Context trong Javascript là gì ?
 
 Mỗi lần bạn chạy Javascript trên một trình duyệt (hoặc trên Node) engine đi qua một loạt các bước.
 
-Một trong những bước này liên quan đến **the creation of the Global Execution Context**
+Một trong những bước này liên quan đến **việc tạo ra Global Execution Context**
 
 Nhưng đợi đã, engine là gì ?
 
@@ -127,7 +127,7 @@ Bây giờ là lúc để hiểu cách chúng làm việc cùng nhau
 
 Execution Context là một từ ưa thích để mô tả môi trường mà code Javascript của bạn chạy.
 
-Thật khó để hình dung những điều trừu tượng này, tôi cảm thấy bạn.
+Thật khó để hình dung những điều trừu tượng này, tôi hiểu mà.
 
 Bây giờ hãy nghĩ Global Execution Context giống như một cái hộp:
 
@@ -153,13 +153,13 @@ Engine đọc đoạn code đó như thế nào ?
 
 **Engine:** _Có vẻ như tôi đã xong_
 
-Nếu tôi hỏi bạn lần nữa: làm thế nào trình duyệt "thấy" code tiếp theo, bạn sẽ nói gì ?
+Nếu tôi hỏi bạn lần nữa: trình duyệt "xem" code tiếp theo như thế nào, bạn sẽ nói gì ?
 
 Vâng, nó theo từ trên xuống dưới nhưng ....
 
 Như vậy bạn có thể thấy engine không chạy hàm pow!
 
-Đó là một mô tả hàm, không phải là lời gọi hàm.
+Đó là một khai báo hàm, không phải là lời gọi hàm.
 
 Đoạn code ở trên sẽ dịch một vài biến lưu vào Bộ nhớ toàn cụ: Một mô tả hàm và một biến
 
@@ -181,7 +181,7 @@ Nếu bạn đọc "Scope và Closure" của Kyle Simpson bạn có thể thấy
 
 Trong thực tế chúng là những thứ tương tự nhau.
 
-I'm flying 10,000 feet high here, for a good reason
+Tôi đang bay cao 10.000 feet ở đây, vì một lý do chính đáng.
 
 Đó là những khái niệm khó.
 
@@ -227,7 +227,7 @@ Nó tạo:
 * Một Global Execution context
 * Một Global Memory
 
-Bên cạnh đó trong ví dụ của chúng ta không có nhiều thứ được xảy ra hơn:
+Ngoài ra trong ví dụ của chúng ta không có gì xảy ra nữa:
 
 ```
 var num = 2;
