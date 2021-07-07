@@ -2,8 +2,8 @@
 
 # Điều chỉnh hiệu năng MySQL 5.7 sau khi cài đặt
 
-Đây là blog cập nhật [blog của Stephane Combaudon's blog trong Điều chỉnh hiệu năng MySQL][1], và bao quát việc điều chỉnh hiệu năng MySQL 5.7 sau cài đặt.
-Một vài năm trước, Stephane Combaudon đã viết một bài viết blog trên [10 cài đặt điều chỉnh hiệu năng MySQL sau khi cài đặt][1] nó bao gồm cho các phiên bản cũ hơn MySQL: 5.1, 5.5 và 5.6. Trong bài viết này, tôi sẽ xem xét điều chỉnh gì trong MySQL 5.7 (tập trung vào InnoDB).
+Đây là blog cập nhật [blog của Stephane Combaudon's blog trong Điều chỉnh hiệu năng MySQL][1], và bao gồm việc điều chỉnh hiệu năng MySQL 5.7 sau cài đặt.
+Một vài năm trước, Stephane Combaudon đã viết một bài viết blog về [10 cài đặt điều chỉnh hiệu năng MySQL sau khi cài đặt][1] nó bao gồm cho các phiên bản cũ hơn MySQL: 5.1, 5.5 và 5.6. Trong bài viết này, tôi sẽ xem xét điều chỉnh gì trong MySQL 5.7 (tập trung vào InnoDB).
 
 Tin tốt là MySQL 5.7 có giá trị mặc định tốt hơn. Morgan Tocker đã tạo một [trang với một danh sách tính năng đã hoàn thành trong MySQL 5.7][2], và là một nơi tham khảo tốt. Ví dụ, các biên su là được thiết lập _theo mặc định_:
 * innodb_file_per_table=ON
@@ -18,7 +18,8 @@ Trong MySQL 5.7, chỉ có 4 biến thực sự quan trọng, chúng cần đư�
 ```
 [mysqld] 
 # các biến khác ở đây
-innodb_buffer_pool_size = 1G # (điều chỉnh giá trị ngay tại đây, 50%-70% của tổng dung lượng RAM) innodb_log_file_size = 256M 
+innodb_buffer_pool_size = 1G # (điều chỉnh giá trị ngay tại đây, 50%-70% của tổng dung lượng RAM)
+innodb_log_file_size = 256M 
 innodb_flush_log_at_trx_commit = 1 # có thể thay đổi 2 hoặc 0 
 innodb_flush_method = O_DIRECT
 ```
@@ -49,7 +50,7 @@ _InnoDB buffer pool size_. Nhìn vào các đồ thị:
 
 ![MySQL 5.7 Performance Tuning][5]
 
-Giống như chúng ta có thể nhìn thấy, chúng ta có thể lợi ích từ việc tăng kích thước bộ nhớ đệm InnoDB một chút lên ~10G, giống như chúng ta có  RAM sẵn sàng và số trang trống là nhỏ so với tổng số  bộ nhớ đệm.
+Giống như chúng ta có thể nhìn thấy, chúng ta có thể lợi ích từ việc tăng kích thước bộ nhớ đệm InnoDB một chút lên ~10G, vì chúng ta có RAM khả dụng và số trang trống là nhỏ so với tổng số  bộ nhớ đệm.
 
 _InnoDB log file size._ Nhìn vào đồ thị:
 
