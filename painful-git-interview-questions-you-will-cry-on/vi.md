@@ -1,22 +1,22 @@
 # 11 Painful Git Interview Questions You Will Cry On
 
-Theo những tóm tắt mới nhất của developer Stack Overflow, hơn 70% các developer sử dụng git, trở thành một trong những VCS được dùng nhiều nhất trên thế giới. Git được sử dụng phổ biến ở cả phát triển pen source và phần mềm thương mại, với nhiều lợi ích cho các cá nhân, nhóm và doanh nghiệp.
+Theo những tóm tắt mới nhất của developer Stack Overflow, hơn 70% các developer sử dụng git, trở thành một trong những VCS được dùng nhiều nhất trên thế giới. Git được sử dụng phổ biến ở cả phát triển open source và phần mềm thương mại, với nhiều lợi ích cho các cá nhân, nhóm và doanh nghiệp.
 
 ## Câu hỏi 1: Git fork là gì ? Sự khác nhau giữa fork, branch và clone là gì ?
 
-* Một fork là một remote, một repository copy của phía server, khác từ gốc. Một fork không là một khái niệm Git thực sự, đó là một ý tưởng chính trị/xã hội. 
-* Một clone không là một fork, một clone là một bản copy dưới local của một vài repository trên remote. Khi bạn cloen, bạn thực ra đang copy toàn bộ mã nguồn của repository, bao gồm tất cả lịch sử và các nhánh.
+* Một fork là một remote, một repository copy của phía server, tách bạch với bản gốc. Một fork không là một khái niệm Git thực sự, đó là một ý tưởng chính trị/xã hội. 
+* Một clone không là một fork, một clone là một bản copy dưới local của một vài repository trên remote. Khi bạn clone, bạn thực ra đang copy toàn bộ mã nguồn của repository, bao gồm tất cả lịch sử và các nhánh.
 * Một nhánh (branch) là một cơ chế để xử lý các thay đổi với một repository riêng để sau đó merge chúng với các code còn lại. Một nhánh hiểu là một vài thứ nằm trong một repository. Về mặt khái niệm, nó đại diện cho một luồng phát triển.
 
 ## Câu hỏi 2: Sự khác nhau giữa một "pull request" và một "nhánh" là gì ?
 
 Một **nhánh** chỉ là một phiên bản riêng của code
-Một **pull request** là khi ai đó lấy về một repository, tạo chúng trên nhánh của họ, thực hiện mộ số thay đổi, sau đó cố gắng hợp nhất nhand đó vào (đẩy những thay đổi của họ vào repository code của người khác)
+Một **pull request** là khi ai đó lấy về một repository, tạo chúng trên nhánh của họ, thực hiện mộ số thay đổi, sau đó cố gắng hợp nhất nhánh đó vào (đẩy những thay đổi của họ vào repository code của người khác)
 
 ## Câu hỏi 3: Sự khác nhau giữa 'git pull' và 'git fetch' là gì ?
 
 Theo thuật ngữ đơn giản nhất, `git pull` làm một `git fetch` được theo dõi bởi một `git merge`
-* Khi bạn sử dụng `pull` , Git cố gắng để tự động làm các việc cho bạn. Đó là ngữ cảnh nhạy cảm, nên Git sẽ merge bất kỳ các commit nào được pull vào nhánh bạn đang làm việc hiện tại. `pull` tự động merge các commit mà không để bạn xem qua chúng trước khi merge. Nếu bạn không quản lý chặt các nhánh của bạn, bạn có thể thường xuyên gặp những xung đột (conflict).
+* Khi bạn sử dụng `pull` , Git cố gắng để tự động làm các việc cho bạn. Tùy vào hoàn cảnh, Git sẽ merge bất kỳ các commit nào được pull vào nhánh bạn đang làm việc hiện tại. `pull` tự động merge các commit mà bạn không cần xem qua chúng trước khi merge. Nếu bạn không quản lý chặt các nhánh của bạn, bạn có thể thường xuyên gặp những xung đột (conflict).
 * Khi bạn `fetch`, Git thu thập bất kỳ commit nào **từ nhánh mục tiêu không tồn tại trong nhánh hiện tại của bạn** và lưu chúng trong repository local của bạn. Điều này đặc biệt hữu ích nếu bạn cần cập nhật repository của mình, nhưng những thứ đang làm việc có thể bị hỏng nếu bạn cập nhật các file của mình. Để tích hợp các commit vào nhánh master, bạn sử dụng `merge`
 
 ## Câu hỏi 4: Làm thế nào để revert lại commit trước trong Git ?
@@ -52,7 +52,7 @@ Khi bạn thực hiện `git status`, bạn sẽ thấy các file tương tự n
 
 ## Câu hỏi 5: "git cherry-pick" là gì ?
 
-Câu lệnh git `cherry-pick` thường được sử dụng để đưa ra các commit cụ thể từ một nhánh trong một repository trên một nhánh khác.Sử dụng phổ biến để chuyển tiếp hoặc back-port các commit từ nhánh bảo trì đến nhánh phát triển.
+Câu lệnh git `cherry-pick` thường được sử dụng để đưa ra các commit cụ thể từ một nhánh trong một repository trên một nhánh khác.Thường được sử dụng để chuyển tiếp hoặc back-port các commit từ nhánh bảo trì đến nhánh phát triển.
  Điều này trái ngược với các cách khác như merge và rebase mà thường được áp dụng cho nhiều commit vào một nhánh khác.
  Xem xét: 
 `git cherry-pick <commit-hash>`
@@ -69,7 +69,7 @@ Câu lệnh git `cherry-pick` thường được sử dụng để đưa ra các
  Nguồn: [stackoverflow.com](https://stackoverflow.com/questions/3689838/whats-the-difference-between-head-working-tree-and-index-in-git)
  ## Câu hỏi 8: Bạn có thể giải thích về luồng làm việc của Gitflow không ?
  Luồng làm việc Gitflow sử dụng hai nhánh chạy song song lâu dài để ghi lại lịch sử của dự án, `master` và `develop` : 
- * **Master** luông sẵn sàng được release trên LIVE, với tất cả mọi thứ được kiểm tra đầy đủ và được phê duyệt (sẵn sàng cho production)
+ * **Master** luồng sẵn sàng được release trên LIVE, với tất cả mọi thứ được kiểm tra đầy đủ và được phê duyệt (sẵn sàng cho production)
     - **Hotfix** nhánh bảo trì hoặc "hotfix" được sử dụng để nhanh chóng vá các bản phát hành của production. Các nhánh hotfix rất giống các nhánh phát hành và các nhánh tính năng trừ khi chúng được dựa trên nhánh  `master` thay vì `develop`
 * **Develop** là nhánh để mà tất cả các nhánh tính năng được merge vào và nơi tất cả các test được thực hiện. Chỉ khi mọi thứ được kiểm tra kỹ lưỡng và được fix thì nó mới có thể được mereg với `master`
     - **Feature** mỗi tính năng mới nên được để ở trong nhánh riêng của nó, nó có thể được push lên nhánh `develop` giống nhánh cha của chúng.
@@ -92,7 +92,7 @@ $ git status
 On branch master
 nothing to commit, working tree clean
 ```
- Một nơi chúng ta có thể sử dụng stash là nếu chúng ta phát hiện ra chúng ta đã quên một diều gì đó trong lần commit cuối cùng của chúng ta và bắt đầu làm việc trên nhánh tiếp theo trong cùng một nhánh
+ Một nơi chúng ta có thể sử dụng stash là nếu chúng ta phát hiện ra chúng ta đã quên một điều gì đó trong lần commit cuối cùng của chúng ta và bắt đầu làm việc trên nhánh tiếp theo trong cùng một nhánh
  ```
 # Assume the latest commit was already done
 # start working on the next patch, and discovered I was missing something
@@ -141,8 +141,8 @@ A <- B <- C <- D <- E
 2. Sự lựa chọn rebase hoặc merge dựa trên những gì bạn muốn lịch sử trong như thế nào
  Nhiều yếu tố cần xem xet: 
  1. Nhánh của bạn có đang nhận được các thay đổi từ việc chia sẻ với các develop khác ngoài team của bạn (ví dụ opensoure, public) ? Nếu vậy, đừng rebasse. Rebase sẽ huỷ bỏ các nhánh và các developer khác sẽ bị hỏng / không nhất quán trừ khi bạn sử dụng lệnh `git pull --reabse`
-2. **Sự phát triển team của bạn có kỹ năng thế nào** Rebase là một hành động phá hoại. Điều đó có nghĩa, nếu bạn không áp dụng nó một cách chính xác, bạn có thể mất công việc đã commit và hoặc phá vỡ sự thống nhất giữa các repository của các developer.
-3. **Bản thân nhánh đó có đại diện cho một thông tin hữu ích không ?** Một số nhóm sử dụng mô hình `branch-per-feature`  nơi mà mỗi nhánh thể hiện một tính năng (hoặc bugfix hoặc tính năng con, ...). Trong mô hình này nhánh giúp xác định mối liên quan giữa các commit. Trong trường hợp mô hình `branch-per-developer` chính nhánh không truyền tải bất cứ thông tin bổ sung nào (commit đã lưu tác giả). Sẽ không có hại gì khi rebase
+2. **Đội ngũ phát triển của bạn có kỹ năng thế nào** Rebase là một hành động mang tính phá hủy. Điều đó có nghĩa, nếu bạn không áp dụng nó một cách chính xác, bạn có thể mất công việc đã commit và hoặc phá vỡ sự thống nhất giữa các repository của các developer.
+3. **Bản thân nhánh đó có thể hiện thông tin hữu ích không ?** Một số nhóm sử dụng mô hình `branch-per-feature`  nơi mà mỗi nhánh thể hiện một tính năng (hoặc bugfix hoặc tính năng con, ...). Trong mô hình này nhánh giúp xác định mối liên quan giữa các commit. Trong trường hợp mô hình `branch-per-developer` chính nhánh không truyền tải bất cứ thông tin bổ sung nào (commit đã lưu tác giả). Sẽ không có hại gì khi rebase
 4. **Bạn có thể muốn revert một merge vì bất kỳ lý do nào ? ** Revert (giống như undo) một rebase là một điều khá khó khăn và không thể (nếu rebase có xung đột) so với revert một merge. Nếu bạn nghĩ rằng có thể có một cơ hội sẽ muốn revert thì sử dụng merge
 Nguồn: [stackoverflow.com](https://stackoverflow.com/questions/804115/when-do-you-use-git-rebase-instead-of-git-merge)
 
