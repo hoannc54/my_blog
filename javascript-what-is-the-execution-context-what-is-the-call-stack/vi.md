@@ -6,13 +6,12 @@ Tôi cá rằng bạn không biết câu trả lời.
 
 Các thành phần cơ bản nhất của ngôn ngữ lập trình là gì ?
 
-Có phải là biến và hàm không ? Mọi người có thể học từng khối xây dựng.
+Có phải là biến và hàm không ? Mọi người có thể học những phần đó.
 
 Nhưng những gì nằm ngoài những điều cơ bản ?
 
-What are the pillars of Javascript that you should master before calling yourself intermediate (or even senior) Javascript developer?
 Những nền tảng nào của Javascript mà bạn nên làm chủ trước khi gọi chính bạn là Javascript developer ở mức trung (hoặc senior)
-Có một số: Scope, Closure, Callbacks, Prototype, and so on.
+Có một số: Scope, Closure, Callbacks, Prototype...
 
 Nhưng trước khi đi sâu hơn vào các khai niệm này bạn nên ít nhất hiểu cách hoạt động của Javascript Engine.
 
@@ -61,7 +60,7 @@ Xong
 
 Nó trông không khó !
 
-Bây giờ hãy cho tôi biết: Theo thứ tự bạn nghĩ trình duyệt sẽ đoán đoạn code thế nào ?
+Bây giờ hãy cho tôi biết: Theo thứ tự bạn nghĩ trình duyệt sẽ đọc đoạn code thế nào ?
 
 Nói cách khác, nếu bạn là trình duyệt, làm thế nào bạn sẽ đọc được đoạn code đó ?
 
@@ -127,7 +126,7 @@ Bây giờ là lúc để hiểu cách chúng làm việc cùng nhau
 
 Execution Context là một từ ưa thích để mô tả môi trường mà code Javascript của bạn chạy.
 
-Thật khó để hình dung những điều trừu tượng này, tôi cảm thấy bạn.
+Thật khó để hình dung những điều trừu tượng này, tôi thông cảm với điều đó.
 
 Bây giờ hãy nghĩ Global Execution Context giống như một cái hộp:
 
@@ -181,7 +180,7 @@ Nếu bạn đọc "Scope và Closure" của Kyle Simpson bạn có thể thấy
 
 Trong thực tế chúng là những thứ tương tự nhau.
 
-I'm flying 10,000 feet high here, for a good reason
+Tôi đang bay cao 10.000 feet ở đây, vì một lý do chính đáng.
 
 Đó là những khái niệm khó.
 
