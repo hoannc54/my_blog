@@ -6,9 +6,9 @@
 
 Đây là tài liệu ban đầu có vẻ là tầm thường và có lẽ nhàm chán, nhưng tạo nên nhiều thông tin thú vị, có lẽ những thứ bạn không nhận ra về cách làm việc index của MariaDB và MySQL.
 
-This also explains [EXPLAIN][1] (to some extent).
+Điều này cũng giải thích [lệnh Explain][1] (cho vài phạm vi nhất định)
 
-(Most of this applies to non-MySQL brands of databases, too.)
+(Hầu hết những điều này cũng áp dụng cho các nhánh cơ sở dữ liệu không phải MySQl)
 
 ## Thảo luận về câu truy vấn
 
@@ -33,7 +33,7 @@ Có sẵn bảng `Presidents` giống như sau:
 
 ("Andrew Johnson" được lấy trong bài học vì chúng bị trùng lặp)
 
-Cái gì index(es) sẽ tốt nhất cho  câu hỏi trên? Cụ thể hơn, tốt nhất cho
+(Các) chỉ mục nào sẽ tốt nhất cho  câu hỏi trên? Cụ thể hơn, tốt nhất cho
     
     
         SELECT  term
@@ -53,7 +53,7 @@ Một số INDEXes để thử...
 
 ## Không indexes
 
-Tốt, tôi đang Well, I am fudging a little here. Tôi có một PRIMARY KEY là `seq`, nhưng cái đó không có lợi trong câu truy vấn mà chúng ta đang học.
+Xem nào, tôi đang tào lao 1 chút ở đây. Tôi có một PRIMARY KEY là `seq`, nhưng cái đó không có lợi trong câu truy vấn mà chúng ta đang học.
     
     
     mysql>  SHOW CREATE TABLE Presidents G
@@ -92,13 +92,13 @@ Tốt, tôi đang Well, I am fudging a little here. Tôi có một PRIMARY KEY l
 
 Đầu tiên, hãy mô tả cách mà InnoDB lưu trữ và dùng index.
 
-* TDữ liệu và PRIMARY KEY  được "nhóm lại" cùng nhau trên BTree. 
+* Dữ liệu và PRIMARY KEY  được "nhóm lại" cùng nhau trên BTree. 
 * Một BTree tìm kiếm thì khá nhanh và hiệu quả. Đối với một triệu dòng trong bảng có thể có 3 cấp trong BTree, và trên 2 câp là có lẽ được cache. 
 * Mỗi index phụ thì nằm trong một index khác BTree, với PRIMARY KEY ở lá.
-* Nạp 'liên ' (theo index) các phần tử từ một BTree thì rất hiệu quả vì chúng được lưu trữ liên tục.
+* Nạp 'liên tục' (theo index) các phần tử từ một BTree thì rất hiệu quả vì chúng được lưu trữ liên tục.
 * Với mục đích đơn giản, chúng ta có thể đếm mỗi tìm kiếm BTree như một đơn vị của công việc và bỏ qua quét các phần tử liên tiếp. Điều này xấp xỉ số lần truy cập ổ đĩa cho 1 bảng lớn trong một hệ thống bận rộn.
 
-Với MyISAM, PRIMARY KEY thì không được lưu trữ với dữ liệu, vì vậy hãy coi nó như là khoá phụ (quá đơn giản).
+Với MyISAM, PRIMARY KEY thì không được lưu trữ với dữ liệu, vì vậy hãy coi nó như là khoá thứ cấp (quá đơn giản).
 
 ## INDEX(first_name), INDEX(last_name)
 
@@ -106,8 +106,8 @@ Người mới, một khi anh ấy học về index, quyết định index nhi�
 
 MySQL hiếm khi sử dụng nhiều hơn một index trong 1 lần của 1 câu truy vấn, Vậy nên, nó sẽ phân tích các index khả thi.
 
-* first_name -- there are 2 possible rows (một BTree tìm kiếm, sau đó quét liên tục) 
-* last_name -- there are 2 possible rows Giả sử nó chọn last_name. Đây là bước để thực hiện SELECT: 
+* first_name -- có 2 dòng khả dụng (một BTree tìm kiếm, sau đó quét liên tục) 
+* last_name -- có 2 dòng khả dụng. Giả sử nó chọn last_name. Đây là bước để thực hiện SELECT: 
 1\. sử dụng INDEX(last_name), tìm 2 index đầu vào với last_name = 'Johnson'. 
 2\. Lấy PRIMARY KEY (Được bổ sung cho mỗi index phụ trong InnoDB); lấy (17, 36). 
 3\. Tiếp cận dữ liệu bằng cách dùng seq = (17, 36) để lấy các dòng cho  Andrew Johnson và Lyndon B. Johnson. 
@@ -152,11 +152,11 @@ OK, để bạn thực sự thông minh và quyết định rằng MySQL nên đ
             Extra: Using intersect(first_name,last_name); Using where
     ```
 
-EXPLAIN thất bại để cung cấp cho các chi tiết của số dòng dữ liệu được tập hợp từ mỗi index.
+EXPLAIN không thể cung cấp cho các chi tiết của số dòng dữ liệu được tập hợp từ mỗi index.
 
 ## INDEX(last_name, first_name)
 
-Nó được gọi là một "hợp chất" hoặc "hỗn hợp" index vì nó có nhiều hơn một cột 
+Nó được gọi là một "trộn" hoặc "hỗn hợp" index vì nó có nhiều hơn một cột 
 1\. Đi sâu vào BTree cho index để lấy các dòng index chính xác cho Johnson+Andrew; get seq = (17). 
 2\. Tiếp cận dữ liệu bằng cách sử dụng seq = (17) để lấy dòng cho  Andrew Johnson. 
 3\. Đưa ra câu trả lời (1865-1869). Thế này tốt hơn. Trong thực tế điều này thường là tốt nhất.
@@ -201,13 +201,13 @@ Nó được gọi là một "hợp chất" hoặc "hỗn hợp" index vì nó c
 
 Mọi thứ đều tương tự như sử dụng "compound", ngoại trừ việc thêm "Using index".
 
-## Variants
+## Các biến thể
 
 * Cái gì sẽ xảy ra nếu bạn xáo trộn các trường trong mệnh đề WHERE? Câu trả lời: Thứ tự của những phép AND thì không quan trọng. 
 * Cái gì xảy ra nếu bạn xáo trộn các INDEX? Câu trả lời: Nó có thể tạo ra sự khác biệt lớn. Nhiều hơn một phút. 
-* Điều gì xảy ra nếu thêm các trường vào cuối ? Câu trả lời: Tác hại tối thiểu là có thể rất nhiều. 
-* Dự phòng? Đó là nếu bạn có cả: INDEX(a), INDEX(a,b)? Trả lời: Chi phí thừa cho INSERTs; nó hiếm khi hữ ích cho SELECTs. 
-* Tiền tố? Đó là, INDEX(last_name(5). first_name(5)) Trả lời: Đừng bận tâm , nó hiếm khi giúp ích và thường làm đau. (Chit tiết trong chủ đề khác.) 
+* Điều gì xảy ra nếu thêm các trường vào cuối ? Câu trả lời: 1 chút ảnh hưởng nhỏ, có thể rất nhiều cái tốtu. 
+* Dự phòng? Đó là nếu bạn có cả: INDEX(a), INDEX(a,b)? Trả lời: Chi phí thừa cho INSERTs; nó hiếm khi hữu ích cho SELECTs. 
+* Tiền tố? Đó là, INDEX(last_name(5). first_name(5)) Trả lời: Đừng bận tâm , nó hiếm khi giúp ích và thường làm hại. (Chit tiết trong chủ đề khác.) 
 
 ## Thêm ví dụ:
 
@@ -233,3 +233,4 @@ Mọi thứ đều tương tự như sử dụng "compound", ngoại trừ việ
 ## Postlog
 
 Refreshed -- Oct, 2012; more links -- Nov 2016
+ILLDIRankAgel0+1whoissourceRankMore dataSummary reportDiagnosisDensity00n/a
