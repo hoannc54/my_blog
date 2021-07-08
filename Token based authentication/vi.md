@@ -1,7 +1,7 @@
 
 ## Giới thiệu
 
-Token based authentication là phương thức nổi tiếng trên nền tảng web ngày nay. Với hầu hết các công ty web sử dụng API, token là cách tốt nhất để xác thực cho nhiều user
+Token based authentication là phương thức phổ biến trên nền tảng web ngày nay. Với hầu hết các công ty web sử dụng API, token là cách tốt nhất để xác thực cho nhiều user
 
 Có một số yếu tố quan trọng khi chọn token dựa trên xác thực cho ứng dụng của bạn. Lý do chính cho token là : 
 Các máy chủ không trạng thái và có thể mở rộng
@@ -11,7 +11,7 @@ Thêm bảo mật
 
 ## Ai sử dụng Token Based Authentication ?
 
-Bất kỳ API hoặc ứng dụng web nào mà bạn gặp phải đều có khả năng sử dụng token. Các ứng dụng như Facebook, Twitter, Google+, GitHub và nhiều hơn nữa sử dụng token
+Bất kỳ API hoặc ứng dụng web nào mà bạn thấy đều có khả năng sử dụng token. Các ứng dụng như Facebook, Twitter, Google+, GitHub và nhiều hơn nữa sử dụng token
 
 Hãy xem chính xác cách thức hoạt động của nó. 
 
@@ -25,7 +25,7 @@ Từ khi giao thức HTTP là phi trạng thái (stateless), điều này có ng
 
 Đó là cách truyền thống để ứng dụng của chúng ta nhớ chúng ta là ai để lưu trữ thông tin người dùng đã đăng nhập trên server. Điều này có thể được thực hiện theo một vài cách khác trong phiên, luôn luôn nhớ hoặc lưu trữ trên ổ đĩa.
 
-Đây là một đồ hoạ các một server dựa trên luồng xác thực sẽ được thấy 
+Đây là một sơ đồ mô tả một server dựa trên luồng xác thực sẽ được thấy 
 
 ![anh](https://cask.scotch.io/2014/11/tokens-traditional.png)
 
@@ -38,7 +38,7 @@ Một vài vấn đề chính phát sinh với phương thức xác thực này:
 
 **Khả năng mở rộng** Từ khi các session được lưu trữ trên bộ nhớ, điều này đưa đến vấn đề về khả năng mở rộng. Khi các nhàu cung cấp Cloud của chúng ta bắt đầu sao chép các server để xử lý việc chịu tải ứng dụng, có các thông tin quan trọng trong bộ nhớ session sẽ hạn chế khả năng mửo rộng quy mô của chúng ta.
 
-**CORS** Khi chúng ta muốn mở rộng ứng dụng của mình để cho phép dữ liệu của chúng ta được sử dụng trên nhiều thiết bị di động, chúng ta phải lo lắng về việc chia sẻ tài nguyên gốc (CORS - cross-origin resource sharing). Khi sử dụng AJAX gọi để lấy tài nguyên từ một tên miền khác (mobile đến API server), chúng ta cso thể gặp sự cố với các request bị cấm
+**CORS** Khi chúng ta muốn mở rộng ứng dụng của mình để cho phép dữ liệu của chúng ta được sử dụng trên nhiều thiết bị di động, chúng ta phải lo lắng về việc chia sẻ tài nguyên gốc (CORS - cross-origin resource sharing). Khi sử dụng AJAX gọi để lấy tài nguyên từ một tên miền khác (mobile đến API server), chúng ta có thể gặp sự cố với các request bị cấm
 
 **CSRF** Chúng ta cũng sẽ có sự bảo vệ chống lại [cross-site request forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery) (CSRF). Người dùng dễ bị CSRF tấn công khi họ có thể đã xác thực với trang web của ngân hàng và điều này có thể được tận dụng để truy cập vào trang web khác.
 
@@ -52,7 +52,7 @@ Chỉ với khái niệm này giải quyết được nhiều vấn đề về v
 
 Không có thông tin nào về session nghĩa là ứng dụng của bạn có thể mở rộng và thêm nhiều máy chủ nếu cần mà không phải lo lắng về nơi lưu người dùng đã đăng nhập
 
-Mặc fuf việc triển khai này có thể thay đổi, nhưng nó vẫn theo như sau: 
+Mặc dù việc triển khai này có thể thay đổi, nhưng nó vẫn theo như sau: 
 
 1. Quyền truy cập của người dùng với username/password
 2. Ứng dụng xác minh các thông tin xác thực 
@@ -86,7 +86,7 @@ Nếu chúng ta giữ thông tin session về một người dùng đã đăng n
 
 Token không là cookie, được gửi theo mọi request và không có cookies nào được gửi, điều này giúp ngăn chặn tấn công CSRF. Ngay cả khi triển khai cụ thẻ lưu trữ token trong một cookies phía client, các cookie chỉ là một cơ chế lưu trữ thay vì một cơ chế xác thực. Không có thông tin nào dựa trên session để thao tác vì chúng ta không có session.
 
-Token cũng hết hạn sau một khoảng thời gian nhất định, do đó, người dùng sẽ yêu cầu đăng nhập lại một lần nưuax. Điều này giúp chúng ta vẫn bảo mật. Ngoài ra còn có khái niệm của [token revocation](https://tools.ietf.org/html/rfc7009) cho phép chúng ta vô hiệu hoá một token cụ thể và thậm chí một nhóm token dựa trên cùng một uỷ quyền.
+Token cũng hết hạn sau một khoảng thời gian nhất định, do đó, người dùng sẽ yêu cầu đăng nhập lại một lần nữa. Điều này giúp chúng ta vẫn bảo mật. Ngoài ra còn có khái niệm của [token revocation](https://tools.ietf.org/html/rfc7009) cho phép chúng ta vô hiệu hoá một token cụ thể và thậm chí một nhóm token dựa trên cùng một uỷ quyền.
 
 ### Khả năng mở rộng (Bạn của bạn và các quyền)
 
@@ -108,11 +108,11 @@ Dữ liệu và tài nguyên của chúng ta sẵn sàng cho các request từ b
 
 Khi tạo token, bạn có một vài tuỳ chọn. Chúng ta sẽ nghiên cứu sâu hơn về chủ đề này khi chúng ta bảo mật API trong một bài viết tiếp theo, nhưng tiêu chuẩn để sử dụng là [JSON Web Tokens](https://scotch.io/tutorials/the-anatomy-of-a-json-web-token)
 
-Biểu đò cho các debugger và thư hiện hiển thị các hỗ trợ cho  JSON Web Tokens. Bạn có thể thấy rằng nó có nhiều hỗ trợ trên nhiều ngôn ngữ. Điều này có nghĩa là bạn có thể sẵn sàng chuyển đổi cơ chế xác thực của mình nếu bạn cho làm điều đó trong tương lai.
+Biểu đồ cho các debugger và thư hiện hiển thị các hỗ trợ cho  JSON Web Tokens. Bạn có thể thấy rằng nó có nhiều hỗ trợ trên nhiều ngôn ngữ. Điều này có nghĩa là bạn có thể sẵn sàng chuyển đổi cơ chế xác thực của mình nếu bạn cho làm điều đó trong tương lai.
 
 ## Kết luận
 
-Đây chỉ được xem là các thức và lý do của  token based authentication. Như mọi khi trong thé giới bảo mật, có nhiều, rất nhiều cho mỗi chủ đề và nó thay đổi theo từng trường hợp sử dụng. Chúng ta thậm chí còn nghiên cứu một số chủ đề về khả năng mở rộng để phù hợp với các cuộc giao tiếp chủ chúng. 
+Đây chỉ là bề nổi của cách thức và lý do của  token based authentication. Như mọi khi trong thé giới bảo mật, có nhiều, rất nhiều cho mỗi chủ đề và nó thay đổi theo từng trường hợp sử dụng. Chúng ta thậm chí còn nghiên cứu một số chủ đề về khả năng mở rộng để phù hợp với các cuộc giao tiếp chủ chúng. 
 
 Cái này ở mức tổng quan cao, vì vậy xin vui lòng chỉ ra bất cứ điều gì đã bị bỏ lỡ hoặc bất kỳ câu hỏi nào của bạn về vấn đề này.
 
