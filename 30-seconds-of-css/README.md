@@ -109,7 +109,7 @@ Tạo hiệu ứng nảy khi tải trang.
 
 Chú ý: `1rem` thường là `16px`.
 
-1. `@keyframes` để định nghĩa một hiệu ứng có 2 trạng thái, khi thành phần thay đổi `opacity` và nó được dịch chuyển lên trong mặt phẳng 2D thì sử dụng `transform: translateY()`.
+1. `@keyframes` để định nghĩa một hiệu ứng có 2 trạng thái, khi thành phần `opacity` thay đổi và nó được dịch chuyển lên trong mặt phẳng 2D thì sử dụng `transform: translateY()`.
 
 2. `.bouncing-loader` là khối cha chứa các hình tròn nảy lên  và sử dụng các thuộc tính`display: flex` và `justify-content: center` để đặt chúng vào giữa.
 
@@ -117,11 +117,11 @@ Chú ý: `1rem` thường là `16px`.
 
 4. `margin: 3rem 0.2rem` xác định cho mỗi hình tròn căn lề trên/dưới `3rem` và căn lề trái/phải `0.2rem` để chúng không chạm trực tiếp vào nhau, cho chúng một vài khoảng trống.
 
-5. `animation` là một thuộc tính nhanh với các thuộc hiệu ứng khác nhau: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` đã được sử dụng.
+5. `animation` là một thuộc tính ~~nhanh với~~(shorthand ... for) *nhanh/tắt thay cho* các thuộc hiệu ứng khác nhau: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` đã được sử dụng.
 
 6. `nth-child(n)` trỏ vào thành phần là con thứ n của thành phần cha.
 
-7. `animation-delay` được dùng với 2s và tương ứng với thẻ `div` thứ 3, để các thành phần không bắt đầu hiệu ứng cùng một lúc.
+7. `animation-delay` được dùng ~~với 2s và tương ứng với thẻ `div` thứ 3~~(on the second and third div respectively)*lần lượt với thẻ div thứ 2 và thứ 3*, để các thành phần không bắt đầu hiệu ứng cùng một lúc.
 
 #### Hỗ trợ trình duyệt
 
@@ -233,8 +233,8 @@ html {
 #### Giải thích
 
 1. `.clearfix::after` định nghĩa một thành phần giả.
-2. `content: ''` cho phép thành phần giả được ảnh hưởng bởi bố cụ.
-3. `clear: both` chỉ các thành phần bên trái, phải, cả hay không thể kề nhau đến các thành phần đã lưu trước đó trong cùng một khối.
+2. `content: ''` cho phép thành phần giả được ảnh hưởng bởi bố cục.
+3. `clear: both` chỉ các thành phần bên trái, phải, ~~cả hay~~(both sides of the element cannot be adjacent to )*cả 2 bên của thành phần không thể kề với* thành phần đã lưu trước đó trong cùng một khối.
 
 #### Hỗ trợ trình duyệt
 
@@ -457,7 +457,7 @@ Căn giữa một phần tử con theo chiều ngang và chiều dọc trong ph�
 #### Giải thích
 
 1. `display: grid` cho phép dạng lưới.
-2. `justify-content: center` căn giưaax phần tử con theo chiều ngang.
+2. `justify-content: center` căn giữa phần tử con theo chiều ngang.
 3. `align-items: center` căn giữa phần tử con theo chiều dọc.
 
 #### Hỗ trợ trình duyệt
@@ -617,7 +617,7 @@ Nếu đoạn văn bản dài quá 1 dòng, nó sẽ được loại bỏ và th
 
 #### Giải thích
 
-1. `overflow: hidden` ngăn ngừa đoạn văn bản tràn ra quá kích thước của nó (một khó, 100% chiều rộng và chiều cao tự động).
+1. `overflow: hidden` ngăn ngừa đoạn văn bản tràn ra quá kích thước của nó (~~một khó~~(for a block)*cho 1 khối*, 100% chiều rộng và chiều cao tự động).
 2. `white-space: nowrap` ngăn ngừa văn bản vượt quá 1 dòng theo chiều cao.
 3. `text-overflow: ellipsis` thực hiện nếu văn bản vượt quá kích thuước của nó, nó sẽ kết thúc một dấu chấm lửng.
 4. `width: 200px;` đảm bảo phần tử có một kích thuước, để biết khi nào thì lấy dấu chấm lửng.
@@ -887,7 +887,7 @@ Tạo một đổ bóng tương tự `box-shadow` nhưng dựa trên các màu �
 
 #### Giải thích
 
-Đoạn mã yêu cầu một trường hợp khá phức tạp của ngữ cảnh của các ngữ cảnh được sắp xếp đúng. Sao cho phần tử pseudo sẽ được đặt bên dưới chính phần tử đó trong khi vẫn nhìn thấy được.
+Đoạn mã yêu cầu một ~~trường hợp khá phức tạp của ngữ cảnh của các ngữ cảnh được sắp xếp đúng~~( somewhat complex case of stacking contexts to get right)*1 tập định nghĩa phức tạp để chạy đúng*. Sao cho phần tử pseudo sẽ được đặt bên dưới chính phần tử đó trong khi vẫn nhìn thấy được.
 
 1. `position: relative` trên phần tử cha khởi tạo một vị trí theo ngữ cảnh cho các phần tử con.
 2. `z-index: 1` khởi tạo một ngữ cảnh xếp chồng mới.
@@ -999,7 +999,7 @@ Cho văn bản một màu gradient.
 #### Giải thích
 
 1. `background: -webkit-linear-gradient(...)` cho phần tử văn bản một hình nền gradient.
-2. `webkit-text-fill-color: transparent` lấp đầy văen bản với màu trong suốt.
+2. `webkit-text-fill-color: transparent` lấp đầy văn bản với màu trong suốt.
 3. `webkit-background-clip: text` cắt hình nền với văn bản, lấp đầy văn bản với nền gradient giống như một màu.
 
 #### Hỗ trợ trình duyệt
@@ -1077,7 +1077,7 @@ CHo một phần tử một đường viền bằng 1px thiết bị gốc về 
 
 #### Giải thích
 
-1. `box-shadow`, khi chỉ sử dụng bề rộng, thêm một đường viền pseudo cái à có thể dùng pixel phụ\*.
+1. `box-shadow`, khi chỉ sử dụng bề rộng, thêm một đường viền pseudo cái mà có thể dùng pixel phụ\*.
 2. Dùng `@media (min-resolution: ...)` để kiểm tra tỉ lệ của thiết bị (`1dppx` bằng 96 DPI), cài đặt bề rộng của `box-shadow` bằng `1 / dppx`.
 
 #### Hỗ trợ trình duyệt
@@ -1526,6 +1526,7 @@ Thử nghiệm với giá trị `px` để thay đổi tỉ lệ của hình tam
 <span class="snippet__support-note">✅ No caveats.</span>
 
 <!-- tags: visual -->
+*Theo trí nhớ thì phần này dịch rồi :))*
 ### Nảy tải trang
 
 `Creates a bouncing loader animation.`
