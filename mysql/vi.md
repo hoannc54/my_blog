@@ -10,15 +10,15 @@ Hầu hết các chương trình MySQL có thể đọc các tuỳ chọn khởi
 
 Chú ý: 
 
-Một chương trình MySQL được bắt đầu với tuỳ chọn `\--no-defaults` đọc không có các file tuỳ chọn nào khác ngoài  `.mylogin.cnf`. 
+Một chương trình MySQL được bắt đầu với tuỳ chọn `\--no-defaults` không đọc các file tuỳ chọn nào khác ngoài  `.mylogin.cnf`. 
 
-Nhiều các file tuỳ chọn là các file văn bản thuần tuý, được tạo bằng bất cứ trình soạn thảo nào. Ngoại lệ là file `.mylogin.cnf` chứa đường dẫn tuỳ chọn đăng nhập. Nó là một file được mã hoá bởi [**mysql_config_editor**][4] utility. Xem [Phần 4.6.6, "**mysql_config_editor** — MySQL Configuration Utility"][4]. Một "đường dẫn đăng nhập" là một nhóm tuỳ chọn chỉ cho phép một số tuỳ chọn: `host`, `user`, `password`, `port` and `socket`. Các chương trình phía Client cái mà đường dẫn đăng nhập đọc từ `.mylogin.cnf` sử dụng tuỳ chọn [`\--login-path`][5] . 
+Nhiều các file tuỳ chọn là các file văn bản thuần tuý, được tạo bằng bất cứ trình soạn thảo nào. Ngoại lệ là file `.mylogin.cnf` chứa đường dẫn tuỳ chọn đăng nhập. Nó là một file được mã hoá bởi [**mysql_config_editor**][4] tiện ích. Xem [Phần 4.6.6, "**mysql_config_editor** — MySQL Configuration Utility"][4]. Một "đường dẫn đăng nhập" là một nhóm tuỳ chọn chỉ cho phép một số tuỳ chọn: `host`, `user`, `password`, `port` and `socket`. Chương trình client sử dụng tùy chọn [`\--login-path`][5] để xác định xem sẽ đọc đường dẫn đăng nhập nào từ file `.mylogin.cnf`.
 
-Để xác định một đường dẫn đăng nhập thay thế, thiết lập biến môi trường  `MYSQL_TEST_LOGIN_FILE` . Biến môi trường này được sử dụng bởi tiện ích testing **mysql-test-run.pl** , những cũng được xác nhận bởi [**mysql_config_editor**][4] và các client MySQL như là [**mysql**][6], [**mysqladmin**][7].
+Để xác định một đường dẫn đăng nhập thay thế, thiết lập biến môi trường  `MYSQL_TEST_LOGIN_FILE` . Biến môi trường này được sử dụng bởi tiện ích kiểm thử **mysql-test-run.pl** , những cũng được xác nhận bởi [**mysql_config_editor**][4] và các client MySQL như là [**mysql**][6], [**mysqladmin**][7].
 
-MySQL tìm kiếm các file tuỳ chọn theo thứ tự mô tả cuộc thảo luận sau và đọc bất cứ nội dung nào đã tồn tại. Nếu một file tuỳ chọn muốn sử dụng là không tồn tại, tạo ra nó và tạo nó bằng phương pháp thích hợp, như thảo luận vừa rồi
+MySQL tìm kiếm các file tuỳ chọn theo thứ tự mô tả như thảo luận phía dưới và đọc bất cứ nội dung nào đã tồn tại. Nếu một file tuỳ chọn muốn sử dụng là không tồn tại, tạo ra nó và tạo nó bằng phương pháp thích hợp, như thảo luận vừa rồi
 
-Trên Windows, các chương trình MySQL đọc các tuỳ chọn khởi động từ các file như bảng, trong các thứ tự được ưu tiên) các file được liệt kê là đọc đầu tiên, và đọc sau khi được ưu tiên). 
+Trên Windows, các chương trình MySQL đọc các tùy chọn khởi động từ các file được hiển thị trong bảng sau, theo thứ tự được chỉ định (các file được liệt kê đầu tiên được đọc trước tiên, các file sau được đọc theo thứ tự ưu tiên).
 
 **Table 4.1 Đọc các file tuỳ chọn trên hệ thống Windows**
 
@@ -108,7 +108,7 @@ Các luật trên có nghĩa là dấu gạch chéo thực sự được đưa v
 
 Các quy tắc cho chuỗi kết thúc trong file tuỳ chọn có thể khác một chút so với các quy tắc về chuỗi kết thúc trong câu lệnh SQL. Trong ngữ cảnh sau, nếu "_`x`_" không là ký tự kết thúc chuỗi hợp lệ, `_`x`_` trở thành "_`x`_" chứ không phải là `_`x`_`. Xem [Section 9.1.1, "String Literals"][15]. 
 
-Các quy tắc kết thúc cho giá trị file tuỳ chọn là đặc biệt thích hợp cho tên đường dẫn Windows, khi sử dụng `` làm ký tự phân cách cho tênd dường dẫn. Một ký tự phân cách trong một tên đường dẫn  Windows phải được ghi `\` nếu nó theo sau bởi một ký tự kết thúc. Nó được ghi thành `\` or `` nếu nó không phải. Tuỳ nhiên, `/` có thể được sử dụng trong tên đường dẫn Windows và sẽ được coi như là ``. Giả sử bạn muốn xác định một thư mục gốc của `C:Program FilesMySQLMySQL Server 5.7` trong file tuỳ chọn. Điều đó có thể hoàn thành theo nhiều các. Một vài ví dụ: 
+Các quy tắc kết thúc cho giá trị file tuỳ chọn là đặc biệt thích hợp cho tên đường dẫn Windows, khi sử dụng `` làm ký tự phân cách cho tên đường dẫn. Một ký tự phân cách trong một tên đường dẫn  Windows phải được ghi `\` nếu nó theo sau bởi một ký tự kết thúc. Nó được ghi thành `\` or `` nếu nó không phải. Tuỳ nhiên, `/` có thể được sử dụng trong tên đường dẫn Windows và sẽ được coi như là ``. Giả sử bạn muốn xác định một thư mục gốc của `C:Program FilesMySQLMySQL Server 5.7` trong file tuỳ chọn. Điều đó có thể hoàn thành theo nhiều các. Một vài ví dụ: 
     
     
     basedir="C:Program FilesMySQLMySQL Server 5.7"
@@ -118,7 +118,7 @@ Các quy tắc kết thúc cho giá trị file tuỳ chọn là đặc biệt th
 
 Nếu một tên nhóm tuỳ chọn là giống như một tên chương trình, các tuỳ chọn trong nhóm có thể áp dụng riêng cho chương trình đấy. Ví dụ,nhóm `[mysqld]` và `[mysql]` áp dụng cho chương trình **[mysqld**][1] server và **[mysql**][6] client, tương ứng. 
 
-Nhóm tuỳ chọn `[client]` được đọc bở tất cả các chương trình client được cung cấp trong bản phân phối MySQL (ngoại trừ **[mysqld**][1]). Để hiểu làm thế nào chương trình bên thứ ba sử dụng C API có thể sử dụng được các file tuỳ chọn, xem tài liệu C API tại [Section 27.8.7.50, "mysql_options()"][16]. 
+Nhóm tuỳ chọn `[client]` được đọc bởi tất cả các chương trình client được cung cấp trong bản phân phối MySQL (ngoại trừ **[mysqld**][1]). Để hiểu làm thế nào chương trình bên thứ ba sử dụng C API có thể sử dụng được các file tuỳ chọn, xem tài liệu C API tại [Section 27.8.7.50, "mysql_options()"][16]. 
 
 Nhóm `[client]` cho phép bạn xác định tuỳ chọn được áp dụng cho tất cả client. Ví dụ, `[client]` là nhóm phù hợp để sử dụng xác định mật khẩu kết nối đến server. (Nhưng chắc chắn file tuỳ chọn là được truy cập bởi chính bạn, điều đó lmaf người khác không thể tìm ra mật khẩu của bạn) . Đảm bảo không chèn được tuỳ chọn vào nhóm `[client]` trừ khi nó được nhận biết bởi tất cả chương trình client mà bạn sử dụng. Các chương trình không thể hiểu tuỳ chọn kết thúc sau khi hiển thị lỗi nếu bạn chạy chúng.
 
@@ -140,7 +140,7 @@ Liệt kê các nhóm tuỳ chọn chung trước các nhóm cụ thể sau. Ví
     [mysqldump]
     quick
 
-Đây là file tuỳ chọnn của người dùng: 
+Đây là file tuỳ chọn của người dùng: 
     
     
     [client]
@@ -173,7 +173,7 @@ Chú ý:
 
 Bất kỳ các file được tìm thấy và thêm vào sử dụng  `!includedir` trên hệ điều hành  Unix _phải_ có các tên kết thúc  `.cnf`. Trên Windows, chỉ thị này kiểm tra các file với đuôi `.ini` hoặc `.cnf` . 
 
-Ghi nội dung của một file cấu hình được include giống như file cấu hình khác. Đó là, nó nên chưa các nhóm của các cấu hình, mỗi nhóm có dòng `[_`group`_]` đặt trước thể hiện chương trình nào áp dụng cấu hình.
+Ghi nội dung của một file cấu hình được include giống như file cấu hình khác. Đó là, nó nên chứa các nhóm của các cấu hình, mỗi nhóm có dòng `[_`group`_]` đặt trước thể hiện chương trình nào áp dụng cấu hình.
 
 Trong khi một file được include đang được xử lý, chỉ có những tuỳ cấu hình trong nhóm mà chương trình hiện tại đang tìm kiếm được sử dụng. Các nhóm khác được bỏ qua. Giả sử một file `my.cnf` chưa dòng này:
     
